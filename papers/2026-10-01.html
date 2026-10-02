@@ -28,12 +28,11 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .standings-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8.5px;letter-spacing:.1em;padding:2px 6px;border-bottom:1px solid var(--rule);color:var(--faint)}
 .standings-tbl th:first-child{text-align:left}.standings-tbl th:not(:first-child){text-align:right}
 .standings-tbl td{padding:2px 6px;border-bottom:1px dotted #d4c9b0}.standings-tbl td:first-child{font-weight:700}.standings-tbl td:not(:first-child){text-align:right}
-.standings-tbl tr.div-leader td:first-child{border-left:3px solid var(--ink);padding-left:3px}
 .standings-tbl tr:last-child td{border-bottom:none}
-.scores-layout{display:flex;flex-direction:column;gap:18px}
+.scores-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
 .league-subsection{display:flex;flex-direction:column;gap:12px}
 .league-subsection-hed{font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.2em;color:var(--faint);padding:4px 0 3px;border-top:1px solid var(--faint2);border-bottom:1px solid var(--faint2)}
-.games-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.games-grid{display:flex;flex-direction:column;gap:12px}
 .box-full{border:1px solid var(--rule)}
 .box-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;display:flex;justify-content:space-between}
 .batting-columns{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
@@ -255,7 +254,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
             <table class="pitching-tbl">
               <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
               <tbody><tr>
-      <td>Nola, A. L</td>
+      <td>Nola, A. L (7-12)</td>
       <td>1.2</td><td>2</td><td>3</td>
       <td>3</td><td>2</td><td>1</td>
     </tr><tr>
@@ -310,7 +309,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
           </div>
         </div>
       </div>
-      <div class="game-notes"><span class="note-label">WP—</span>Holmes, G. <span class="note-label">HBP—</span>Harris II (by Bowlan). <span class="note-label">ABS Challenge—</span>Acuña Jr. (Strike-Overturned to Ball); Realmuto (Ball-Overturned to Strike); Baldwin, D (Ball-Confirmed). <span class="note-label">Att—</span>41,731. T—2:46.</div>
+      <div class="game-notes"><span class="note-label">2B—</span>Harper <span class="note-label">3B—</span>Hill <span class="note-label">HR—</span>Olson, Harris II, Albies <span class="note-label">WP—</span>Holmes, G. <span class="note-label">HBP—</span>Harris II (by Bowlan). <span class="note-label">ABS Challenge—</span>Acuña Jr. (Strike-Overturned to Ball); Realmuto (Ball-Overturned to Strike); Baldwin, D (Ball-Confirmed). <span class="note-label">Att—</span>41,731. T—2:46.</div>
     </div></div>
     </div>
   </div>
@@ -323,192 +322,192 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
     <div class="league-section-hed">American League Leaders</div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Batting Average</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Aaron Judge <span class="player-team"></span></td>
-    <td>.331</td>
+    <td><span class="rank">1.</span>Yordan Alvarez <span class="player-team"></span></td>
+    <td>.316</td>
   </tr><tr>
-    <td><span class="rank">2.</span>Bo Bichette <span class="player-team"></span></td>
-    <td>.311</td>
+    <td><span class="rank">2.</span>Chandler Simpson <span class="player-team"></span></td>
+    <td>.306</td>
   </tr><tr>
-    <td><span class="rank">3.</span>Jacob Wilson <span class="player-team"></span></td>
-    <td>.311</td>
+    <td><span class="rank">3.</span>Yandy Díaz <span class="player-team"></span></td>
+    <td>.293</td>
   </tr><tr>
-    <td><span class="rank">4.</span>George Springer <span class="player-team"></span></td>
-    <td>.309</td>
+    <td><span class="rank">4.</span>Jac Caglianone <span class="player-team"></span></td>
+    <td>.289</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Jeremy Peña <span class="player-team"></span></td>
-    <td>.304</td>
+    <td><span class="rank">5.</span>Chase DeLauter <span class="player-team"></span></td>
+    <td>.287</td>
   </tr><tr>
-    <td><span class="rank">6.</span>Yandy Díaz <span class="player-team"></span></td>
-    <td>.300</td>
+    <td><span class="rank">6.</span>Ceddanne Rafaela <span class="player-team"></span></td>
+    <td>.285</td>
   </tr><tr>
-    <td><span class="rank">7.</span>Bobby Witt Jr. <span class="player-team"></span></td>
-    <td>.295</td>
+    <td><span class="rank">7.</span>Luke Keaschall <span class="player-team"></span></td>
+    <td>.282</td>
   </tr><tr>
-    <td><span class="rank">8.</span>Vladimir Guerrero Jr. <span class="player-team"></span></td>
-    <td>.292</td>
+    <td><span class="rank">8.</span>Steven Kwan <span class="player-team"></span></td>
+    <td>.282</td>
   </tr><tr>
-    <td><span class="rank">9.</span>Maikel Garcia <span class="player-team"></span></td>
-    <td>.286</td>
+    <td><span class="rank">9.</span>Randy Arozarena <span class="player-team"></span></td>
+    <td>.281</td>
   </tr><tr>
-    <td><span class="rank">10.</span>José Ramírez <span class="player-team"></span></td>
-    <td>.283</td>
+    <td><span class="rank">10.</span>Bobby Witt Jr. <span class="player-team"></span></td>
+    <td>.281</td>
   </tr></tbody></table></div>
       <div class="leaders-block"><div class="leaders-hed">Home Runs</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Cal Raleigh <span class="player-team"></span></td>
-    <td>60</td>
+    <td><span class="rank">1.</span>Pete Alonso <span class="player-team"></span></td>
+    <td>43</td>
   </tr><tr>
-    <td><span class="rank">2.</span>Aaron Judge <span class="player-team"></span></td>
-    <td>53</td>
+    <td><span class="rank">2.</span>Yordan Alvarez <span class="player-team"></span></td>
+    <td>42</td>
   </tr><tr>
     <td><span class="rank">3.</span>Junior Caminero <span class="player-team"></span></td>
-    <td>45</td>
+    <td>42</td>
   </tr><tr>
-    <td><span class="rank">4.</span>Jo Adell <span class="player-team"></span></td>
-    <td>37</td>
+    <td><span class="rank">4.</span>Ben Rice <span class="player-team"></span></td>
+    <td>41</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Riley Greene <span class="player-team"></span></td>
-    <td>36</td>
-  </tr><tr>
-    <td><span class="rank">6.</span>Nick Kurtz <span class="player-team"></span></td>
-    <td>36</td>
-  </tr><tr>
-    <td><span class="rank">7.</span>Taylor Ward <span class="player-team"></span></td>
-    <td>36</td>
-  </tr><tr>
-    <td><span class="rank">8.</span>Byron Buxton <span class="player-team"></span></td>
+    <td><span class="rank">5.</span>Munetaka Murakami <span class="player-team"></span></td>
     <td>35</td>
   </tr><tr>
-    <td><span class="rank">9.</span>Trent Grisham <span class="player-team"></span></td>
-    <td>34</td>
+    <td><span class="rank">6.</span>Kazuma Okamoto <span class="player-team"></span></td>
+    <td>33</td>
   </tr><tr>
-    <td><span class="rank">10.</span>Vinnie Pasquantino <span class="player-team"></span></td>
-    <td>32</td>
+    <td><span class="rank">7.</span>Miguel Vargas <span class="player-team"></span></td>
+    <td>33</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Colson Montgomery <span class="player-team"></span></td>
+    <td>31</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Christian Walker <span class="player-team"></span></td>
+    <td>29</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Jake Burger <span class="player-team"></span></td>
+    <td>28</td>
   </tr></tbody></table></div>
       <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Cal Raleigh <span class="player-team"></span></td>
-    <td>125</td>
-  </tr><tr>
-    <td><span class="rank">2.</span>Aaron Judge <span class="player-team"></span></td>
-    <td>114</td>
-  </tr><tr>
-    <td><span class="rank">3.</span>Vinnie Pasquantino <span class="player-team"></span></td>
+    <td><span class="rank">1.</span>Pete Alonso <span class="player-team"></span></td>
     <td>113</td>
   </tr><tr>
-    <td><span class="rank">4.</span>Riley Greene <span class="player-team"></span></td>
-    <td>111</td>
+    <td><span class="rank">2.</span>Yordan Alvarez <span class="player-team"></span></td>
+    <td>106</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Junior Caminero <span class="player-team"></span></td>
-    <td>110</td>
+    <td><span class="rank">3.</span>Junior Caminero <span class="player-team"></span></td>
+    <td>101</td>
   </tr><tr>
-    <td><span class="rank">6.</span>Taylor Ward <span class="player-team"></span></td>
-    <td>103</td>
+    <td><span class="rank">4.</span>Ben Rice <span class="player-team"></span></td>
+    <td>97</td>
   </tr><tr>
-    <td><span class="rank">7.</span>Salvador Perez <span class="player-team"></span></td>
-    <td>100</td>
-  </tr><tr>
-    <td><span class="rank">8.</span>Jo Adell <span class="player-team"></span></td>
-    <td>98</td>
-  </tr><tr>
-    <td><span class="rank">9.</span>Cody Bellinger <span class="player-team"></span></td>
-    <td>98</td>
-  </tr><tr>
-    <td><span class="rank">10.</span>Trevor Story <span class="player-team"></span></td>
+    <td><span class="rank">5.</span>Josh Bell <span class="player-team"></span></td>
     <td>96</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Jo Adell <span class="player-team"></span></td>
+    <td>94</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Isaac Paredes <span class="player-team"></span></td>
+    <td>94</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Miguel Vargas <span class="player-team"></span></td>
+    <td>93</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Jonathan Aranda <span class="player-team"></span></td>
+    <td>92</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Kazuma Okamoto <span class="player-team"></span></td>
+    <td>92</td>
   </tr></tbody></table></div>
     </div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Wins</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Max Fried <span class="player-team"></span></td>
-    <td>19</td>
-  </tr><tr>
-    <td><span class="rank">2.</span>Garrett Crochet <span class="player-team"></span></td>
+    <td><span class="rank">1.</span>Sonny Gray <span class="player-team"></span></td>
     <td>18</td>
   </tr><tr>
-    <td><span class="rank">3.</span>Carlos Rodón <span class="player-team"></span></td>
-    <td>18</td>
+    <td><span class="rank">2.</span>Drew Rasmussen <span class="player-team"></span></td>
+    <td>16</td>
   </tr><tr>
-    <td><span class="rank">4.</span>Bryan Woo <span class="player-team"></span></td>
+    <td><span class="rank">3.</span>Nick Martinez <span class="player-team"></span></td>
     <td>15</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Casey Mize <span class="player-team"></span></td>
+    <td><span class="rank">4.</span>Cam Schlittler <span class="player-team"></span></td>
     <td>14</td>
   </tr><tr>
-    <td><span class="rank">6.</span>Joe Ryan <span class="player-team"></span></td>
-    <td>13</td>
+    <td><span class="rank">5.</span>Gavin Williams <span class="player-team"></span></td>
+    <td>14</td>
   </tr><tr>
-    <td><span class="rank">7.</span>Tarik Skubal <span class="player-team"></span></td>
-    <td>13</td>
-  </tr><tr>
-    <td><span class="rank">8.</span>Framber Valdez <span class="player-team"></span></td>
-    <td>13</td>
-  </tr><tr>
-    <td><span class="rank">9.</span>Tanner Bibee <span class="player-team"></span></td>
+    <td><span class="rank">6.</span>Taj Bradley <span class="player-team"></span></td>
     <td>12</td>
   </tr><tr>
-    <td><span class="rank">10.</span>Hunter Brown <span class="player-team"></span></td>
+    <td><span class="rank">7.</span>Logan Gilbert <span class="player-team"></span></td>
+    <td>12</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Parker Messick <span class="player-team"></span></td>
+    <td>12</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>José Soriano <span class="player-team"></span></td>
+    <td>12</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Bryan Woo <span class="player-team"></span></td>
     <td>12</td>
   </tr></tbody></table></div>
       <div class="leaders-block"><div class="leaders-hed">Saves</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Carlos Estévez <span class="player-team"></span></td>
-    <td>42</td>
+    <td><span class="rank">1.</span>Bryan Baker <span class="player-team"></span></td>
+    <td>41</td>
   </tr><tr>
-    <td><span class="rank">2.</span>Andrés Muñoz <span class="player-team"></span></td>
-    <td>38</td>
+    <td><span class="rank">2.</span>Cade Smith <span class="player-team"></span></td>
+    <td>41</td>
   </tr><tr>
-    <td><span class="rank">3.</span>Jeff Hoffman <span class="player-team"></span></td>
-    <td>33</td>
+    <td><span class="rank">3.</span>David Bednar <span class="player-team"></span></td>
+    <td>35</td>
   </tr><tr>
     <td><span class="rank">4.</span>Aroldis Chapman <span class="player-team"></span></td>
-    <td>32</td>
+    <td>35</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Kenley Jansen <span class="player-team"></span></td>
-    <td>29</td>
+    <td><span class="rank">5.</span>Louis Varland <span class="player-team"></span></td>
+    <td>35</td>
   </tr><tr>
-    <td><span class="rank">6.</span>Josh Hader <span class="player-team"></span></td>
+    <td><span class="rank">6.</span>Jacob Latz <span class="player-team"></span></td>
+    <td>30</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Andrés Muñoz <span class="player-team"></span></td>
     <td>28</td>
   </tr><tr>
-    <td><span class="rank">7.</span>Pete Fairbanks <span class="player-team"></span></td>
-    <td>27</td>
+    <td><span class="rank">8.</span>Josh Hader <span class="player-team"></span></td>
+    <td>26</td>
   </tr><tr>
-    <td><span class="rank">8.</span>Emmanuel Clase <span class="player-team"></span></td>
-    <td>24</td>
+    <td><span class="rank">9.</span>Yoendrys Gómez <span class="player-team"></span></td>
+    <td>22</td>
   </tr><tr>
-    <td><span class="rank">9.</span>Will Vest <span class="player-team"></span></td>
-    <td>23</td>
-  </tr><tr>
-    <td><span class="rank">10.</span>Mason Miller <span class="player-team"></span></td>
-    <td>20</td>
+    <td><span class="rank">10.</span>Kenley Jansen <span class="player-team"></span></td>
+    <td>22</td>
   </tr></tbody></table></div>
       <div class="leaders-block"><div class="leaders-hed">Strikeouts</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Garrett Crochet <span class="player-team"></span></td>
-    <td>255</td>
+    <td><span class="rank">1.</span>Gavin Williams <span class="player-team"></span></td>
+    <td>248</td>
   </tr><tr>
-    <td><span class="rank">2.</span>Tarik Skubal <span class="player-team"></span></td>
-    <td>241</td>
+    <td><span class="rank">2.</span>Dylan Cease <span class="player-team"></span></td>
+    <td>239</td>
   </tr><tr>
-    <td><span class="rank">3.</span>Hunter Brown <span class="player-team"></span></td>
-    <td>206</td>
+    <td><span class="rank">3.</span>Cam Schlittler <span class="player-team"></span></td>
+    <td>239</td>
   </tr><tr>
-    <td><span class="rank">4.</span>Carlos Rodón <span class="player-team"></span></td>
-    <td>203</td>
+    <td><span class="rank">4.</span>Reid Detmers <span class="player-team"></span></td>
+    <td>211</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Bryan Woo <span class="player-team"></span></td>
-    <td>198</td>
+    <td><span class="rank">5.</span>Taj Bradley <span class="player-team"></span></td>
+    <td>205</td>
   </tr><tr>
-    <td><span class="rank">6.</span>Joe Ryan <span class="player-team"></span></td>
-    <td>194</td>
+    <td><span class="rank">6.</span>Logan Gilbert <span class="player-team"></span></td>
+    <td>205</td>
   </tr><tr>
-    <td><span class="rank">7.</span>Max Fried <span class="player-team"></span></td>
-    <td>189</td>
+    <td><span class="rank">7.</span>Jacob deGrom <span class="player-team"></span></td>
+    <td>201</td>
   </tr><tr>
-    <td><span class="rank">8.</span>Kevin Gausman <span class="player-team"></span></td>
-    <td>189</td>
+    <td><span class="rank">8.</span>Parker Messick <span class="player-team"></span></td>
+    <td>193</td>
   </tr><tr>
-    <td><span class="rank">9.</span>Jack Flaherty <span class="player-team"></span></td>
-    <td>188</td>
+    <td><span class="rank">9.</span>Sean Burke <span class="player-team"></span></td>
+    <td>185</td>
   </tr><tr>
-    <td><span class="rank">10.</span>Framber Valdez <span class="player-team"></span></td>
-    <td>187</td>
+    <td><span class="rank">10.</span>Bryan Woo <span class="player-team"></span></td>
+    <td>175</td>
   </tr></tbody></table></div>
     </div>
   </div>
@@ -516,192 +515,192 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
     <div class="league-section-hed">National League Leaders</div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Batting Average</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Trea Turner <span class="player-team"></span></td>
-    <td>.304</td>
+    <td><span class="rank">1.</span>Gabriel Moreno <span class="player-team"></span></td>
+    <td>.311</td>
   </tr><tr>
-    <td><span class="rank">2.</span>Nico Hoerner <span class="player-team"></span></td>
-    <td>.297</td>
+    <td><span class="rank">2.</span>Luis Arraez <span class="player-team"></span></td>
+    <td>.310</td>
   </tr><tr>
-    <td><span class="rank">3.</span>Freddie Freeman <span class="player-team"></span></td>
-    <td>.295</td>
+    <td><span class="rank">3.</span>Otto Lopez <span class="player-team"></span></td>
+    <td>.305</td>
   </tr><tr>
-    <td><span class="rank">4.</span>Luis Arraez <span class="player-team"></span></td>
-    <td>.292</td>
+    <td><span class="rank">4.</span>Nick Gonzales <span class="player-team"></span></td>
+    <td>.303</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Geraldo Perdomo <span class="player-team"></span></td>
-    <td>.290</td>
+    <td><span class="rank">5.</span>TJ Rumfield <span class="player-team"></span></td>
+    <td>.300</td>
   </tr><tr>
-    <td><span class="rank">6.</span>Alec Burleson <span class="player-team"></span></td>
-    <td>.290</td>
+    <td><span class="rank">6.</span>Michael Harris II <span class="player-team"></span></td>
+    <td>.294</td>
   </tr><tr>
-    <td><span class="rank">7.</span>Sal Frelick <span class="player-team"></span></td>
+    <td><span class="rank">7.</span>Jackson Chourio <span class="player-team"></span></td>
+    <td>.291</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Jake McCarthy <span class="player-team"></span></td>
+    <td>.291</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Fernando Tatis Jr. <span class="player-team"></span></td>
+    <td>.289</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Freddie Freeman <span class="player-team"></span></td>
     <td>.288</td>
-  </tr><tr>
-    <td><span class="rank">8.</span>Brice Turang <span class="player-team"></span></td>
-    <td>.288</td>
-  </tr><tr>
-    <td><span class="rank">9.</span>Brendan Donovan <span class="player-team"></span></td>
-    <td>.287</td>
-  </tr><tr>
-    <td><span class="rank">10.</span>Alec Bohm <span class="player-team"></span></td>
-    <td>.287</td>
   </tr></tbody></table></div>
       <div class="leaders-block"><div class="leaders-hed">Home Runs</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Kyle Schwarber <span class="player-team"></span></td>
-    <td>56</td>
+    <td><span class="rank">1.</span>Pete Crow-Armstrong <span class="player-team"></span></td>
+    <td>45</td>
   </tr><tr>
-    <td><span class="rank">2.</span>Shohei Ohtani <span class="player-team"></span></td>
-    <td>55</td>
+    <td><span class="rank">2.</span>Kyle Schwarber <span class="player-team"></span></td>
+    <td>45</td>
   </tr><tr>
-    <td><span class="rank">3.</span>Juan Soto <span class="player-team"></span></td>
-    <td>43</td>
+    <td><span class="rank">3.</span>Hunter Goodman <span class="player-team"></span></td>
+    <td>41</td>
   </tr><tr>
-    <td><span class="rank">4.</span>Pete Alonso <span class="player-team"></span></td>
-    <td>38</td>
+    <td><span class="rank">4.</span>Matt Olson <span class="player-team"></span></td>
+    <td>41</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Eugenio Suárez <span class="player-team"></span></td>
-    <td>36</td>
+    <td><span class="rank">5.</span>Rafael Devers <span class="player-team"></span></td>
+    <td>37</td>
   </tr><tr>
-    <td><span class="rank">6.</span>Michael Busch <span class="player-team"></span></td>
-    <td>34</td>
+    <td><span class="rank">6.</span>Brandon Lowe <span class="player-team"></span></td>
+    <td>35</td>
   </tr><tr>
-    <td><span class="rank">7.</span>Seiya Suzuki <span class="player-team"></span></td>
+    <td><span class="rank">7.</span>CJ Abrams <span class="player-team"></span></td>
+    <td>33</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Sal Stewart <span class="player-team"></span></td>
     <td>32</td>
   </tr><tr>
-    <td><span class="rank">8.</span>Corbin Carroll <span class="player-team"></span></td>
-    <td>31</td>
+    <td><span class="rank">9.</span>Nolan Arenado <span class="player-team"></span></td>
+    <td>30</td>
   </tr><tr>
-    <td><span class="rank">9.</span>Pete Crow-Armstrong <span class="player-team"></span></td>
-    <td>31</td>
-  </tr><tr>
-    <td><span class="rank">10.</span>Hunter Goodman <span class="player-team"></span></td>
-    <td>31</td>
+    <td><span class="rank">10.</span>Elly De La Cruz <span class="player-team"></span></td>
+    <td>30</td>
   </tr></tbody></table></div>
       <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Kyle Schwarber <span class="player-team"></span></td>
-    <td>132</td>
+    <td><span class="rank">1.</span>Alec Burleson <span class="player-team"></span></td>
+    <td>116</td>
   </tr><tr>
-    <td><span class="rank">2.</span>Pete Alonso <span class="player-team"></span></td>
-    <td>126</td>
+    <td><span class="rank">2.</span>Sal Stewart <span class="player-team"></span></td>
+    <td>112</td>
   </tr><tr>
-    <td><span class="rank">3.</span>Juan Soto <span class="player-team"></span></td>
-    <td>105</td>
+    <td><span class="rank">3.</span>Pete Crow-Armstrong <span class="player-team"></span></td>
+    <td>107</td>
   </tr><tr>
-    <td><span class="rank">4.</span>Seiya Suzuki <span class="player-team"></span></td>
-    <td>103</td>
+    <td><span class="rank">4.</span>CJ Abrams <span class="player-team"></span></td>
+    <td>106</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Christian Yelich <span class="player-team"></span></td>
-    <td>103</td>
-  </tr><tr>
-    <td><span class="rank">6.</span>Shohei Ohtani <span class="player-team"></span></td>
+    <td><span class="rank">5.</span>Jordan Walker <span class="player-team"></span></td>
     <td>102</td>
   </tr><tr>
-    <td><span class="rank">7.</span>Geraldo Perdomo <span class="player-team"></span></td>
+    <td><span class="rank">6.</span>Brice Turang <span class="player-team"></span></td>
     <td>100</td>
   </tr><tr>
-    <td><span class="rank">8.</span>Pete Crow-Armstrong <span class="player-team"></span></td>
-    <td>95</td>
+    <td><span class="rank">7.</span>Rafael Devers <span class="player-team"></span></td>
+    <td>98</td>
   </tr><tr>
-    <td><span class="rank">9.</span>Manny Machado <span class="player-team"></span></td>
-    <td>95</td>
+    <td><span class="rank">8.</span>Kyle Schwarber <span class="player-team"></span></td>
+    <td>97</td>
   </tr><tr>
-    <td><span class="rank">10.</span>Matt Olson <span class="player-team"></span></td>
-    <td>95</td>
+    <td><span class="rank">9.</span>Brandon Lowe <span class="player-team"></span></td>
+    <td>96</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>William Contreras <span class="player-team"></span></td>
+    <td>94</td>
   </tr></tbody></table></div>
     </div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Wins</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Freddy Peralta <span class="player-team"></span></td>
-    <td>17</td>
+    <td><span class="rank">1.</span>Cristopher Sánchez <span class="player-team"></span></td>
+    <td>18</td>
   </tr><tr>
-    <td><span class="rank">2.</span>Jesús Luzardo <span class="player-team"></span></td>
+    <td><span class="rank">2.</span>Jacob Misiorowski <span class="player-team"></span></td>
+    <td>16</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Eduardo Rodriguez <span class="player-team"></span></td>
+    <td>16</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Chase Burns <span class="player-team"></span></td>
     <td>15</td>
   </tr><tr>
-    <td><span class="rank">3.</span>Logan Webb <span class="player-team"></span></td>
-    <td>15</td>
-  </tr><tr>
-    <td><span class="rank">4.</span>Matthew Boyd <span class="player-team"></span></td>
+    <td><span class="rank">5.</span>Braxton Ashcraft <span class="player-team"></span></td>
     <td>14</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Sonny Gray <span class="player-team"></span></td>
+    <td><span class="rank">6.</span>Jesús Luzardo <span class="player-team"></span></td>
     <td>14</td>
   </tr><tr>
-    <td><span class="rank">6.</span>Brady Singer <span class="player-team"></span></td>
+    <td><span class="rank">7.</span>Chris Sale <span class="player-team"></span></td>
     <td>14</td>
   </tr><tr>
-    <td><span class="rank">7.</span>Zac Gallen <span class="player-team"></span></td>
-    <td>13</td>
+    <td><span class="rank">8.</span>Zack Wheeler <span class="player-team"></span></td>
+    <td>14</td>
   </tr><tr>
-    <td><span class="rank">8.</span>Adrian Morejon <span class="player-team"></span></td>
-    <td>13</td>
+    <td><span class="rank">9.</span>Yoshinobu Yamamoto <span class="player-team"></span></td>
+    <td>14</td>
   </tr><tr>
-    <td><span class="rank">9.</span>Brandon Pfaadt <span class="player-team"></span></td>
-    <td>13</td>
-  </tr><tr>
-    <td><span class="rank">10.</span>Nick Pivetta <span class="player-team"></span></td>
+    <td><span class="rank">10.</span>Sandy Alcantara <span class="player-team"></span></td>
     <td>13</td>
   </tr></tbody></table></div>
       <div class="leaders-block"><div class="leaders-hed">Saves</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Robert Suarez <span class="player-team"></span></td>
-    <td>40</td>
+    <td><span class="rank">1.</span>Mason Miller <span class="player-team"></span></td>
+    <td>38</td>
   </tr><tr>
-    <td><span class="rank">2.</span>Emilio Pagán <span class="player-team"></span></td>
-    <td>32</td>
+    <td><span class="rank">2.</span>Riley O'Brien <span class="player-team"></span></td>
+    <td>38</td>
   </tr><tr>
-    <td><span class="rank">3.</span>Trevor Megill <span class="player-team"></span></td>
+    <td><span class="rank">3.</span>Raisel Iglesias <span class="player-team"></span></td>
+    <td>34</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Jhoan Duran <span class="player-team"></span></td>
+    <td>33</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Trevor Megill <span class="player-team"></span></td>
     <td>30</td>
   </tr><tr>
-    <td><span class="rank">4.</span>Raisel Iglesias <span class="player-team"></span></td>
-    <td>29</td>
+    <td><span class="rank">6.</span>Emilio Pagán <span class="player-team"></span></td>
+    <td>25</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Edwin Díaz <span class="player-team"></span></td>
-    <td>28</td>
+    <td><span class="rank">7.</span>Tanner Scott <span class="player-team"></span></td>
+    <td>25</td>
   </tr><tr>
-    <td><span class="rank">6.</span>Tanner Scott <span class="player-team"></span></td>
-    <td>23</td>
+    <td><span class="rank">8.</span>Paul Sewald <span class="player-team"></span></td>
+    <td>24</td>
   </tr><tr>
-    <td><span class="rank">7.</span>Daniel Palencia <span class="player-team"></span></td>
-    <td>22</td>
+    <td><span class="rank">9.</span>Pete Fairbanks <span class="player-team"></span></td>
+    <td>19</td>
   </tr><tr>
-    <td><span class="rank">8.</span>Ryan Helsley <span class="player-team"></span></td>
-    <td>21</td>
-  </tr><tr>
-    <td><span class="rank">9.</span>Kyle Finnegan <span class="player-team"></span></td>
-    <td>20</td>
-  </tr><tr>
-    <td><span class="rank">10.</span>David Bednar <span class="player-team"></span></td>
-    <td>17</td>
+    <td><span class="rank">10.</span>Mason Montgomery <span class="player-team"></span></td>
+    <td>18</td>
   </tr></tbody></table></div>
       <div class="leaders-block"><div class="leaders-hed">Strikeouts</div><table class="leaders-tbl"><tbody><tr>
-    <td><span class="rank">1.</span>Logan Webb <span class="player-team"></span></td>
-    <td>224</td>
+    <td><span class="rank">1.</span>Jacob Misiorowski <span class="player-team"></span></td>
+    <td>252</td>
   </tr><tr>
-    <td><span class="rank">2.</span>Jesús Luzardo <span class="player-team"></span></td>
-    <td>216</td>
+    <td><span class="rank">2.</span>Cristopher Sánchez <span class="player-team"></span></td>
+    <td>231</td>
   </tr><tr>
-    <td><span class="rank">3.</span>Paul Skenes <span class="player-team"></span></td>
-    <td>216</td>
+    <td><span class="rank">3.</span>Jesús Luzardo <span class="player-team"></span></td>
+    <td>221</td>
   </tr><tr>
-    <td><span class="rank">4.</span>Dylan Cease <span class="player-team"></span></td>
-    <td>215</td>
+    <td><span class="rank">4.</span>Cade Cavalli <span class="player-team"></span></td>
+    <td>200</td>
   </tr><tr>
-    <td><span class="rank">5.</span>Cristopher Sánchez <span class="player-team"></span></td>
-    <td>212</td>
+    <td><span class="rank">5.</span>Chris Sale <span class="player-team"></span></td>
+    <td>200</td>
   </tr><tr>
-    <td><span class="rank">6.</span>Freddy Peralta <span class="player-team"></span></td>
-    <td>204</td>
+    <td><span class="rank">6.</span>Paul Skenes <span class="player-team"></span></td>
+    <td>200</td>
   </tr><tr>
-    <td><span class="rank">7.</span>Sonny Gray <span class="player-team"></span></td>
-    <td>201</td>
+    <td><span class="rank">7.</span>Nolan McLean <span class="player-team"></span></td>
+    <td>194</td>
   </tr><tr>
-    <td><span class="rank">8.</span>Yoshinobu Yamamoto <span class="player-team"></span></td>
-    <td>201</td>
+    <td><span class="rank">8.</span>Zack Wheeler <span class="player-team"></span></td>
+    <td>193</td>
   </tr><tr>
-    <td><span class="rank">9.</span>Zack Wheeler <span class="player-team"></span></td>
-    <td>195</td>
+    <td><span class="rank">9.</span>Chase Burns <span class="player-team"></span></td>
+    <td>185</td>
   </tr><tr>
-    <td><span class="rank">10.</span>Nick Pivetta <span class="player-team"></span></td>
-    <td>190</td>
+    <td><span class="rank">10.</span>Yoshinobu Yamamoto <span class="player-team"></span></td>
+    <td>182</td>
   </tr></tbody></table></div>
     </div>
   </div>
