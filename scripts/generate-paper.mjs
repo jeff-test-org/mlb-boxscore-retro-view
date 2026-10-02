@@ -241,11 +241,12 @@ function buildExtraBaseNotes(awayBs, homeBs, batterSeasonStats = {}) {
       const p=players[`ID${id}`]; if (!p) continue;
       const s=p.stats?.batting||{};
       const last=(p.person?.fullName||'').split(' ').slice(1).join(' ')||(p.person?.fullName||'?');
-      const seasonStats=batterSeasonStats[id]||{};
+      // Use season stats from boxscore player object first (most reliable)
+      const seasonBatting=p.seasonStats?.batting||batterSeasonStats[id]||{};
       for (const cat of cats) {
         const n=s[cat]??0;
         if (n<=0) continue;
-        const total=seasonStats[cat];
+        const total=seasonBatting[cat];
         if (total!=null&&total>0) {
           const nums=[];
           for (let k=n;k>=1;k--) nums.push(total-k+1);
@@ -289,7 +290,8 @@ function renderPitcherRows(teamBs, decisions, pitcherSeasonStats = {}) {
     const p=players[`ID${id}`]; if (!p) return '';
     const s=p.stats?.pitching||{};
     let name=shortName(p.person?.fullName);
-    const rec=pitcherSeasonStats[id];
+    // Use season stats from boxscore player object first (most reliable)
+    const rec=p.seasonStats?.pitching||pitcherSeasonStats[id];
     if (id===wId)      name+=rec?` W (${rec.wins}-${rec.losses})`     :' W';
     else if (id===lId) name+=rec?` L (${rec.wins}-${rec.losses})`     :' L';
     else if (id===sId) name+=rec?` S (${rec.saves})`                  :' S';
@@ -610,7 +612,7 @@ function buildHTML({ matchupsHtml, scoresHtml, standingsHtml, leadersHtml }) {
   </header>
 
   <section class="section">
-    <h2 class="section-hed">Standings — Through ${gameDate}</h2>
+    <h2 class="section-hed">Standings</h2>
     ${standingsHtml}
   </section>
 
