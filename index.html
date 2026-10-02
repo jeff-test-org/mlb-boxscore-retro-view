@@ -287,7 +287,7 @@ function setupMasthead() {
   document.getElementById('pub-date-left').textContent = pubDate.toUpperCase();
   document.getElementById('scores-date-right').textContent = `SCORES FROM ${gameDate.toUpperCase()}`;
   const dayName = DAYS[new Date(...DATE.split('-').map((v,i)=>i===1?v-1:+v)).getDay()];
-  document.getElementById('scores-hed').textContent = `${dayName}'s Scores & Box Scores`;
+  document.getElementById('scores-hed').textContent = `${dayName}'s Box Scores`;
   document.getElementById('standings-hed').textContent = `Standings — Through ${gameDate}`;
   document.getElementById('matchups-hed').textContent = `Today's Matchups — ${formatDisplayDate(TODAY)}`;
   document.getElementById('paper-footer').textContent =
@@ -354,9 +354,9 @@ function isExcludedNote(label) {
          l === 'weather' || l === 'wind' || l === 'first pitch' || l === 'venue';
 }
 
-// Build old-style 2B/3B/HR/SB lines from batting stats.
-// e.g. "2B—Smith, Jones 2. HR—Judge."
-function buildExtraBaseNotes(awayBs, homeBs) {
+// Build old-style 2B/3B/HR/SB lines from batting stats with season totals in parens.
+// e.g. "2B—Henderson (31). HR—Judge (46, 47), Jeter (22)."
+function buildExtraBaseNotes(awayBs, homeBs, batterSeasonStats = {}) {
   const cats = ['doubles','triples','homeRuns','stolenBases'];
   const lbls = {doubles:'2B', triples:'3B', homeRuns:'HR', stolenBases:'SB'};
   const res  = {doubles:[], triples:[], homeRuns:[], stolenBases:[]};
@@ -366,9 +366,19 @@ function buildExtraBaseNotes(awayBs, homeBs) {
       const p = players[`ID${id}`]; if (!p) continue;
       const s = p.stats?.batting||{};
       const last = (p.person?.fullName||'').split(' ').slice(1).join(' ') || (p.person?.fullName||'?');
+      const seasonStats = batterSeasonStats[id] || {};
       for (const cat of cats) {
         const n = s[cat]??0;
-        if (n > 0) res[cat].push(n===1 ? last : `${last} ${n}`);
+        if (n <= 0) continue;
+        const total = seasonStats[cat];
+        if (total != null && total > 0) {
+          // Build sequential season numbers: n=2, total=47 → "(46, 47)"
+          const nums = [];
+          for (let k = n; k >= 1; k--) nums.push(total - k + 1);
+          res[cat].push(`${last} (${nums.join(', ')})`);
+        } else {
+          res[cat].push(n === 1 ? last : `${last} ${n}`);
+        }
       }
     }
   }
@@ -439,7 +449,7 @@ function buildGameNotes(bs) {
   return notes.join(' ');
 }
 
-function buildBoxScore(game, pitcherSeasonStats = {}) {
+function buildBoxScore(game, pitcherSeasonStats = {}, batterSeasonStats = {}) {
   const t    = game.teams;
   const away = t.away, home = t.home;
   const bs   = game._boxscore || {};
@@ -469,7 +479,7 @@ function buildBoxScore(game, pitcherSeasonStats = {}) {
 
   const awayH = ls.teams?.away?.hits??'–', homeH = ls.teams?.home?.hits??'–';
   const awayE = ls.teams?.away?.errors??'–', homeE = ls.teams?.home?.errors??'–';
-  const xbNotes   = buildExtraBaseNotes(awayBs, homeBs);
+  const xbNotes   = buildExtraBaseNotes(awayBs, homeBs, batterSeasonStats);
   const infoNotes = buildGameNotes(bs);
   const notes = [xbNotes, infoNotes].filter(Boolean).join(' ');
 
@@ -555,6 +565,8 @@ async function loadScores() {
     );
     games.forEach((g, i) => { g._boxscore = boxscores[i]; });
 
+    const season = DATE.split('-')[0];
+
     // Fetch season W-L/saves for pitchers of record (winner, loser, save)
     const decisionIds = new Set();
     for (const g of games) {
@@ -565,14 +577,46 @@ async function loadScores() {
     const pitcherSeasonStats = {};
     if (decisionIds.size > 0) {
       try {
-        const season = DATE.split('-')[0];
         const sd = await fetchJSON(
           `${MLB}/stats?stats=season&playerIds=${[...decisionIds].join(',')}&group=pitching&season=${season}&sportId=1`
         );
-        for (const split of (sd.stats?.[0]?.splits || [])) {
-          pitcherSeasonStats[split.player?.id] = {
-            wins: split.stat?.wins??0, losses: split.stat?.losses??0, saves: split.stat?.saves??0
-          };
+        for (const block of (sd.stats || [])) {
+          for (const split of (block.splits || [])) {
+            if (split.player?.id) pitcherSeasonStats[split.player.id] = {
+              wins: split.stat?.wins??0, losses: split.stat?.losses??0, saves: split.stat?.saves??0
+            };
+          }
+        }
+      } catch { /* optional */ }
+    }
+
+    // Fetch season batting stats for batters with XBH/SB (for season totals in notes)
+    const xbhBatterIds = new Set();
+    for (const g of games) {
+      const bs = g._boxscore || {};
+      for (const side of ['away','home']) {
+        const teamBs = bs.teams?.[side] || {};
+        for (const id of (teamBs.batters || [])) {
+          const p = teamBs.players?.[`ID${id}`];
+          if (!p) continue;
+          const s = p.stats?.batting || {};
+          if ((s.doubles??0)>0||(s.triples??0)>0||(s.homeRuns??0)>0||(s.stolenBases??0)>0) xbhBatterIds.add(id);
+        }
+      }
+    }
+    const batterSeasonStats = {};
+    if (xbhBatterIds.size > 0) {
+      try {
+        const bd = await fetchJSON(
+          `${MLB}/stats?stats=season&playerIds=${[...xbhBatterIds].join(',')}&group=hitting&season=${season}&sportId=1`
+        );
+        for (const block of (bd.stats || [])) {
+          for (const split of (block.splits || [])) {
+            if (split.player?.id) batterSeasonStats[split.player.id] = {
+              doubles: split.stat?.doubles??0, triples: split.stat?.triples??0,
+              homeRuns: split.stat?.homeRuns??0, stolenBases: split.stat?.stolenBases??0
+            };
+          }
         }
       } catch { /* optional */ }
     }
@@ -592,7 +636,7 @@ async function loadScores() {
       wrap.appendChild(hed);
       const grid = document.createElement('div');
       grid.className = 'games-grid';
-      leagueGames.forEach(g => grid.appendChild(buildBoxScore(g, pitcherSeasonStats)));
+      leagueGames.forEach(g => grid.appendChild(buildBoxScore(g, pitcherSeasonStats, batterSeasonStats)));
       wrap.appendChild(grid);
       return wrap;
     }
@@ -740,11 +784,14 @@ async function loadMatchups() {
     const pitcherStats = {};
     if (pitcherIds.size > 0) {
       try {
+        const matchupSeason = TODAY.split('-')[0];
         const sd = await fetchJSON(
-          `${MLB}/stats?stats=season&playerIds=${[...pitcherIds].join(',')}&group=pitching&season=2025`
+          `${MLB}/stats?stats=season&playerIds=${[...pitcherIds].join(',')}&group=pitching&season=${matchupSeason}&sportId=1`
         );
-        for (const split of (sd.stats?.[0]?.splits || [])) {
-          pitcherStats[split.player?.id] = { wins: split.stat?.wins??0, losses: split.stat?.losses??0 };
+        for (const block of (sd.stats || [])) {
+          for (const split of (block.splits || [])) {
+            if (split.player?.id) pitcherStats[split.player.id] = { wins: split.stat?.wins??0, losses: split.stat?.losses??0 };
+          }
         }
       } catch { /* optional */ }
     }
