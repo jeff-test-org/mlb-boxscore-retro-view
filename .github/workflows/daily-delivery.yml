@@ -1,0 +1,45 @@
+# The Baseball Gazette — Daily Paper Delivery
+# Runs at 6:00 AM Pacific Time (13:00 UTC, accounting for PT = UTC-7 in summer)
+# Also triggers on every push to main so the page stays deployed.
+
+name: Daily Paper Delivery
+
+on:
+  schedule:
+    - cron: '0 13 * * *'   # 6:00 AM PT (UTC-7)
+  push:
+    branches: [main]
+  workflow_dispatch:        # Allow manual "print run" via GitHub UI
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Print & Deliver
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
