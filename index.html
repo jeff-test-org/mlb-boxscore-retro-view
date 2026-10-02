@@ -60,11 +60,10 @@
     .standings-tbl td { padding: 2px 6px; border-bottom: 1px dotted #d4c9b0; }
     .standings-tbl td:first-child { font-weight: 700; }
     .standings-tbl td:not(:first-child) { text-align: right; }
-    .standings-tbl tr.div-leader td:first-child { border-left: 3px solid var(--ink); padding-left: 3px; }
     .standings-tbl tr:last-child td { border-bottom: none; }
 
-    /* ── SCORES — uniform 2-col grid, AL then NL subsections ── */
-    .scores-layout { display: flex; flex-direction: column; gap: 18px; }
+    /* ── SCORES — AL left column, NL right column, games stacked vertically within each ── */
+    .scores-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
 
     .league-subsection { display: flex; flex-direction: column; gap: 12px; }
 
@@ -78,8 +77,8 @@
       border-bottom: 1px solid var(--faint2);
     }
 
-    /* Every game card is same width — strict 2-column grid, no exceptions */
-    .games-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    /* Games stack vertically within their league column */
+    .games-grid { display: flex; flex-direction: column; gap: 12px; }
 
     /* ── BOX SCORE CARD ── */
     .box-full { border: 1px solid var(--rule); }
@@ -355,6 +354,30 @@ function isExcludedNote(label) {
          l === 'weather' || l === 'wind' || l === 'first pitch' || l === 'venue';
 }
 
+// Build old-style 2B/3B/HR/SB lines from batting stats.
+// e.g. "2B—Smith, Jones 2. HR—Judge."
+function buildExtraBaseNotes(awayBs, homeBs) {
+  const cats = ['doubles','triples','homeRuns','stolenBases'];
+  const lbls = {doubles:'2B', triples:'3B', homeRuns:'HR', stolenBases:'SB'};
+  const res  = {doubles:[], triples:[], homeRuns:[], stolenBases:[]};
+  for (const teamBs of [awayBs, homeBs]) {
+    const batters = teamBs.batters||[], players = teamBs.players||{};
+    for (const id of batters) {
+      const p = players[`ID${id}`]; if (!p) continue;
+      const s = p.stats?.batting||{};
+      const last = (p.person?.fullName||'').split(' ').slice(1).join(' ') || (p.person?.fullName||'?');
+      for (const cat of cats) {
+        const n = s[cat]??0;
+        if (n > 0) res[cat].push(n===1 ? last : `${last} ${n}`);
+      }
+    }
+  }
+  return cats
+    .filter(c => res[c].length)
+    .map(c => `<span class="note-label">${lbls[c]}—</span>${res[c].join(', ')}`)
+    .join(' ');
+}
+
 // ── BOX SCORES ────────────────────────────────────────────────────────────────
 
 function batterRows(teamBs) {
@@ -378,7 +401,7 @@ function batterRows(teamBs) {
   return html + `<tr class="totals-row"><td>Totals</td><td>${totAb}</td><td>${totR}</td><td>${totH}</td><td>${totBi}</td></tr>`;
 }
 
-function pitcherRows(teamBs, decisions) {
+function pitcherRows(teamBs, decisions, pitcherSeasonStats = {}) {
   const pitchers = teamBs.pitchers || [];
   const players  = teamBs.players  || {};
   const wId = decisions?.winner?.id, lId = decisions?.loser?.id, sId = decisions?.save?.id;
@@ -387,7 +410,10 @@ function pitcherRows(teamBs, decisions) {
     if (!p) return '';
     const s = p.stats?.pitching || {};
     let name = shortName(p.person?.fullName);
-    if (id===wId) name += ' W'; else if (id===lId) name += ' L'; else if (id===sId) name += ' S';
+    const rec = pitcherSeasonStats[id];
+    if (id===wId)      name += rec ? ` W (${rec.wins}-${rec.losses})` : ' W';
+    else if (id===lId) name += rec ? ` L (${rec.wins}-${rec.losses})` : ' L';
+    else if (id===sId) name += rec ? ` S (${rec.saves})`              : ' S';
     return `<tr>
       <td>${name}</td>
       <td>${s.inningsPitched??'0.0'}</td><td>${s.hits??0}</td><td>${s.runs??0}</td>
@@ -413,7 +439,7 @@ function buildGameNotes(bs) {
   return notes.join(' ');
 }
 
-function buildBoxScore(game) {
+function buildBoxScore(game, pitcherSeasonStats = {}) {
   const t    = game.teams;
   const away = t.away, home = t.home;
   const bs   = game._boxscore || {};
@@ -425,7 +451,6 @@ function buildBoxScore(game) {
   const awayWon  = isOver && awayRuns > homeRuns;
   const homeWon  = isOver && homeRuns > awayRuns;
   const numInn   = Math.max(9, innings.length);
-  const venue    = game.venue?.name || '';
   const awayBs   = bs.teams?.away || {};
   const homeBs   = bs.teams?.home || {};
 
@@ -444,7 +469,9 @@ function buildBoxScore(game) {
 
   const awayH = ls.teams?.away?.hits??'–', homeH = ls.teams?.home?.hits??'–';
   const awayE = ls.teams?.away?.errors??'–', homeE = ls.teams?.home?.errors??'–';
-  const notes = buildGameNotes(bs);
+  const xbNotes   = buildExtraBaseNotes(awayBs, homeBs);
+  const infoNotes = buildGameNotes(bs);
+  const notes = [xbNotes, infoNotes].filter(Boolean).join(' ');
 
   const div = document.createElement('div');
   div.className = 'box-full';
@@ -492,14 +519,14 @@ function buildBoxScore(game) {
           <div class="team-label">${away.team.name.toUpperCase()}</div>
           <table class="pitching-tbl">
             <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-            <tbody>${pitcherRows(awayBs, game.decisions)}</tbody>
+            <tbody>${pitcherRows(awayBs, game.decisions, pitcherSeasonStats)}</tbody>
           </table>
         </div>
         <div class="pitching-col">
           <div class="team-label">${home.team.name.toUpperCase()}</div>
           <table class="pitching-tbl">
             <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-            <tbody>${pitcherRows(homeBs, game.decisions)}</tbody>
+            <tbody>${pitcherRows(homeBs, game.decisions, pitcherSeasonStats)}</tbody>
           </table>
         </div>
       </div>
@@ -528,9 +555,32 @@ async function loadScores() {
     );
     games.forEach((g, i) => { g._boxscore = boxscores[i]; });
 
-    // Split by home team league; sort each group by gamePk
-    const alGames = games.filter(g =>  AL_TEAMS.has(g.teams.home.team.id)).sort((a,b)=>a.gamePk-b.gamePk);
-    const nlGames = games.filter(g => !AL_TEAMS.has(g.teams.home.team.id)).sort((a,b)=>a.gamePk-b.gamePk);
+    // Fetch season W-L/saves for pitchers of record (winner, loser, save)
+    const decisionIds = new Set();
+    for (const g of games) {
+      if (g.decisions?.winner?.id) decisionIds.add(g.decisions.winner.id);
+      if (g.decisions?.loser?.id)  decisionIds.add(g.decisions.loser.id);
+      if (g.decisions?.save?.id)   decisionIds.add(g.decisions.save.id);
+    }
+    const pitcherSeasonStats = {};
+    if (decisionIds.size > 0) {
+      try {
+        const season = DATE.split('-')[0];
+        const sd = await fetchJSON(
+          `${MLB}/stats?stats=season&playerIds=${[...decisionIds].join(',')}&group=pitching&season=${season}&sportId=1`
+        );
+        for (const split of (sd.stats?.[0]?.splits || [])) {
+          pitcherSeasonStats[split.player?.id] = {
+            wins: split.stat?.wins??0, losses: split.stat?.losses??0, saves: split.stat?.saves??0
+          };
+        }
+      } catch { /* optional */ }
+    }
+
+    // Split by home team league; sort alphabetically by home team city
+    const byCity = (a, b) => a.teams.home.team.name.localeCompare(b.teams.home.team.name);
+    const alGames = games.filter(g =>  AL_TEAMS.has(g.teams.home.team.id)).sort(byCity);
+    const nlGames = games.filter(g => !AL_TEAMS.has(g.teams.home.team.id)).sort(byCity);
 
     function leagueSection(leagueGames, label) {
       if (!leagueGames.length) return null;
@@ -542,7 +592,7 @@ async function loadScores() {
       wrap.appendChild(hed);
       const grid = document.createElement('div');
       grid.className = 'games-grid';
-      leagueGames.forEach(g => grid.appendChild(buildBoxScore(g)));
+      leagueGames.forEach(g => grid.appendChild(buildBoxScore(g, pitcherSeasonStats)));
       wrap.appendChild(grid);
       return wrap;
     }

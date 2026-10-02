@@ -71,27 +71,39 @@ async function fetchAll() {
     if (g.teams.away.probablePitcher?.id) pitcherIds.add(g.teams.away.probablePitcher.id);
     if (g.teams.home.probablePitcher?.id) pitcherIds.add(g.teams.home.probablePitcher.id);
   }
-  const pitcherStats = {};
-  if (pitcherIds.size > 0) {
+  // Also collect decision pitcher IDs for W-L display in box scores
+  const decisionIds = new Set();
+  for (const g of games) {
+    if (g.decisions?.winner?.id) decisionIds.add(g.decisions.winner.id);
+    if (g.decisions?.loser?.id)  decisionIds.add(g.decisions.loser.id);
+    if (g.decisions?.save?.id)   decisionIds.add(g.decisions.save.id);
+  }
+
+  const season = DATE.split('-')[0];
+  const allPitcherIds = new Set([...pitcherIds, ...decisionIds]);
+  const allPitcherStats = {};
+  if (allPitcherIds.size > 0) {
     try {
       const sd = await get(
-        `${MLB}/stats?stats=season&playerIds=${[...pitcherIds].join(',')}&group=pitching&season=2025`
+        `${MLB}/stats?stats=season&playerIds=${[...allPitcherIds].join(',')}&group=pitching&season=${season}&sportId=1`
       );
       for (const split of (sd.stats?.[0]?.splits || [])) {
-        pitcherStats[split.player?.id] = { wins: split.stat?.wins??0, losses: split.stat?.losses??0 };
+        allPitcherStats[split.player?.id] = {
+          wins: split.stat?.wins??0, losses: split.stat?.losses??0, saves: split.stat?.saves??0
+        };
       }
     } catch { /* optional */ }
   }
 
   const [standings, alHit, nlHit, alPit, nlPit] = await Promise.all([
     get(`${MLB}/standings?leagueId=103,104&season=2025&standingsType=regularSeason&date=${DATE}&hydrate=team`),
-    get(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,runsBattedIn&season=2025&limit=10&statGroup=hitting&sportId=1&leagueId=103`),
-    get(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,runsBattedIn&season=2025&limit=10&statGroup=hitting&sportId=1&leagueId=104`),
-    get(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts&season=2025&limit=10&statGroup=pitching&sportId=1&leagueId=103`),
-    get(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts&season=2025&limit=10&statGroup=pitching&sportId=1&leagueId=104`),
+    get(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,runsBattedIn&season=${season}&limit=10&statGroup=hitting&sportId=1&leagueId=103`),
+    get(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,runsBattedIn&season=${season}&limit=10&statGroup=hitting&sportId=1&leagueId=104`),
+    get(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts&season=${season}&limit=10&statGroup=pitching&sportId=1&leagueId=103`),
+    get(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts&season=${season}&limit=10&statGroup=pitching&sportId=1&leagueId=104`),
   ]);
 
-  return { games, matchupGames, pitcherStats, standings, alHit, nlHit, alPit, nlPit };
+  return { games, matchupGames, pitcherStats: allPitcherStats, decisionStats: allPitcherStats, standings, alHit, nlHit, alPit, nlPit };
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -187,6 +199,29 @@ function renderMatchups(matchupGames, pitcherStats) {
   return html + '</div>';
 }
 
+// Build old-style 2B/3B/HR/SB lines from batting stats.
+function buildExtraBaseNotes(awayBs, homeBs) {
+  const cats=['doubles','triples','homeRuns','stolenBases'];
+  const lbls={doubles:'2B',triples:'3B',homeRuns:'HR',stolenBases:'SB'};
+  const res={doubles:[],triples:[],homeRuns:[],stolenBases:[]};
+  for (const teamBs of [awayBs,homeBs]) {
+    const batters=teamBs.batters||[],players=teamBs.players||{};
+    for (const id of batters) {
+      const p=players[`ID${id}`]; if (!p) continue;
+      const s=p.stats?.batting||{};
+      const last=(p.person?.fullName||'').split(' ').slice(1).join(' ')||(p.person?.fullName||'?');
+      for (const cat of cats) {
+        const n=s[cat]??0;
+        if (n>0) res[cat].push(n===1?h(last):`${h(last)} ${n}`);
+      }
+    }
+  }
+  return cats
+    .filter(c=>res[c].length)
+    .map(c=>`<span class="note-label">${lbls[c]}—</span>${res[c].join(', ')}`)
+    .join(' ');
+}
+
 // ── BOX SCORES ────────────────────────────────────────────────────────────────
 
 function renderBatterRows(teamBs) {
@@ -207,14 +242,17 @@ function renderBatterRows(teamBs) {
   return html+`<tr class="totals-row"><td>Totals</td><td>${totAb}</td><td>${totR}</td><td>${totH}</td><td>${totBi}</td></tr>`;
 }
 
-function renderPitcherRows(teamBs, decisions) {
+function renderPitcherRows(teamBs, decisions, pitcherSeasonStats = {}) {
   const pitchers=teamBs.pitchers||[], players=teamBs.players||{};
   const wId=decisions?.winner?.id, lId=decisions?.loser?.id, sId=decisions?.save?.id;
   return pitchers.map(id => {
     const p=players[`ID${id}`]; if (!p) return '';
     const s=p.stats?.pitching||{};
     let name=shortName(p.person?.fullName);
-    if (id===wId) name+=' W'; else if (id===lId) name+=' L'; else if (id===sId) name+=' S';
+    const rec=pitcherSeasonStats[id];
+    if (id===wId)      name+=rec?` W (${rec.wins}-${rec.losses})`     :' W';
+    else if (id===lId) name+=rec?` L (${rec.wins}-${rec.losses})`     :' L';
+    else if (id===sId) name+=rec?` S (${rec.saves})`                  :' S';
     return `<tr>
       <td>${h(name)}</td>
       <td>${s.inningsPitched??'0.0'}</td><td>${s.hits??0}</td><td>${s.runs??0}</td>
@@ -236,7 +274,7 @@ function buildGameNotes(bs) {
   return notes.join(' ');
 }
 
-function renderBoxScore(game) {
+function renderBoxScore(game, pitcherSeasonStats = {}) {
   const t=game.teams, away=t.away, home=t.home;
   const bs=game._boxscore||{}, ls=game.linescore||{};
   const innings=ls.innings||[];
@@ -245,7 +283,6 @@ function renderBoxScore(game) {
   const awayRuns=away.score??0, homeRuns=home.score??0;
   const awayWon=isOver&&awayRuns>homeRuns, homeWon=isOver&&homeRuns>awayRuns;
   const numInn=Math.max(9,innings.length);
-  const venue=game.venue?.name||'';
   const awayBs=bs.teams?.away||{}, homeBs=bs.teams?.home||{};
 
   let innHdr='';
@@ -263,7 +300,9 @@ function renderBoxScore(game) {
 
   const awayH=ls.teams?.away?.hits??'–', homeH=ls.teams?.home?.hits??'–';
   const awayE=ls.teams?.away?.errors??'–', homeE=ls.teams?.home?.errors??'–';
-  const notes=buildGameNotes(bs);
+  const xbNotes=buildExtraBaseNotes(awayBs,homeBs);
+  const infoNotes=buildGameNotes(bs);
+  const notes=[xbNotes,infoNotes].filter(Boolean).join(' ');
 
   return `
     <div class="box-full">
@@ -310,14 +349,14 @@ function renderBoxScore(game) {
             <div class="team-label">${h(away.team.name.toUpperCase())}</div>
             <table class="pitching-tbl">
               <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-              <tbody>${renderPitcherRows(awayBs, game.decisions)}</tbody>
+              <tbody>${renderPitcherRows(awayBs, game.decisions, pitcherSeasonStats)}</tbody>
             </table>
           </div>
           <div class="pitching-col">
             <div class="team-label">${h(home.team.name.toUpperCase())}</div>
             <table class="pitching-tbl">
               <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-              <tbody>${renderPitcherRows(homeBs, game.decisions)}</tbody>
+              <tbody>${renderPitcherRows(homeBs, game.decisions, pitcherSeasonStats)}</tbody>
             </table>
           </div>
         </div>
@@ -326,16 +365,17 @@ function renderBoxScore(game) {
     </div>`;
 }
 
-function renderScores(games) {
+function renderScores(games, pitcherSeasonStats = {}) {
   if (!games.length) return '<div class="loading">No games scheduled for this date.</div>';
-  const alGames=games.filter(g =>  AL_TEAMS.has(g.teams.home.team.id)).sort((a,b)=>a.gamePk-b.gamePk);
-  const nlGames=games.filter(g => !AL_TEAMS.has(g.teams.home.team.id)).sort((a,b)=>a.gamePk-b.gamePk);
+  const byCity=(a,b)=>a.teams.home.team.name.localeCompare(b.teams.home.team.name);
+  const alGames=games.filter(g =>  AL_TEAMS.has(g.teams.home.team.id)).sort(byCity);
+  const nlGames=games.filter(g => !AL_TEAMS.has(g.teams.home.team.id)).sort(byCity);
 
   function leagueSection(lg, label) {
     if (!lg.length) return '';
     return `<div class="league-subsection">
       <div class="league-subsection-hed">${label}</div>
-      <div class="games-grid">${lg.map(renderBoxScore).join('')}</div>
+      <div class="games-grid">${lg.map(g=>renderBoxScore(g,pitcherSeasonStats)).join('')}</div>
     </div>`;
   }
 
@@ -427,12 +467,11 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .standings-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8.5px;letter-spacing:.1em;padding:2px 6px;border-bottom:1px solid var(--rule);color:var(--faint)}
 .standings-tbl th:first-child{text-align:left}.standings-tbl th:not(:first-child){text-align:right}
 .standings-tbl td{padding:2px 6px;border-bottom:1px dotted #d4c9b0}.standings-tbl td:first-child{font-weight:700}.standings-tbl td:not(:first-child){text-align:right}
-.standings-tbl tr.div-leader td:first-child{border-left:3px solid var(--ink);padding-left:3px}
 .standings-tbl tr:last-child td{border-bottom:none}
-.scores-layout{display:flex;flex-direction:column;gap:18px}
+.scores-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
 .league-subsection{display:flex;flex-direction:column;gap:12px}
 .league-subsection-hed{font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.2em;color:var(--faint);padding:4px 0 3px;border-top:1px solid var(--faint2);border-bottom:1px solid var(--faint2)}
-.games-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.games-grid{display:flex;flex-direction:column;gap:12px}
 .box-full{border:1px solid var(--rule)}
 .box-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;display:flex;justify-content:space-between}
 .batting-columns{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
@@ -561,11 +600,11 @@ function buildHTML({ matchupsHtml, scoresHtml, standingsHtml, leadersHtml }) {
 // ── MAIN ──────────────────────────────────────────────────────────────────────
 
 async function main() {
-  const { games, matchupGames, pitcherStats, standings, alHit, nlHit, alPit, nlPit } = await fetchAll();
+  const { games, matchupGames, pitcherStats, decisionStats, standings, alHit, nlHit, alPit, nlPit } = await fetchAll();
 
   const html = buildHTML({
     matchupsHtml:  renderMatchups(matchupGames, pitcherStats),
-    scoresHtml:    renderScores(games),
+    scoresHtml:    renderScores(games, decisionStats),
     standingsHtml: renderStandings(standings),
     leadersHtml:   `<div class="league-leaders-layout">
       ${renderLeagueSection('American League Leaders', alHit, alPit)}
