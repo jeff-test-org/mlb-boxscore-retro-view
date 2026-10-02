@@ -22,43 +22,34 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .section-hed{font-family:'Playfair Display SC',serif;font-size:13px;letter-spacing:.2em;text-align:center;padding:8px 0 6px;border-bottom:1px solid var(--rule);margin-bottom:14px}
 .loading{text-align:center;padding:30px;font-style:italic;color:var(--faint)}
 .scores-layout{display:flex;flex-direction:column;gap:16px}
-.games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:12px}
-.box-full{border:2px solid var(--rule)}
-.box-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:11px;letter-spacing:.1em;padding:4px 10px;display:flex;justify-content:space-between}
+.other-games-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box-full{border:1px solid var(--rule)}.box-full.featured{border-width:2px}
+.box-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;display:flex;justify-content:space-between}
 .batting-columns{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
 .batting-col+.batting-col{border-left:1px solid var(--rule)}
-.team-label{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.12em;padding:3px 6px;background:var(--paper-dark);border-bottom:1px solid var(--rule)}
-.batting-table{width:100%;border-collapse:collapse;font-size:11px}
-.batting-table th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8.5px;letter-spacing:.1em;padding:1px 4px;text-align:right;color:var(--faint);border-bottom:1px solid var(--faint2)}
+.team-label{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:.1em;padding:2px 5px;background:var(--paper-dark);border-bottom:1px solid var(--rule)}
+.batting-table{width:100%;border-collapse:collapse;font-size:10.5px}
+.batting-table th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;padding:1px 3px;text-align:right;color:var(--faint);border-bottom:1px solid var(--faint2)}
 .batting-table th:first-child{text-align:left}
-.batting-table td{padding:1px 4px;text-align:right;border-bottom:1px dotted #d8cfbc}
-.batting-table td:first-child{text-align:left;white-space:nowrap;overflow:hidden;max-width:160px}
+.batting-table td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}
+.batting-table td:first-child{text-align:left;white-space:nowrap;overflow:hidden;max-width:145px}
 .batting-table tr.totals-row td{border-top:1px solid var(--rule);border-bottom:none;font-weight:700;background:var(--paper-dark)}
-.batting-table tr.totals-row td:first-child{font-size:9px;letter-spacing:.05em}
-.pos-abbr{font-size:9px;color:var(--faint);margin-right:2px}
-.linescore-section{padding:6px 10px;border-bottom:1px solid var(--rule)}
-.linescore-tbl{width:100%;border-collapse:collapse;font-size:11.5px}
-.linescore-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:9px;letter-spacing:.08em;color:var(--faint);text-align:center;padding:0 3px;border-bottom:1px solid var(--faint2)}
-.linescore-tbl th:first-child{text-align:left;width:120px}
-.linescore-tbl td{text-align:center;padding:2px 3px}.linescore-tbl td:first-child{text-align:left;font-weight:700}
+.batting-table tr.totals-row td:first-child{font-size:8.5px;letter-spacing:.05em}
+.pos-abbr{font-size:8.5px;color:var(--faint);margin-right:2px}
+.linescore-section{padding:4px 8px;border-bottom:1px solid var(--rule)}
+.linescore-tbl{width:100%;border-collapse:collapse;font-size:11px}
+.linescore-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.06em;color:var(--faint);text-align:center;padding:0 2px;border-bottom:1px solid var(--faint2)}
+.linescore-tbl th:first-child{text-align:left;width:100px}
+.linescore-tbl td{text-align:center;padding:1px 2px}.linescore-tbl td:first-child{text-align:left;font-weight:700}
 .linescore-tbl td.sep{border-left:1px solid var(--rule);font-weight:700}.linescore-tbl td.x{color:var(--faint)}
-.pitching-section{padding:6px 10px;border-bottom:1px solid var(--rule)}
-.pitching-label{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:.12em;color:var(--faint);margin-bottom:3px}
-.pitching-tbl{width:100%;border-collapse:collapse;font-size:11px}
-.pitching-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8.5px;letter-spacing:.1em;color:var(--faint);text-align:right;padding:0 4px;border-bottom:1px solid var(--faint2)}
+.pitching-section{padding:4px 8px;border-bottom:1px solid var(--rule)}
+.pitching-label{font-family:'Playfair Display SC',serif;font-size:8.5px;letter-spacing:.1em;color:var(--faint);margin-bottom:2px}
+.pitching-tbl{width:100%;border-collapse:collapse;font-size:10.5px}
+.pitching-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;color:var(--faint);text-align:right;padding:0 3px;border-bottom:1px solid var(--faint2)}
 .pitching-tbl th:first-child{text-align:left}
-.pitching-tbl td{padding:1px 4px;text-align:right;border-bottom:1px dotted #d8cfbc}.pitching-tbl td:first-child{text-align:left}.pitching-tbl tr:last-child td{border-bottom:none}
-.game-notes{padding:6px 10px;font-size:10.5px;line-height:1.6}
-.note-label{font-weight:700;font-size:9.5px}
-.game-card{border:1px solid var(--rule)}
-.gc-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:.1em;padding:3px 8px;display:flex;justify-content:space-between}
-.gc-linescore{width:100%;border-collapse:collapse;font-size:11px}
-.gc-linescore th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8.5px;letter-spacing:.08em;color:var(--faint);text-align:center;padding:1px 3px;border-bottom:1px solid var(--faint2)}
-.gc-linescore th:first-child{text-align:left;width:110px}.gc-linescore td{text-align:center;padding:2px 3px}
-.gc-linescore td:first-child{text-align:left;font-weight:700;padding-left:6px}
-.gc-linescore td.sep{border-left:1px solid var(--rule);font-weight:700}
-.gc-linescore tr.winner td:first-child::after{content:' ✓';font-weight:400;color:var(--faint);font-size:9px}
-.gc-linescore tr:last-child{background:var(--paper-dark)}.gc-footer{font-size:9.5px;padding:2px 8px;color:var(--faint);border-top:1px dotted var(--rule);font-style:italic}
+.pitching-tbl td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}.pitching-tbl td:first-child{text-align:left}.pitching-tbl tr:last-child td{border-bottom:none}
+.game-notes{padding:4px 8px;font-size:10px;line-height:1.55}
+.note-label{font-weight:700;font-size:9px}
 .standings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .div-block{border:1px solid var(--rule)}
 .div-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;text-align:center}
@@ -68,16 +59,19 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .standings-tbl td{padding:2px 6px;border-bottom:1px dotted #d4c9b0}.standings-tbl td:first-child{font-weight:700}.standings-tbl td:not(:first-child){text-align:right}
 .standings-tbl tr.div-leader td:first-child{border-left:3px solid var(--ink);padding-left:3px}
 .standings-tbl tr:last-child td{border-bottom:none}
-.leaders-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.leaders-block{border:1px solid var(--rule)}
-.leaders-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;text-align:center}
-.leaders-tbl{width:100%;border-collapse:collapse;font-size:11.5px}
-.leaders-tbl td{padding:3px 8px;border-bottom:1px dotted #d4c9b0}.leaders-tbl td:last-child{text-align:right;font-weight:700}
-.leaders-tbl tr:first-child td{font-size:12.5px;font-weight:700}.leaders-tbl tr:last-child td{border-bottom:none}
-.rank{font-family:'Playfair Display SC',serif;font-size:9.5px;color:var(--faint);margin-right:4px}
-.player-team{font-size:9.5px;color:var(--faint);font-style:italic}
+.league-leaders-layout{display:flex;flex-direction:column;gap:14px}
+.league-section{border:1px solid var(--rule)}
+.league-section-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:11px;letter-spacing:.18em;padding:4px 10px;text-align:center}
+.leaders-row{display:grid;grid-template-columns:repeat(3,1fr)}.leaders-row+.leaders-row{border-top:1px solid var(--rule)}
+.leaders-block+.leaders-block{border-left:1px solid var(--rule)}
+.leaders-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.12em;padding:3px 8px;background:var(--paper-dark);border-bottom:1px solid var(--faint2);color:var(--ink)}
+.leaders-tbl{width:100%;border-collapse:collapse;font-size:11px}
+.leaders-tbl td{padding:2px 8px;border-bottom:1px dotted #d4c9b0}.leaders-tbl td:last-child{text-align:right;font-weight:700;white-space:nowrap}
+.leaders-tbl tr:last-child td{border-bottom:none}
+.rank{font-family:'Playfair Display SC',serif;font-size:8.5px;color:var(--faint);margin-right:3px}
+.player-team{font-size:9px;color:var(--faint);font-style:italic}
 .paper-footer{border-top:3px double var(--rule);text-align:center;font-size:9px;color:var(--faint);padding:8px;font-style:italic;letter-spacing:.05em}
-@media(max-width:700px){.masthead-name{font-size:48px}.standings-grid,.leaders-grid{grid-template-columns:1fr 1fr}.batting-columns{grid-template-columns:1fr}.batting-col+.batting-col{border-left:none;border-top:1px solid var(--rule)}}
+@media(max-width:700px){.masthead-name{font-size:48px}.standings-grid{grid-template-columns:1fr 1fr}.other-games-grid{grid-template-columns:1fr}.batting-columns{grid-template-columns:1fr}.batting-col+.batting-col{border-left:none;border-top:1px solid var(--rule)}.leaders-row{grid-template-columns:1fr}.leaders-block+.leaders-block{border-left:none;border-top:1px solid var(--rule)}}
 </style>
 </head>
 <body>
@@ -100,29 +94,62 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 
   <section class="section">
     <h2 class="section-hed">Thursday's Scores &amp; Box Scores</h2>
-    <div class="scores-layout"><div class="games-grid">
-    <div class="game-card">
-      <div class="gc-header">
-        <span>Truist Park</span>
+    <div class="scores-layout">
+    
+    <div class="other-games-grid">
+    <div class="box-full">
+      <div class="box-header">
+        <span>Philadelphia Phillies at Atlanta Braves — Truist Park</span>
         <span>Final</span>
       </div>
-      <table class="gc-linescore">
-        <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
-        <tbody>
-          <tr class="">
-            <td>Philadelphia</td>
-            <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td>
-            <td class="sep">2</td><td>6</td><td>0</td>
-          </tr>
-          <tr class="winner">
-            <td>Atlanta</td>
-            <td>3</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>·</td>
-            <td class="sep">6</td><td>6</td><td>0</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="gc-footer">W: Holmes · L: Nola</div>
-    </div></div></div>
+      <div class="batting-columns">
+        <div class="batting-col">
+          <div class="team-label">PHILADELPHIA PHILLIES</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+          </table>
+        </div>
+        <div class="batting-col">
+          <div class="team-label">ATLANTA BRAVES</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="linescore-section">
+        <table class="linescore-tbl">
+          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Philadelphia</td>
+              <td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">1</td><td class="">0</td>
+              <td class="sep">2</td><td>6</td><td>0</td>
+            </tr>
+            <tr>
+              <td>Atlanta ✓</td>
+              <td class="">3</td><td class="">0</td><td class="">0</td><td class="">2</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">·</td>
+              <td class="sep">6</td><td>6</td><td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pitching-section">
+        <div class="pitching-label">PHILADELPHIA PHILLIES</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody></tbody>
+        </table>
+        <div class="pitching-label" style="margin-top:5px">ATLANTA BRAVES</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      
+    </div></div>
+  </div>
   </section>
 
   <section class="section">
@@ -132,64 +159,369 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 
   <section class="section">
     <h2 class="section-hed">League Leaders</h2>
-    <div class="leaders-grid">
-    <div class="leaders-block">
-      <div class="leaders-hed">Batting Average</div>
-      <table class="leaders-tbl"><tbody><tr>
-      <td><span class="rank">1st</span>Aaron Judge <span class="player-team"></span></td>
-      <td>.331</td>
-    </tr><tr>
-      <td><span class="rank">2nd</span>Bo Bichette <span class="player-team"></span></td>
-      <td>.311</td>
-    </tr><tr>
-      <td><span class="rank">3rd</span>Jacob Wilson <span class="player-team"></span></td>
-      <td>.311</td>
-    </tr><tr>
-      <td><span class="rank">4th</span>George Springer <span class="player-team"></span></td>
-      <td>.309</td>
-    </tr><tr>
-      <td><span class="rank">5th</span>Jeremy Peña <span class="player-team"></span></td>
-      <td>.304</td>
-    </tr></tbody></table>
+    <div class="league-leaders-layout">
+    <div class="league-section">
+    <div class="league-section-hed">American League Leaders</div>
+    <div class="leaders-row">
+      <div class="leaders-block">
+    <div class="leaders-hed">Batting Average</div>
+    <table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Aaron Judge <span class="player-team"></span></td>
+    <td>.331</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Bo Bichette <span class="player-team"></span></td>
+    <td>.311</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Jacob Wilson <span class="player-team"></span></td>
+    <td>.311</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>George Springer <span class="player-team"></span></td>
+    <td>.309</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Jeremy Peña <span class="player-team"></span></td>
+    <td>.304</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Yandy Díaz <span class="player-team"></span></td>
+    <td>.300</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Bobby Witt Jr. <span class="player-team"></span></td>
+    <td>.295</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Vladimir Guerrero Jr. <span class="player-team"></span></td>
+    <td>.292</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Maikel Garcia <span class="player-team"></span></td>
+    <td>.286</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>José Ramírez <span class="player-team"></span></td>
+    <td>.283</td>
+  </tr></tbody></table>
+  </div>
+      <div class="leaders-block">
+    <div class="leaders-hed">Home Runs</div>
+    <table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Cal Raleigh <span class="player-team"></span></td>
+    <td>60</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Aaron Judge <span class="player-team"></span></td>
+    <td>53</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Junior Caminero <span class="player-team"></span></td>
+    <td>45</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Jo Adell <span class="player-team"></span></td>
+    <td>37</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Riley Greene <span class="player-team"></span></td>
+    <td>36</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Nick Kurtz <span class="player-team"></span></td>
+    <td>36</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Taylor Ward <span class="player-team"></span></td>
+    <td>36</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Byron Buxton <span class="player-team"></span></td>
+    <td>35</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Trent Grisham <span class="player-team"></span></td>
+    <td>34</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Vinnie Pasquantino <span class="player-team"></span></td>
+    <td>32</td>
+  </tr></tbody></table>
+  </div>
+      <div class="leaders-block">
+    <div class="leaders-hed">RBI</div>
+    <table class="leaders-tbl"><tbody></tbody></table>
+  </div>
     </div>
-    <div class="leaders-block">
-      <div class="leaders-hed">Home Runs</div>
-      <table class="leaders-tbl"><tbody><tr>
-      <td><span class="rank">1st</span>Cal Raleigh <span class="player-team"></span></td>
-      <td>60</td>
-    </tr><tr>
-      <td><span class="rank">2nd</span>Kyle Schwarber <span class="player-team"></span></td>
-      <td>56</td>
-    </tr><tr>
-      <td><span class="rank">3rd</span>Shohei Ohtani <span class="player-team"></span></td>
-      <td>55</td>
-    </tr><tr>
-      <td><span class="rank">4th</span>Aaron Judge <span class="player-team"></span></td>
-      <td>53</td>
-    </tr><tr>
-      <td><span class="rank">5th</span>Eugenio Suárez <span class="player-team"></span></td>
-      <td>49</td>
-    </tr></tbody></table>
+    <div class="leaders-row">
+      <div class="leaders-block">
+    <div class="leaders-hed">Wins</div>
+    <table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Max Fried <span class="player-team"></span></td>
+    <td>19</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Garrett Crochet <span class="player-team"></span></td>
+    <td>18</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Carlos Rodón <span class="player-team"></span></td>
+    <td>18</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Bryan Woo <span class="player-team"></span></td>
+    <td>15</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Casey Mize <span class="player-team"></span></td>
+    <td>14</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Joe Ryan <span class="player-team"></span></td>
+    <td>13</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Tarik Skubal <span class="player-team"></span></td>
+    <td>13</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Framber Valdez <span class="player-team"></span></td>
+    <td>13</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Tanner Bibee <span class="player-team"></span></td>
+    <td>12</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Hunter Brown <span class="player-team"></span></td>
+    <td>12</td>
+  </tr></tbody></table>
+  </div>
+      <div class="leaders-block">
+    <div class="leaders-hed">Saves</div>
+    <table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Carlos Estévez <span class="player-team"></span></td>
+    <td>42</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Andrés Muñoz <span class="player-team"></span></td>
+    <td>38</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Jeff Hoffman <span class="player-team"></span></td>
+    <td>33</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Aroldis Chapman <span class="player-team"></span></td>
+    <td>32</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Kenley Jansen <span class="player-team"></span></td>
+    <td>29</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Josh Hader <span class="player-team"></span></td>
+    <td>28</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Pete Fairbanks <span class="player-team"></span></td>
+    <td>27</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Emmanuel Clase <span class="player-team"></span></td>
+    <td>24</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Will Vest <span class="player-team"></span></td>
+    <td>23</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Mason Miller <span class="player-team"></span></td>
+    <td>20</td>
+  </tr></tbody></table>
+  </div>
+      <div class="leaders-block">
+    <div class="leaders-hed">Strikeouts</div>
+    <table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Garrett Crochet <span class="player-team"></span></td>
+    <td>255</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Tarik Skubal <span class="player-team"></span></td>
+    <td>241</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Hunter Brown <span class="player-team"></span></td>
+    <td>206</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Carlos Rodón <span class="player-team"></span></td>
+    <td>203</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Bryan Woo <span class="player-team"></span></td>
+    <td>198</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Joe Ryan <span class="player-team"></span></td>
+    <td>194</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Max Fried <span class="player-team"></span></td>
+    <td>189</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Kevin Gausman <span class="player-team"></span></td>
+    <td>189</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Jack Flaherty <span class="player-team"></span></td>
+    <td>188</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Framber Valdez <span class="player-team"></span></td>
+    <td>187</td>
+  </tr></tbody></table>
+  </div>
     </div>
-    <div class="leaders-block">
-      <div class="leaders-hed">ERA</div>
-      <table class="leaders-tbl"><tbody><tr>
-      <td><span class="rank">1st</span>Paul Skenes <span class="player-team"></span></td>
-      <td>1.97</td>
-    </tr><tr>
-      <td><span class="rank">2nd</span>Tarik Skubal <span class="player-team"></span></td>
-      <td>2.21</td>
-    </tr><tr>
-      <td><span class="rank">3rd</span>Hunter Brown <span class="player-team"></span></td>
-      <td>2.43</td>
-    </tr><tr>
-      <td><span class="rank">4th</span>Yoshinobu Yamamoto <span class="player-team"></span></td>
-      <td>2.49</td>
-    </tr><tr>
-      <td><span class="rank">5th</span>Cristopher Sánchez <span class="player-team"></span></td>
-      <td>2.50</td>
-    </tr></tbody></table>
+  </div>
+    <div class="league-section">
+    <div class="league-section-hed">National League Leaders</div>
+    <div class="leaders-row">
+      <div class="leaders-block">
+    <div class="leaders-hed">Batting Average</div>
+    <table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Trea Turner <span class="player-team"></span></td>
+    <td>.304</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Nico Hoerner <span class="player-team"></span></td>
+    <td>.297</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Freddie Freeman <span class="player-team"></span></td>
+    <td>.295</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Luis Arraez <span class="player-team"></span></td>
+    <td>.292</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Geraldo Perdomo <span class="player-team"></span></td>
+    <td>.290</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Alec Burleson <span class="player-team"></span></td>
+    <td>.290</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Sal Frelick <span class="player-team"></span></td>
+    <td>.288</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Brice Turang <span class="player-team"></span></td>
+    <td>.288</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Brendan Donovan <span class="player-team"></span></td>
+    <td>.287</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Alec Bohm <span class="player-team"></span></td>
+    <td>.287</td>
+  </tr></tbody></table>
+  </div>
+      <div class="leaders-block">
+    <div class="leaders-hed">Home Runs</div>
+    <table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Kyle Schwarber <span class="player-team"></span></td>
+    <td>56</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Shohei Ohtani <span class="player-team"></span></td>
+    <td>55</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Juan Soto <span class="player-team"></span></td>
+    <td>43</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Pete Alonso <span class="player-team"></span></td>
+    <td>38</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Eugenio Suárez <span class="player-team"></span></td>
+    <td>36</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Michael Busch <span class="player-team"></span></td>
+    <td>34</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Seiya Suzuki <span class="player-team"></span></td>
+    <td>32</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Corbin Carroll <span class="player-team"></span></td>
+    <td>31</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Pete Crow-Armstrong <span class="player-team"></span></td>
+    <td>31</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Hunter Goodman <span class="player-team"></span></td>
+    <td>31</td>
+  </tr></tbody></table>
+  </div>
+      <div class="leaders-block">
+    <div class="leaders-hed">RBI</div>
+    <table class="leaders-tbl"><tbody></tbody></table>
+  </div>
     </div>
+    <div class="leaders-row">
+      <div class="leaders-block">
+    <div class="leaders-hed">Wins</div>
+    <table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Freddy Peralta <span class="player-team"></span></td>
+    <td>17</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Jesús Luzardo <span class="player-team"></span></td>
+    <td>15</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Logan Webb <span class="player-team"></span></td>
+    <td>15</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Matthew Boyd <span class="player-team"></span></td>
+    <td>14</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Sonny Gray <span class="player-team"></span></td>
+    <td>14</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Brady Singer <span class="player-team"></span></td>
+    <td>14</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Zac Gallen <span class="player-team"></span></td>
+    <td>13</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Adrian Morejon <span class="player-team"></span></td>
+    <td>13</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Brandon Pfaadt <span class="player-team"></span></td>
+    <td>13</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Nick Pivetta <span class="player-team"></span></td>
+    <td>13</td>
+  </tr></tbody></table>
+  </div>
+      <div class="leaders-block">
+    <div class="leaders-hed">Saves</div>
+    <table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Robert Suarez <span class="player-team"></span></td>
+    <td>40</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Emilio Pagán <span class="player-team"></span></td>
+    <td>32</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Trevor Megill <span class="player-team"></span></td>
+    <td>30</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Raisel Iglesias <span class="player-team"></span></td>
+    <td>29</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Edwin Díaz <span class="player-team"></span></td>
+    <td>28</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Tanner Scott <span class="player-team"></span></td>
+    <td>23</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Daniel Palencia <span class="player-team"></span></td>
+    <td>22</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Ryan Helsley <span class="player-team"></span></td>
+    <td>21</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Kyle Finnegan <span class="player-team"></span></td>
+    <td>20</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>David Bednar <span class="player-team"></span></td>
+    <td>17</td>
+  </tr></tbody></table>
+  </div>
+      <div class="leaders-block">
+    <div class="leaders-hed">Strikeouts</div>
+    <table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Logan Webb <span class="player-team"></span></td>
+    <td>224</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Jesús Luzardo <span class="player-team"></span></td>
+    <td>216</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Paul Skenes <span class="player-team"></span></td>
+    <td>216</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Dylan Cease <span class="player-team"></span></td>
+    <td>215</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Cristopher Sánchez <span class="player-team"></span></td>
+    <td>212</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Freddy Peralta <span class="player-team"></span></td>
+    <td>204</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Sonny Gray <span class="player-team"></span></td>
+    <td>201</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Yoshinobu Yamamoto <span class="player-team"></span></td>
+    <td>201</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Zack Wheeler <span class="player-team"></span></td>
+    <td>195</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Nick Pivetta <span class="player-team"></span></td>
+    <td>190</td>
+  </tr></tbody></table>
+  </div>
+    </div>
+  </div>
   </div>
   </section>
 
