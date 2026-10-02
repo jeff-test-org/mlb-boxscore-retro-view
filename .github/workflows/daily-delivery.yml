@@ -1,18 +1,24 @@
 # The Baseball Gazette — Daily Paper Delivery
-# Runs at 6:00 AM Pacific Time (13:00 UTC, accounting for PT = UTC-7 in summer)
-# Also triggers on every push to main so the page stays deployed.
+# Runs at 6:00 AM Pacific Time (13:00 UTC)
+# Fetches yesterday's MLB data, generates papers/YYYY-MM-DD.html,
+# commits it to the repo, and deploys to GitHub Pages.
 
 name: Daily Paper Delivery
 
 on:
   schedule:
-    - cron: '0 13 * * *'   # 6:00 AM PT (UTC-7)
+    - cron: '0 13 * * *'   # 6:00 AM PT (UTC-7 in summer)
   push:
     branches: [main]
-  workflow_dispatch:        # Allow manual "print run" via GitHub UI
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date to generate (YYYY-MM-DD, default: yesterday)'
+        required: false
+        type: string
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -21,7 +27,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  print-and-deliver:
     name: Print & Deliver
     runs-on: ubuntu-latest
     environment:
@@ -31,6 +37,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so we can commit
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate today's paper
+        env:
+          TARGET_DATE: ${{ github.event.inputs.date }}
+        run: |
+          node scripts/generate-paper.mjs $TARGET_DATE
+
+      - name: Update archive index
+        run: node scripts/build-archive-index.mjs
+
+      - name: Commit paper to repo
+        run: |
+          git config user.name  "The Baseball Gazette"
+          git config user.email "gazette@users.noreply.github.com"
+          git add papers/
+          # Only commit if there's something new
+          if git diff --cached --quiet; then
+            echo "No new paper to commit."
+          else
+            DATE=$(ls papers/*.html | sort | tail -1 | xargs basename .html)
+            git commit -m "Print run: ${DATE}"
+            git push
+          fi
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
