@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>The Baseball Gazette — Thursday, October 1, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display+SC:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+:root{--ink:#1a1209;--paper:#f5f0e8;--paper-dark:#ede7d9;--rule:#2a1f0f;--faint:#8b7355;--faint2:#b8a88a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(--ink);font-size:13px;line-height:1.4}
+.newspaper{max-width:980px;margin:24px auto;background:var(--paper);box-shadow:2px 2px 12px rgba(0,0,0,.45),4px 4px 24px rgba(0,0,0,.2)}
+.masthead{border-bottom:4px double var(--rule);padding:16px 24px 10px;text-align:center}
+.masthead-meta{display:flex;justify-content:space-between;font-size:9.5px;color:var(--faint);margin-bottom:4px;letter-spacing:.05em}
+.masthead-name{font-family:'UnifrakturMaguntia',cursive;font-size:72px;line-height:1;color:var(--ink)}
+.masthead-rule{border:none;border-top:1px solid var(--rule);margin:6px 0 4px}
+.masthead-tagline{font-family:'Playfair Display SC',serif;font-size:10.5px;letter-spacing:.18em;color:var(--faint);margin-bottom:5px}
+.masthead-date-bar{display:flex;justify-content:space-between;align-items:center;font-size:9.5px;color:var(--faint);letter-spacing:.06em;padding:3px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.section{padding:0 24px 20px}.section+.section{border-top:3px double var(--rule)}
+.section-hed{font-family:'Playfair Display SC',serif;font-size:13px;letter-spacing:.2em;text-align:center;padding:8px 0 6px;border-bottom:1px solid var(--rule);margin-bottom:14px}
+.loading{text-align:center;padding:30px;font-style:italic;color:var(--faint)}
+.scores-layout{display:flex;flex-direction:column;gap:16px}
+.games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:12px}
+.box-full{border:2px solid var(--rule)}
+.box-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:11px;letter-spacing:.1em;padding:4px 10px;display:flex;justify-content:space-between}
+.batting-columns{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
+.batting-col+.batting-col{border-left:1px solid var(--rule)}
+.team-label{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.12em;padding:3px 6px;background:var(--paper-dark);border-bottom:1px solid var(--rule)}
+.batting-table{width:100%;border-collapse:collapse;font-size:11px}
+.batting-table th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8.5px;letter-spacing:.1em;padding:1px 4px;text-align:right;color:var(--faint);border-bottom:1px solid var(--faint2)}
+.batting-table th:first-child{text-align:left}
+.batting-table td{padding:1px 4px;text-align:right;border-bottom:1px dotted #d8cfbc}
+.batting-table td:first-child{text-align:left;white-space:nowrap;overflow:hidden;max-width:160px}
+.batting-table tr.totals-row td{border-top:1px solid var(--rule);border-bottom:none;font-weight:700;background:var(--paper-dark)}
+.batting-table tr.totals-row td:first-child{font-size:9px;letter-spacing:.05em}
+.pos-abbr{font-size:9px;color:var(--faint);margin-right:2px}
+.linescore-section{padding:6px 10px;border-bottom:1px solid var(--rule)}
+.linescore-tbl{width:100%;border-collapse:collapse;font-size:11.5px}
+.linescore-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:9px;letter-spacing:.08em;color:var(--faint);text-align:center;padding:0 3px;border-bottom:1px solid var(--faint2)}
+.linescore-tbl th:first-child{text-align:left;width:120px}
+.linescore-tbl td{text-align:center;padding:2px 3px}.linescore-tbl td:first-child{text-align:left;font-weight:700}
+.linescore-tbl td.sep{border-left:1px solid var(--rule);font-weight:700}.linescore-tbl td.x{color:var(--faint)}
+.pitching-section{padding:6px 10px;border-bottom:1px solid var(--rule)}
+.pitching-label{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:.12em;color:var(--faint);margin-bottom:3px}
+.pitching-tbl{width:100%;border-collapse:collapse;font-size:11px}
+.pitching-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8.5px;letter-spacing:.1em;color:var(--faint);text-align:right;padding:0 4px;border-bottom:1px solid var(--faint2)}
+.pitching-tbl th:first-child{text-align:left}
+.pitching-tbl td{padding:1px 4px;text-align:right;border-bottom:1px dotted #d8cfbc}.pitching-tbl td:first-child{text-align:left}.pitching-tbl tr:last-child td{border-bottom:none}
+.game-notes{padding:6px 10px;font-size:10.5px;line-height:1.6}
+.note-label{font-weight:700;font-size:9.5px}
+.game-card{border:1px solid var(--rule)}
+.gc-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:.1em;padding:3px 8px;display:flex;justify-content:space-between}
+.gc-linescore{width:100%;border-collapse:collapse;font-size:11px}
+.gc-linescore th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8.5px;letter-spacing:.08em;color:var(--faint);text-align:center;padding:1px 3px;border-bottom:1px solid var(--faint2)}
+.gc-linescore th:first-child{text-align:left;width:110px}.gc-linescore td{text-align:center;padding:2px 3px}
+.gc-linescore td:first-child{text-align:left;font-weight:700;padding-left:6px}
+.gc-linescore td.sep{border-left:1px solid var(--rule);font-weight:700}
+.gc-linescore tr.winner td:first-child::after{content:' ✓';font-weight:400;color:var(--faint);font-size:9px}
+.gc-linescore tr:last-child{background:var(--paper-dark)}.gc-footer{font-size:9.5px;padding:2px 8px;color:var(--faint);border-top:1px dotted var(--rule);font-style:italic}
+.standings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.div-block{border:1px solid var(--rule)}
+.div-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;text-align:center}
+.standings-tbl{width:100%;border-collapse:collapse;font-size:11.5px}
+.standings-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8.5px;letter-spacing:.1em;padding:2px 6px;border-bottom:1px solid var(--rule);color:var(--faint)}
+.standings-tbl th:first-child{text-align:left}.standings-tbl th:not(:first-child){text-align:right}
+.standings-tbl td{padding:2px 6px;border-bottom:1px dotted #d4c9b0}.standings-tbl td:first-child{font-weight:700}.standings-tbl td:not(:first-child){text-align:right}
+.standings-tbl tr.div-leader td:first-child{border-left:3px solid var(--ink);padding-left:3px}
+.standings-tbl tr:last-child td{border-bottom:none}
+.leaders-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.leaders-block{border:1px solid var(--rule)}
+.leaders-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;text-align:center}
+.leaders-tbl{width:100%;border-collapse:collapse;font-size:11.5px}
+.leaders-tbl td{padding:3px 8px;border-bottom:1px dotted #d4c9b0}.leaders-tbl td:last-child{text-align:right;font-weight:700}
+.leaders-tbl tr:first-child td{font-size:12.5px;font-weight:700}.leaders-tbl tr:last-child td{border-bottom:none}
+.rank{font-family:'Playfair Display SC',serif;font-size:9.5px;color:var(--faint);margin-right:4px}
+.player-team{font-size:9.5px;color:var(--faint);font-style:italic}
+.paper-footer{border-top:3px double var(--rule);text-align:center;font-size:9px;color:var(--faint);padding:8px;font-style:italic;letter-spacing:.05em}
+@media(max-width:700px){.masthead-name{font-size:48px}.standings-grid,.leaders-grid{grid-template-columns:1fr 1fr}.batting-columns{grid-template-columns:1fr}.batting-col+.batting-col{border-left:none;border-top:1px solid var(--rule)}}
+</style>
+</head>
+<body>
+<article class="newspaper">
+  <header class="masthead">
+    <div class="masthead-meta">
+      <span>VOL. CLIV . . . No. 274</span>
+      <span>ESTABLISHED 1876</span>
+      <span>PRICE: FOUR CENTS</span>
+    </div>
+    <div class="masthead-name">The Baseball Gazette</div>
+    <hr class="masthead-rule">
+    <div class="masthead-tagline">All the News That's Fit to Print — From Diamond to Dugout</div>
+    <div class="masthead-date-bar">
+      <span>FRIDAY, OCTOBER 2, 2026</span>
+      <span>MORNING EDITION</span>
+      <span>SCORES FROM THURSDAY, OCTOBER 1, 2026</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <h2 class="section-hed">Thursday's Scores &amp; Box Scores</h2>
+    <div class="scores-layout"><div class="games-grid">
+    <div class="game-card">
+      <div class="gc-header">
+        <span>Truist Park</span>
+        <span>Final</span>
+      </div>
+      <table class="gc-linescore">
+        <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
+        <tbody>
+          <tr class="">
+            <td>Philadelphia</td>
+            <td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td>
+            <td class="sep">2</td><td>6</td><td>0</td>
+          </tr>
+          <tr class="winner">
+            <td>Atlanta</td>
+            <td>3</td><td>0</td><td>0</td><td>2</td><td>0</td><td>0</td><td>1</td><td>0</td><td>·</td>
+            <td class="sep">6</td><td>6</td><td>0</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="gc-footer">W: Holmes · L: Nola</div>
+    </div></div></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-hed">Standings — Through Thursday, October 1, 2026</h2>
+    <div class="standings-grid"></div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-hed">League Leaders</h2>
+    <div class="leaders-grid">
+    <div class="leaders-block">
+      <div class="leaders-hed">Batting Average</div>
+      <table class="leaders-tbl"><tbody><tr>
+      <td><span class="rank">1st</span>Aaron Judge <span class="player-team"></span></td>
+      <td>.331</td>
+    </tr><tr>
+      <td><span class="rank">2nd</span>Bo Bichette <span class="player-team"></span></td>
+      <td>.311</td>
+    </tr><tr>
+      <td><span class="rank">3rd</span>Jacob Wilson <span class="player-team"></span></td>
+      <td>.311</td>
+    </tr><tr>
+      <td><span class="rank">4th</span>George Springer <span class="player-team"></span></td>
+      <td>.309</td>
+    </tr><tr>
+      <td><span class="rank">5th</span>Jeremy Peña <span class="player-team"></span></td>
+      <td>.304</td>
+    </tr></tbody></table>
+    </div>
+    <div class="leaders-block">
+      <div class="leaders-hed">Home Runs</div>
+      <table class="leaders-tbl"><tbody><tr>
+      <td><span class="rank">1st</span>Cal Raleigh <span class="player-team"></span></td>
+      <td>60</td>
+    </tr><tr>
+      <td><span class="rank">2nd</span>Kyle Schwarber <span class="player-team"></span></td>
+      <td>56</td>
+    </tr><tr>
+      <td><span class="rank">3rd</span>Shohei Ohtani <span class="player-team"></span></td>
+      <td>55</td>
+    </tr><tr>
+      <td><span class="rank">4th</span>Aaron Judge <span class="player-team"></span></td>
+      <td>53</td>
+    </tr><tr>
+      <td><span class="rank">5th</span>Eugenio Suárez <span class="player-team"></span></td>
+      <td>49</td>
+    </tr></tbody></table>
+    </div>
+    <div class="leaders-block">
+      <div class="leaders-hed">ERA</div>
+      <table class="leaders-tbl"><tbody><tr>
+      <td><span class="rank">1st</span>Paul Skenes <span class="player-team"></span></td>
+      <td>1.97</td>
+    </tr><tr>
+      <td><span class="rank">2nd</span>Tarik Skubal <span class="player-team"></span></td>
+      <td>2.21</td>
+    </tr><tr>
+      <td><span class="rank">3rd</span>Hunter Brown <span class="player-team"></span></td>
+      <td>2.43</td>
+    </tr><tr>
+      <td><span class="rank">4th</span>Yoshinobu Yamamoto <span class="player-team"></span></td>
+      <td>2.49</td>
+    </tr><tr>
+      <td><span class="rank">5th</span>Cristopher Sánchez <span class="player-team"></span></td>
+      <td>2.50</td>
+    </tr></tbody></table>
+    </div>
+  </div>
+  </section>
+
+  <footer class="paper-footer">
+    Data via MLB Stats API &mdash; Printed for the morning of Friday, October 2, 2026 &mdash; San Francisco Edition
+  </footer>
+</article>
+</body>
+</html>
