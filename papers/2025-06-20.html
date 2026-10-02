@@ -21,44 +21,6 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .section{padding:0 24px 20px}.section+.section{border-top:3px double var(--rule)}
 .section-hed{font-family:'Playfair Display SC',serif;font-size:13px;letter-spacing:.2em;text-align:center;padding:8px 0 6px;border-bottom:1px solid var(--rule);margin-bottom:14px}
 .loading{text-align:center;padding:30px;font-style:italic;color:var(--faint)}
-.matchups-layout{display:flex;flex-direction:column;gap:0}
-.matchup-league-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.18em;color:var(--faint);padding:6px 0 3px;border-bottom:1px solid var(--faint2);margin-bottom:4px}
-.matchup-league{margin-bottom:10px}
-.matchup-line{font-size:11.5px;padding:2px 0;border-bottom:1px dotted #d4c9b0;display:flex;justify-content:space-between;gap:8px}
-.matchup-line:last-child{border-bottom:none}
-.matchup-teams{flex:1}.matchup-time{white-space:nowrap;color:var(--faint);font-size:10.5px}
-.scores-layout{display:flex;flex-direction:column;gap:18px}
-.league-subsection{display:flex;flex-direction:column;gap:12px}
-.league-subsection-hed{font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.2em;color:var(--faint);padding:4px 0 3px;border-top:1px solid var(--faint2);border-bottom:1px solid var(--faint2)}
-.other-games-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.box-full{border:1px solid var(--rule)}.box-full.featured{border-width:2px}
-.box-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;display:flex;justify-content:space-between}
-.batting-columns{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
-.batting-col+.batting-col{border-left:1px solid var(--rule)}
-.team-label{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:.1em;padding:2px 5px;background:var(--paper-dark);border-bottom:1px solid var(--rule)}
-.batting-table{width:100%;border-collapse:collapse;font-size:10.5px}
-.batting-table th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;padding:1px 3px;text-align:right;color:var(--faint);border-bottom:1px solid var(--faint2)}
-.batting-table th:first-child{text-align:left}
-.batting-table td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}
-.batting-table td:first-child{text-align:left;white-space:nowrap;overflow:hidden;max-width:145px}
-.batting-table tr.totals-row td{border-top:1px solid var(--rule);border-bottom:none;font-weight:700;background:var(--paper-dark)}
-.batting-table tr.totals-row td:first-child{font-size:8.5px}
-.batting-table tr.sub-row td:first-child{padding-left:10px}
-.pos-abbr{font-size:8.5px;color:var(--faint);margin-right:2px}
-.linescore-section{padding:4px 8px;border-bottom:1px solid var(--rule)}
-.linescore-tbl{width:100%;border-collapse:collapse;font-size:11px}
-.linescore-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.06em;color:var(--faint);text-align:center;padding:0 2px;border-bottom:1px solid var(--faint2)}
-.linescore-tbl th:first-child{text-align:left;width:100px}
-.linescore-tbl td{text-align:center;padding:1px 2px}.linescore-tbl td:first-child{text-align:left;font-weight:700}
-.linescore-tbl td.sep{border-left:1px solid var(--rule);font-weight:700}.linescore-tbl td.x{color:var(--faint)}
-.pitching-section{padding:4px 8px;border-bottom:1px solid var(--rule)}
-.pitching-label{font-family:'Playfair Display SC',serif;font-size:8.5px;letter-spacing:.1em;color:var(--faint);margin-bottom:2px}
-.pitching-tbl{width:100%;border-collapse:collapse;font-size:10.5px}
-.pitching-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;color:var(--faint);text-align:right;padding:0 3px;border-bottom:1px solid var(--faint2)}
-.pitching-tbl th:first-child{text-align:left}
-.pitching-tbl td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}.pitching-tbl td:first-child{text-align:left}.pitching-tbl tr:last-child td{border-bottom:none}
-.game-notes{padding:4px 8px;font-size:10px;line-height:1.55}
-.note-label{font-weight:700;font-size:9px}
 .standings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .div-block{border:1px solid var(--rule)}
 .div-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;text-align:center}
@@ -68,6 +30,39 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .standings-tbl td{padding:2px 6px;border-bottom:1px dotted #d4c9b0}.standings-tbl td:first-child{font-weight:700}.standings-tbl td:not(:first-child){text-align:right}
 .standings-tbl tr.div-leader td:first-child{border-left:3px solid var(--ink);padding-left:3px}
 .standings-tbl tr:last-child td{border-bottom:none}
+.scores-layout{display:flex;flex-direction:column;gap:18px}
+.league-subsection{display:flex;flex-direction:column;gap:12px}
+.league-subsection-hed{font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.2em;color:var(--faint);padding:4px 0 3px;border-top:1px solid var(--faint2);border-bottom:1px solid var(--faint2)}
+.games-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.box-full{border:1px solid var(--rule)}
+.box-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;display:flex;justify-content:space-between}
+.batting-columns{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
+.batting-col+.batting-col{border-left:1px solid var(--rule)}
+.team-label{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:.1em;padding:2px 5px;background:var(--paper-dark);border-bottom:1px solid var(--rule)}
+.batting-table{width:100%;border-collapse:collapse;font-size:10.5px}
+.batting-table th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;padding:1px 3px;text-align:right;color:var(--faint);border-bottom:1px solid var(--faint2)}
+.batting-table th:first-child{text-align:left}
+.batting-table td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}
+.batting-table td:first-child{text-align:left;white-space:nowrap;overflow:hidden;max-width:130px}
+.batting-table tr.totals-row td{border-top:1px solid var(--rule);border-bottom:none;font-weight:700;background:var(--paper-dark)}
+.batting-table tr.totals-row td:first-child{font-size:8.5px}
+.batting-table tr.sub-row td:first-child{padding-left:10px}
+.pos-abbr{font-size:8.5px;color:var(--faint);margin-right:2px}
+.linescore-section{padding:4px 8px;border-bottom:1px solid var(--rule)}
+.linescore-tbl{width:100%;border-collapse:collapse;font-size:11px}
+.linescore-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.06em;color:var(--faint);text-align:center;padding:0 2px;border-bottom:1px solid var(--faint2)}
+.linescore-tbl th:first-child{text-align:left;width:90px}
+.linescore-tbl td{text-align:center;padding:1px 2px}.linescore-tbl td:first-child{text-align:left;font-weight:700}
+.linescore-tbl td.sep{border-left:1px solid var(--rule);font-weight:700}.linescore-tbl td.x{color:var(--faint)}
+.pitching-section{border-bottom:1px solid var(--rule)}
+.pitching-columns{display:grid;grid-template-columns:1fr 1fr}
+.pitching-col{padding:4px 5px}.pitching-col+.pitching-col{border-left:1px solid var(--rule)}
+.pitching-tbl{width:100%;border-collapse:collapse;font-size:10.5px}
+.pitching-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;color:var(--faint);text-align:right;padding:0 3px;border-bottom:1px solid var(--faint2)}
+.pitching-tbl th:first-child{text-align:left}
+.pitching-tbl td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}.pitching-tbl td:first-child{text-align:left}.pitching-tbl tr:last-child td{border-bottom:none}
+.game-notes{padding:4px 8px;font-size:10px;line-height:1.6}
+.note-label{font-weight:700;font-size:9px}
 .league-leaders-layout{display:flex;flex-direction:column;gap:14px}
 .league-section{border:1px solid var(--rule)}
 .league-section-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:11px;letter-spacing:.18em;padding:4px 10px;text-align:center}
@@ -79,8 +74,14 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .leaders-tbl tr:last-child td{border-bottom:none}
 .rank{font-family:'Playfair Display SC',serif;font-size:8.5px;color:var(--faint);margin-right:3px}
 .player-team{font-size:9px;color:var(--faint);font-style:italic}
+.matchups-layout{display:flex;flex-direction:column;gap:0}
+.matchup-league-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.18em;color:var(--faint);padding:6px 0 3px;border-bottom:1px solid var(--faint2);margin-bottom:4px}
+.matchup-league{margin-bottom:10px}
+.matchup-line{font-size:11.5px;padding:2px 0;border-bottom:1px dotted #d4c9b0;display:flex;justify-content:space-between;gap:8px}
+.matchup-line:last-child{border-bottom:none}
+.matchup-teams{flex:1}.matchup-time{white-space:nowrap;color:var(--faint);font-size:10.5px}
 .paper-footer{border-top:3px double var(--rule);text-align:center;font-size:9px;color:var(--faint);padding:8px;font-style:italic;letter-spacing:.05em}
-@media(max-width:700px){.masthead-name{font-size:48px}.standings-grid{grid-template-columns:1fr 1fr}.other-games-grid{grid-template-columns:1fr}.batting-columns{grid-template-columns:1fr}.batting-col+.batting-col{border-left:none;border-top:1px solid var(--rule)}.leaders-row{grid-template-columns:1fr}.leaders-block+.leaders-block{border-left:none;border-top:1px solid var(--rule)}}
+@media(max-width:700px){.masthead-name{font-size:48px}.standings-grid{grid-template-columns:1fr 1fr}.games-grid{grid-template-columns:1fr}.batting-columns,.pitching-columns{grid-template-columns:1fr}.batting-col+.batting-col,.pitching-col+.pitching-col{border-left:none;border-top:1px solid var(--rule)}.leaders-row{grid-template-columns:1fr}.leaders-block+.leaders-block{border-left:none;border-top:1px solid var(--rule)}}
 </style>
 </head>
 <body>
@@ -102,65 +103,145 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </header>
 
   <section class="section">
-    <h2 class="section-hed">Today's Matchups — Saturday, June 21, 2025</h2>
-    <div class="matchups-layout"><div class="matchup-league"><div class="matchup-league-hed">American League</div><div class="matchup-line">
-        <span class="matchup-teams">Detroit (Gipson-Long) at Tampa Bay (Pepiot 11-12)</span>
-        <span class="matchup-time">9:10 a.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Baltimore (Eflin) at N.Y. Yankees (Schmidt)</span>
-        <span class="matchup-time">10:05 a.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Milwaukee (Quintana) at Minnesota (Woods Richardson)</span>
-        <span class="matchup-time">11:10 a.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Chi. Sox (Civale) at Toronto (Berríos 9-5)</span>
-        <span class="matchup-time">12:07 p.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Houston (Walter) at L.A. Angels (Soriano 10-11)</span>
-        <span class="matchup-time">6:38 p.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Cleveland (Ortiz) at Athletics (Spence)</span>
-        <span class="matchup-time">7:05 p.m. PT</span>
-      </div></div><div class="matchup-league"><div class="matchup-league-hed">National League</div><div class="matchup-line">
-        <span class="matchup-teams">Cincinnati (Suter) at St. Louis (Gray 14-8)</span>
-        <span class="matchup-time">11:15 a.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Seattle (Hancock) at Chi. Cubs (Horton)</span>
-        <span class="matchup-time">11:20 a.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Boston (Bello 11-9) at San Francisco (Roupp)</span>
-        <span class="matchup-time">1:05 p.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Texas (Rocker) at Pittsburgh (Keller 6-15)</span>
-        <span class="matchup-time">1:05 p.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Atlanta (Holmes) at Miami (Pérez)</span>
-        <span class="matchup-time">1:10 p.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Kansas City (Cameron) at San Diego (Cease 8-12)</span>
-        <span class="matchup-time">4:15 p.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">N.Y. Mets (Canning) at Philadelphia (Abel)</span>
-        <span class="matchup-time">4:15 p.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Arizona (Kelly 12-9) at Colorado (Palmquist)</span>
-        <span class="matchup-time">6:10 p.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">Washington (Irvin) at L.A. Dodgers (May)</span>
-        <span class="matchup-time">7:10 p.m. PT</span>
-      </div></div></div>
+    <h2 class="section-hed">Standings — Through Friday, June 20, 2025</h2>
+    <div class="standings-grid"><div class="div-block">
+      <div class="div-hed">AL East</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>N.Y. Yankees</td>
+        <td>43</td><td>32</td><td>—</td><td>.573</td>
+      </tr><tr class="">
+        <td>Tampa Bay</td>
+        <td>42</td><td>34</td><td>1.5</td><td>.553</td>
+      </tr><tr class="">
+        <td>Toronto</td>
+        <td>40</td><td>35</td><td>3.0</td><td>.533</td>
+      </tr><tr class="">
+        <td>Boston</td>
+        <td>40</td><td>37</td><td>4.0</td><td>.519</td>
+      </tr><tr class="">
+        <td>Baltimore</td>
+        <td>33</td><td>42</td><td>10.0</td><td>.440</td>
+      </tr></tbody>
+      </table>
+    </div><div class="div-block">
+      <div class="div-hed">AL Central</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>Detroit</td>
+        <td>48</td><td>29</td><td>—</td><td>.623</td>
+      </tr><tr class="">
+        <td>Cleveland</td>
+        <td>37</td><td>37</td><td>9.5</td><td>.500</td>
+      </tr><tr class="">
+        <td>Kansas City</td>
+        <td>38</td><td>38</td><td>9.5</td><td>.500</td>
+      </tr><tr class="">
+        <td>Minnesota</td>
+        <td>37</td><td>38</td><td>10.0</td><td>.493</td>
+      </tr><tr class="">
+        <td>Chi. Sox</td>
+        <td>24</td><td>52</td><td>23.5</td><td>.316</td>
+      </tr></tbody>
+      </table>
+    </div><div class="div-block">
+      <div class="div-hed">AL West</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>Houston</td>
+        <td>44</td><td>32</td><td>—</td><td>.579</td>
+      </tr><tr class="">
+        <td>Seattle</td>
+        <td>38</td><td>36</td><td>5.0</td><td>.514</td>
+      </tr><tr class="">
+        <td>Texas</td>
+        <td>37</td><td>39</td><td>7.0</td><td>.487</td>
+      </tr><tr class="">
+        <td>L.A. Angels</td>
+        <td>36</td><td>39</td><td>7.5</td><td>.480</td>
+      </tr><tr class="">
+        <td>Athletics</td>
+        <td>32</td><td>46</td><td>13.0</td><td>.410</td>
+      </tr></tbody>
+      </table>
+    </div><div class="div-block">
+      <div class="div-hed">NL East</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>Philadelphia</td>
+        <td>46</td><td>30</td><td>—</td><td>.605</td>
+      </tr><tr class="">
+        <td>N.Y. Mets</td>
+        <td>45</td><td>31</td><td>1.0</td><td>.592</td>
+      </tr><tr class="">
+        <td>Atlanta</td>
+        <td>34</td><td>40</td><td>11.0</td><td>.459</td>
+      </tr><tr class="">
+        <td>Washington</td>
+        <td>31</td><td>45</td><td>15.0</td><td>.408</td>
+      </tr><tr class="">
+        <td>Miami</td>
+        <td>30</td><td>44</td><td>15.0</td><td>.405</td>
+      </tr></tbody>
+      </table>
+    </div><div class="div-block">
+      <div class="div-hed">NL Central</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>Chi. Cubs</td>
+        <td>45</td><td>30</td><td>—</td><td>.600</td>
+      </tr><tr class="">
+        <td>Milwaukee</td>
+        <td>41</td><td>35</td><td>4.5</td><td>.539</td>
+      </tr><tr class="">
+        <td>St. Louis</td>
+        <td>41</td><td>35</td><td>4.5</td><td>.539</td>
+      </tr><tr class="">
+        <td>Cincinnati</td>
+        <td>39</td><td>37</td><td>6.5</td><td>.513</td>
+      </tr><tr class="">
+        <td>Pittsburgh</td>
+        <td>30</td><td>47</td><td>16.0</td><td>.390</td>
+      </tr></tbody>
+      </table>
+    </div><div class="div-block">
+      <div class="div-hed">NL West</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>L.A. Dodgers</td>
+        <td>47</td><td>30</td><td>—</td><td>.610</td>
+      </tr><tr class="">
+        <td>San Francisco</td>
+        <td>42</td><td>34</td><td>4.5</td><td>.553</td>
+      </tr><tr class="">
+        <td>San Diego</td>
+        <td>40</td><td>35</td><td>6.0</td><td>.533</td>
+      </tr><tr class="">
+        <td>Arizona</td>
+        <td>38</td><td>37</td><td>8.0</td><td>.507</td>
+      </tr><tr class="">
+        <td>Colorado</td>
+        <td>17</td><td>59</td><td>29.5</td><td>.224</td>
+      </tr></tbody>
+      </table>
+    </div></div>
   </section>
 
   <section class="section">
     <h2 class="section-hed">Friday's Scores &amp; Box Scores</h2>
     <div class="scores-layout">
     <div class="league-subsection">
-    <div class="league-subsection-hed">American League</div>
-    
-    <div class="other-games-grid">
+      <div class="league-subsection-hed">American League</div>
+      <div class="games-grid">
     <div class="box-full">
       <div class="box-header">
-        <span>Houston Astros at Los Angeles Angels — Angel Stadium</span>
+        <span>Houston Astros at Los Angeles Angels</span>
         <span>Final (10 inn.)</span>
       </div>
       <div class="batting-columns">
@@ -296,10 +377,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">HOUSTON ASTROS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">HOUSTON ASTROS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Brown, H.</td>
       <td>5.0</td><td>2</td><td>1</td>
       <td>1</td><td>2</td><td>4</td>
@@ -324,11 +407,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>1</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">LOS ANGELES ANGELS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">LOS ANGELES ANGELS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Kikuchi, Y.</td>
       <td>7.0</td><td>6</td><td>2</td>
       <td>2</td><td>0</td><td>9</td>
@@ -345,13 +430,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>1</td><td>1</td>
       <td>0</td><td>1</td><td>1</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">WP—</span>Strickland. <span class="note-label">IBB—</span>Altuve (by Strickland). <span class="note-label">HBP—</span>Neto (by Brown, H); Trout (by Dubin); Rengifo (by Abreu, B). <span class="note-label">Pitches-strikes—</span>Brown, H 87-48; Dubin 17-7; King, B 27-18; Abreu, B 30-18; Hader 9-7; Sousa 10-8; Kikuchi 103-69; Detmers 22-12; Jansen, K 17-12; Strickland 19-12. <span class="note-label">Groundouts-flyouts—</span>Brown, H 6-2; Dubin 0-0; King, B 2-0; Abreu, B 0-0; Hader 0-1; Sousa 1-0; Kikuchi 4-4; Detmers 0-0; Jansen, K 0-2; Strickland 0-1. <span class="note-label">Batters faced—</span>Brown, H 20; Dubin 4; King, B 6; Abreu, B 6; Hader 3; Sousa 3; Kikuchi 26; Detmers 5; Jansen, K 5; Strickland 4. <span class="note-label">Inherited runners-scored—</span>King, B 3-0. <span class="note-label">Umpires—</span>HP: John Libka. 1B: D.J. Reyburn. 2B: Tom Hanahan. 3B: Sean Barber.  <span class="note-label">Weather—</span>71 degrees, Clear. <span class="note-label">Wind—</span>9 mph, Out To CF. <span class="note-label">First pitch—</span>6:38 PM. <span class="note-label">Att—</span>29,580. <span class="note-label">Venue—</span>Angel Stadium. T—3:15.</div>
+      <div class="game-notes"><span class="note-label">WP—</span>Strickland. <span class="note-label">IBB—</span>Altuve (by Strickland). <span class="note-label">HBP—</span>Neto (by Brown, H); Trout (by Dubin); Rengifo (by Abreu, B). <span class="note-label">Att—</span>29,580. T—3:15.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>Cleveland Guardians at Athletics — Sutter Health Park</span>
+        <span>Cleveland Guardians at Athletics</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -463,19 +550,23 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">CLEVELAND GUARDIANS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">CLEVELAND GUARDIANS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Bibee, T. L</td>
       <td>8.0</td><td>11</td><td>5</td>
       <td>5</td><td>0</td><td>10</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">ATHLETICS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">ATHLETICS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Springs, J. W</td>
       <td>7.1</td><td>3</td><td>1</td>
       <td>1</td><td>1</td><td>6</td>
@@ -488,13 +579,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>1</td><td>1</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">Pitch timer violations—</span>Wynns, A (batter timer). <span class="note-label">Pitches-strikes—</span>Bibee 105-75; Springs 104-69; Kelly, Mi 17-9; Miller, M 18-11. <span class="note-label">Groundouts-flyouts—</span>Bibee 9-5; Springs 3-5; Kelly, Mi 0-1; Miller, M 1-0. <span class="note-label">Batters faced—</span>Bibee 35; Springs 26; Kelly, Mi 3; Miller, M 4. <span class="note-label">Umpires—</span>HP: Tripp Gibson. 1B: Ryan Blakney. 2B: Jacob Metz. 3B: Marvin Hudson.  <span class="note-label">Weather—</span>75 degrees, Clear. <span class="note-label">Wind—</span>14 mph, Out To CF. <span class="note-label">First pitch—</span>7:06 PM. <span class="note-label">Att—</span>8,578. <span class="note-label">Venue—</span>Sutter Health Park. T—2:13.</div>
+      <div class="game-notes"><span class="note-label">Att—</span>8,578. T—2:13.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>Detroit Tigers at Tampa Bay Rays — George M. Steinbrenner Field</span>
+        <span>Detroit Tigers at Tampa Bay Rays</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -612,10 +705,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">DETROIT TIGERS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">DETROIT TIGERS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Flaherty, J. L</td>
       <td>2.1</td><td>6</td><td>8</td>
       <td>8</td><td>3</td><td>3</td>
@@ -636,11 +731,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>2.0</td><td>4</td><td>3</td>
       <td>2</td><td>1</td><td>0</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">TAMPA BAY RAYS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">TAMPA BAY RAYS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Baz, S. W</td>
       <td>5.1</td><td>4</td><td>5</td>
       <td>5</td><td>4</td><td>6</td>
@@ -653,13 +750,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>2.0</td><td>3</td><td>3</td>
       <td>3</td><td>0</td><td>2</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">WP—</span>Flaherty; Hernández, C. <span class="note-label">HBP—</span>Díaz, Y (by Flaherty). <span class="note-label">Pitch timer violations—</span>Gage (pitcher). <span class="note-label">Pitches-strikes—</span>Flaherty 74-45; Gage 28-15; Lee, C 17-11; Hernández, C 33-20; Hanifee 29-16; Baz 105-60; Whitley 22-13; Orze 34-23. <span class="note-label">Groundouts-flyouts—</span>Flaherty 0-1; Gage 1-0; Lee, C 1-0; Hernández, C 1-0; Hanifee 5-0; Baz 3-4; Whitley 0-2; Orze 1-0. <span class="note-label">Batters faced—</span>Flaherty 17; Gage 8; Lee, C 4; Hernández, C 7; Hanifee 10; Baz 24; Whitley 6; Orze 9. <span class="note-label">Inherited runners-scored—</span>Gage 1-1; Whitley 2-2. <span class="note-label">Umpires—</span>HP: Ramon De Jesus. 1B: Quinn Wolcott. 2B: Edwin Jimenez. 3B: Paul Clemons.  <span class="note-label">Weather—</span>77 degrees, Rain. <span class="note-label">Wind—</span>5 mph, L To R. <span class="note-label">First pitch—</span>7:55 PM. <span class="note-label">Att—</span>10,046. <span class="note-label">Venue—</span>George M. Steinbrenner Field. T—2:58.</div>
+      <div class="game-notes"><span class="note-label">WP—</span>Flaherty; Hernández, C. <span class="note-label">HBP—</span>Díaz, Y (by Flaherty). <span class="note-label">Att—</span>10,046. T—2:58.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>Milwaukee Brewers at Minnesota Twins — Target Field</span>
+        <span>Milwaukee Brewers at Minnesota Twins</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -795,10 +894,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">MILWAUKEE BREWERS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">MILWAUKEE BREWERS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Misiorowski, J. W</td>
       <td>6.0</td><td>1</td><td>2</td>
       <td>2</td><td>1</td><td>6</td>
@@ -815,11 +916,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>4</td><td>4</td>
       <td>2</td><td>2</td><td>1</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">MINNESOTA TWINS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">MINNESOTA TWINS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Ryan, J. L</td>
       <td>5.1</td><td>3</td><td>3</td>
       <td>3</td><td>3</td><td>7</td>
@@ -844,13 +947,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>5</td><td>5</td>
       <td>5</td><td>1</td><td>1</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">WP—</span>Wentz. <span class="note-label">Pitch timer violations—</span>Bauers (pitcher). <span class="note-label">Pitches-strikes—</span>Misiorowski 86-60; Mears 12-7; Hall, D 15-9; Bauers 32-15; Ryan 101-66; Coulombe 3-3; Topa 22-13; Wentz 43-25; Duran, J 3-1; Bride 30-17. <span class="note-label">Groundouts-flyouts—</span>Misiorowski 6-2; Mears 0-2; Hall, D 1-1; Bauers 1-2; Ryan 2-1; Coulombe 1-0; Topa 0-0; Wentz 0-2; Duran, J 1-0; Bride 0-1. <span class="note-label">Batters faced—</span>Misiorowski 20; Mears 4; Hall, D 3; Bauers 10; Ryan 20; Coulombe 3; Topa 6; Wentz 10; Duran, J 1; Bride 9. <span class="note-label">Inherited runners-scored—</span>Coulombe 1-1; Wentz 3-3; Duran, J 1-0. <span class="note-label">Umpires—</span>HP: Bill Miller. 1B: Chad Fairchild. 2B: Ben May. 3B: Roberto Ortiz.  <span class="note-label">Weather—</span>85 degrees, Partly Cloudy. <span class="note-label">Wind—</span>11 mph, In From LF. <span class="note-label">First pitch—</span>7:15 PM. <span class="note-label">Att—</span>28,011. <span class="note-label">Venue—</span>Target Field. T—3:04.</div>
+      <div class="game-notes"><span class="note-label">WP—</span>Wentz. <span class="note-label">Att—</span>28,011. T—3:04.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>Chicago White Sox at Toronto Blue Jays — Rogers Centre</span>
+        <span>Chicago White Sox at Toronto Blue Jays</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -977,10 +1082,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">CHICAGO WHITE SOX</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">CHICAGO WHITE SOX</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Taylor, G.</td>
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>1</td>
@@ -1001,11 +1108,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>1</td><td>0</td>
       <td>0</td><td>0</td><td>1</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">TORONTO BLUE JAYS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">TORONTO BLUE JAYS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Turnbull, S. L</td>
       <td>2.0</td><td>5</td><td>4</td>
       <td>4</td><td>2</td><td>2</td>
@@ -1034,13 +1143,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>1</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">HBP—</span>Teel (by Hoffman, J). <span class="note-label">Pitches-strikes—</span>Taylor, G 13-9; Alexander, T 49-34; Altavilla 13-7; González, W 37-24; Gilbert, T 13-9; Turnbull 45-24; Fluharty 35-18; Fisher 19-16; Sandlin 19-12; Green 19-14; Little, B 17-10; Hoffman, J 14-10. <span class="note-label">Groundouts-flyouts—</span>Taylor, G 2-0; Alexander, T 4-2; Altavilla 2-0; González, W 0-0; Gilbert, T 2-0; Turnbull 1-2; Fluharty 0-0; Fisher 0-1; Sandlin 0-0; Green 1-0; Little, B 1-0; Hoffman, J 1-0. <span class="note-label">Batters faced—</span>Taylor, G 3; Alexander, T 14; Altavilla 4; González, W 9; Gilbert, T 4; Turnbull 12; Fluharty 7; Fisher 6; Sandlin 4; Green 4; Little, B 4; Hoffman, J 4. <span class="note-label">Inherited runners-scored—</span>Fluharty 1-1. <span class="note-label">Umpires—</span>HP: Erich Bacchus. 1B: Stu Scheurwater. 2B: Jordan Baker. 3B: Charlie Ramos.  <span class="note-label">Weather—</span>69 degrees, Cloudy. <span class="note-label">Wind—</span>17 mph, Out To RF. <span class="note-label">First pitch—</span>7:08 PM. <span class="note-label">Att—</span>36,121. <span class="note-label">Venue—</span>Rogers Centre. T—2:35.</div>
+      <div class="game-notes"><span class="note-label">HBP—</span>Teel (by Hoffman, J). <span class="note-label">Att—</span>36,121. T—2:35.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>Baltimore Orioles at New York Yankees — Yankee Stadium</span>
+        <span>Baltimore Orioles at New York Yankees</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -1167,10 +1278,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">BALTIMORE ORIOLES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">BALTIMORE ORIOLES</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Sugano, T.</td>
       <td>3.2</td><td>7</td><td>3</td>
       <td>3</td><td>3</td><td>4</td>
@@ -1191,11 +1304,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>2</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">NEW YORK YANKEES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">NEW YORK YANKEES</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Fried, M.</td>
       <td>6.0</td><td>7</td><td>3</td>
       <td>3</td><td>0</td><td>7</td>
@@ -1216,17 +1331,19 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>1</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">IBB—</span>Judge (by Sugano). <span class="note-label">HBP—</span>Laureano (by Fried); Cowser (by Fried). <span class="note-label">Pitch timer violations—</span>Westburg (batter timer). <span class="note-label">Pitches-strikes—</span>Sugano 89-56; Akin 30-18; Cano 24-13; Blewett 19-13; Bautista, F 17-11; Fried 105-67; Loáisiga 14-11; Weaver 24-14; Hill, T 6-5; Hamilton, I 10-7. <span class="note-label">Groundouts-flyouts—</span>Sugano 2-5; Akin 2-0; Cano 1-1; Blewett 2-1; Bautista, F 0-1; Fried 7-2; Loáisiga 1-0; Weaver 0-0; Hill, T 0-0; Hamilton, I 2-0. <span class="note-label">Batters faced—</span>Sugano 21; Akin 5; Cano 5; Blewett 6; Bautista, F 3; Fried 27; Loáisiga 3; Weaver 5; Hill, T 2; Hamilton, I 3. <span class="note-label">Inherited runners-scored—</span>Akin 2-0; Hill, T 2-1. <span class="note-label">Umpires—</span>HP: Adam Hamari. 1B: Andy Fletcher. 2B: Jansen Visconti. 3B: Willie Traynor.  <span class="note-label">Weather—</span>82 degrees, Partly Cloudy. <span class="note-label">Wind—</span>10 mph, Out To LF. <span class="note-label">First pitch—</span>7:10 PM. <span class="note-label">Att—</span>47,034. <span class="note-label">Venue—</span>Yankee Stadium. T—3:12.</div>
+      <div class="game-notes"><span class="note-label">IBB—</span>Judge (by Sugano). <span class="note-label">HBP—</span>Laureano (by Fried); Cowser (by Fried). <span class="note-label">Att—</span>47,034. T—3:12.</div>
     </div></div>
-  </div>
+    </div>
     <div class="league-subsection">
-    <div class="league-subsection-hed">National League</div>
-    
-    <div class="box-full featured">
+      <div class="league-subsection-hed">National League</div>
+      <div class="games-grid">
+    <div class="box-full">
       <div class="box-header">
-        <span>★ Boston Red Sox at San Francisco Giants — Oracle Park</span>
+        <span>Boston Red Sox at San Francisco Giants</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -1368,10 +1485,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">BOSTON RED SOX</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">BOSTON RED SOX</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Dobbins, H.</td>
       <td>4.0</td><td>4</td><td>5</td>
       <td>4</td><td>5</td><td>1</td>
@@ -1400,11 +1519,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>2</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">SAN FRANCISCO GIANTS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">SAN FRANCISCO GIANTS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Birdsong, H.</td>
       <td>4.1</td><td>7</td><td>5</td>
       <td>4</td><td>1</td><td>4</td>
@@ -1429,14 +1550,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>2</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">WP—</span>Wilson, J. <span class="note-label">Pitch timer violations—</span>Chapman (pitcher). <span class="note-label">Pitches-strikes—</span>Dobbins 75-39; Bernardino 13-10; Kelly, Z 14-8; Wilson, J 14-9; Weissert 4-3; Whitlock 34-20; Chapman 14-10; Birdsong 85-51; Hjelle 19-12; Miller, E 10-5; Lucchesi 8-7; Walker, R 20-15; Bivens 14-9. <span class="note-label">Groundouts-flyouts—</span>Dobbins 5-2; Bernardino 2-0; Kelly, Z 0-0; Wilson, J 0-2; Weissert 1-0; Whitlock 0-1; Chapman 0-0; Birdsong 3-3; Hjelle 3-0; Miller, E 0-0; Lucchesi 0-0; Walker, R 2-1; Bivens 0-1. <span class="note-label">Batters faced—</span>Dobbins 20; Bernardino 3; Kelly, Z 3; Wilson, J 4; Weissert 1; Whitlock 6; Chapman 3; Birdsong 22; Hjelle 5; Miller, E 2; Lucchesi 3; Walker, R 5; Bivens 3. <span class="note-label">Inherited runners-scored—</span>Bernardino 1-1; Wilson, J 1-0; Weissert 1-0; Hjelle 1-0; Miller, E 1-0; Walker, R 1-0. <span class="note-label">Umpires—</span>HP: Doug Eddings. 1B: Gabe Morales. 2B: Mike Muchlinski. 3B: Emil Jimenez.  <span class="note-label">Weather—</span>61 degrees, Partly Cloudy. <span class="note-label">Wind—</span>19 mph, Out To CF. <span class="note-label">First pitch—</span>7:15 PM. <span class="note-label">Att—</span>40,169. <span class="note-label">Venue—</span>Oracle Park. T—2:53.</div>
+      <div class="game-notes"><span class="note-label">WP—</span>Wilson, J. <span class="note-label">Att—</span>40,169. T—2:53.</div>
     </div>
-    <div class="other-games-grid">
     <div class="box-full">
       <div class="box-header">
-        <span>Kansas City Royals at San Diego Padres — Petco Park</span>
+        <span>Kansas City Royals at San Diego Padres</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -1575,10 +1697,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">KANSAS CITY ROYALS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">KANSAS CITY ROYALS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Lorenzen, M.</td>
       <td>5.1</td><td>5</td><td>2</td>
       <td>2</td><td>3</td><td>4</td>
@@ -1599,11 +1723,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>1</td><td>1</td>
       <td>1</td><td>0</td><td>0</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">SAN DIEGO PADRES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">SAN DIEGO PADRES</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Pivetta, N.</td>
       <td>4.2</td><td>6</td><td>4</td>
       <td>4</td><td>2</td><td>3</td>
@@ -1624,13 +1750,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>1</td><td>0</td>
       <td>0</td><td>0</td><td>0</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">WP—</span>Lorenzen. <span class="note-label">Pitches-strikes—</span>Lorenzen 89-60; Zerpa 11-9; Erceg 29-18; Cruz 15-8; Estévez 24-16; Pivetta 84-54; Peralta, W 14-10; Reynolds 21-12; Adam 30-21; Morgan, D 12-8. <span class="note-label">Groundouts-flyouts—</span>Lorenzen 3-2; Zerpa 1-0; Erceg 3-0; Cruz 1-0; Estévez 0-0; Pivetta 3-4; Peralta, W 3-0; Reynolds 0-1; Adam 0-0; Morgan, D 0-1. <span class="note-label">Batters faced—</span>Lorenzen 23; Zerpa 3; Erceg 7; Cruz 5; Estévez 4; Pivetta 21; Peralta, W 4; Reynolds 4; Adam 7; Morgan, D 4. <span class="note-label">Inherited runners-scored—</span>Zerpa 1-1; Peralta, W 1-0. <span class="note-label">Umpires—</span>HP: Mark Ripperger. 1B: Nic Lentz. 2B: Vic Carapazza. 3B: Nick Mahrley.  <span class="note-label">Weather—</span>67 degrees, Partly Cloudy. <span class="note-label">Wind—</span>7 mph, L To R. <span class="note-label">First pitch—</span>6:41 PM. <span class="note-label">Att—</span>43,574. <span class="note-label">Venue—</span>Petco Park. T—3:04.</div>
+      <div class="game-notes"><span class="note-label">WP—</span>Lorenzen. <span class="note-label">Att—</span>43,574. T—3:04.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>Washington Nationals at Los Angeles Dodgers — Dodger Stadium</span>
+        <span>Washington Nationals at Los Angeles Dodgers</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -1757,10 +1885,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">WASHINGTON NATIONALS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">WASHINGTON NATIONALS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Gore, M. L</td>
       <td>5.2</td><td>7</td><td>6</td>
       <td>5</td><td>4</td><td>4</td>
@@ -1773,11 +1903,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>1</td><td>0</td>
       <td>0</td><td>1</td><td>1</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">LOS ANGELES DODGERS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">LOS ANGELES DODGERS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Kershaw, C. W</td>
       <td>5.0</td><td>5</td><td>2</td>
       <td>2</td><td>2</td><td>4</td>
@@ -1802,13 +1934,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>1</td><td>1</td>
       <td>1</td><td>0</td><td>0</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">WP—</span>Salazar; Kershaw. <span class="note-label">HBP—</span>Adams, R (by Vesia). <span class="note-label">Pitches-strikes—</span>Gore 100-58; Rutledge 21-13; Salazar 27-16; Kershaw 78-45; Kopech 13-9; Vesia 21-10; Yates 9-6; Dreyer 12-8; Scott 19-13. <span class="note-label">Groundouts-flyouts—</span>Gore 5-4; Rutledge 1-2; Salazar 1-1; Kershaw 7-3; Kopech 0-1; Vesia 0-0; Yates 0-0; Dreyer 1-1; Scott 2-1. <span class="note-label">Batters faced—</span>Gore 27; Rutledge 6; Salazar 5; Kershaw 21; Kopech 4; Vesia 5; Yates 2; Dreyer 3; Scott 4. <span class="note-label">Inherited runners-scored—</span>Yates 3-2. <span class="note-label">Umpires—</span>HP: Lance Barrett. 1B: Alfonso Márquez. 2B: Carlos Torres. 3B: Brian Walsh.  <span class="note-label">Weather—</span>69 degrees, Clear. <span class="note-label">Wind—</span>8 mph, Out To RF. <span class="note-label">First pitch—</span>7:10 PM. <span class="note-label">Att—</span>46,558. <span class="note-label">Venue—</span>Dodger Stadium. T—2:44.</div>
+      <div class="game-notes"><span class="note-label">WP—</span>Salazar; Kershaw. <span class="note-label">HBP—</span>Adams, R (by Vesia). <span class="note-label">Att—</span>46,558. T—2:44.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>Arizona Diamondbacks at Colorado Rockies — Coors Field</span>
+        <span>Arizona Diamondbacks at Colorado Rockies</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -1926,10 +2060,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">ARIZONA DIAMONDBACKS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">ARIZONA DIAMONDBACKS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Gallen, Z. W</td>
       <td>5.0</td><td>10</td><td>7</td>
       <td>7</td><td>1</td><td>5</td>
@@ -1950,11 +2086,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>1</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">COLORADO ROCKIES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">COLORADO ROCKIES</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Gomber, A. L</td>
       <td>4.2</td><td>12</td><td>9</td>
       <td>9</td><td>1</td><td>0</td>
@@ -1971,13 +2109,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>2.0</td><td>4</td><td>1</td>
       <td>1</td><td>0</td><td>1</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">Balk—</span>Rolison. <span class="note-label">Pitch timer violations—</span>Molina (pitcher). <span class="note-label">Pitches-strikes—</span>Gallen 91-62; Morillo, J 12-9; Beeks 15-9; Backhus 15-10; Ginkel 13-8; Gomber 81-57; Rolison 20-14; Mejia, J 20-13; Molina 30-22. <span class="note-label">Groundouts-flyouts—</span>Gallen 2-5; Morillo, J 0-0; Beeks 0-1; Backhus 1-0; Ginkel 0-1; Gomber 3-6; Rolison 2-0; Mejia, J 1-3; Molina 1-2. <span class="note-label">Batters faced—</span>Gallen 26; Morillo, J 3; Beeks 3; Backhus 5; Ginkel 3; Gomber 26; Rolison 6; Mejia, J 7; Molina 10. <span class="note-label">Umpires—</span>HP: Brian O'Nora. 1B: Mike Estabrook. 2B: Austin Jones. 3B: Laz Diaz.  <span class="note-label">Weather—</span>98 degrees, Clear. <span class="note-label">Wind—</span>12 mph, Out To CF. <span class="note-label">First pitch—</span>6:41 PM. <span class="note-label">Att—</span>31,851. <span class="note-label">Venue—</span>Coors Field. T—2:53.</div>
+      <div class="game-notes"><span class="note-label">Balk—</span>Rolison. <span class="note-label">Att—</span>31,851. T—2:53.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>Texas Rangers at Pittsburgh Pirates — PNC Park</span>
+        <span>Texas Rangers at Pittsburgh Pirates</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -2101,10 +2241,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">TEXAS RANGERS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">TEXAS RANGERS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>deGrom, J. W</td>
       <td>6.0</td><td>5</td><td>2</td>
       <td>2</td><td>1</td><td>7</td>
@@ -2121,11 +2263,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>1</td><td>0</td>
       <td>0</td><td>0</td><td>0</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">PITTSBURGH PIRATES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">PITTSBURGH PIRATES</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Burrows, M. L</td>
       <td>4.2</td><td>7</td><td>4</td>
       <td>4</td><td>1</td><td>4</td>
@@ -2146,13 +2290,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>0.2</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>0</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">WP—</span>Burrows. <span class="note-label">HBP—</span>Carter (by Burrows). <span class="note-label">Pitches-strikes—</span>deGrom 84-62; Milner 16-13; Martin, C 11-9; Garcia, R 10-6; Burrows 88-52; Ashcraft, B 40-26; Mattson 16-9; Borucki 16-7; Ferguson, C 4-4. <span class="note-label">Groundouts-flyouts—</span>deGrom 3-4; Milner 1-0; Martin, C 2-0; Garcia, R 3-0; Burrows 1-4; Ashcraft, B 2-2; Mattson 2-0; Borucki 1-0; Ferguson, C 1-0. <span class="note-label">Batters faced—</span>deGrom 24; Milner 4; Martin, C 5; Garcia, R 4; Burrows 23; Ashcraft, B 11; Mattson 5; Borucki 4; Ferguson, C 2. <span class="note-label">Inherited runners-scored—</span>Ashcraft, B 1-0; Mattson 1-0; Ferguson, C 3-1. <span class="note-label">Umpires—</span>HP: Mark Wegner. 1B: Bruce Dreckman. 2B: Shane Livensparger. 3B: Brock Ballou.  <span class="note-label">Weather—</span>78 degrees, Cloudy. <span class="note-label">Wind—</span>5 mph, Out To CF. <span class="note-label">First pitch—</span>6:40 PM. <span class="note-label">Att—</span>31,327. <span class="note-label">Venue—</span>PNC Park. T—2:49.</div>
+      <div class="game-notes"><span class="note-label">WP—</span>Burrows. <span class="note-label">HBP—</span>Carter (by Burrows). <span class="note-label">Att—</span>31,327. T—2:49.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>Cincinnati Reds at St. Louis Cardinals — Busch Stadium</span>
+        <span>Cincinnati Reds at St. Louis Cardinals</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -2279,10 +2425,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">CINCINNATI REDS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">CINCINNATI REDS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Singer, B. L</td>
       <td>6.0</td><td>4</td><td>1</td>
       <td>1</td><td>1</td><td>7</td>
@@ -2303,11 +2451,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>1</td><td>0</td>
       <td>0</td><td>1</td><td>2</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">ST. LOUIS CARDINALS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">ST. LOUIS CARDINALS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Pallante, A. W</td>
       <td>6.0</td><td>3</td><td>0</td>
       <td>0</td><td>1</td><td>4</td>
@@ -2328,13 +2478,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>0.2</td><td>0</td><td>0</td>
       <td>0</td><td>1</td><td>2</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">HBP—</span>Scott II 2 (by Singer, by Barlow, S). <span class="note-label">Pitch timer violations—</span>Romero, J (pitcher). <span class="note-label">Pitches-strikes—</span>Singer 102-65; Barlow, S 14-7; Rogers, Ta 20-10; Santillan 12-9; Phillips 21-13; Pallante 87-58; Maton, P 8-6; King, Jo 16-9; Romero, J 12-9; O'Brien 13-7. <span class="note-label">Groundouts-flyouts—</span>Singer 5-5; Barlow, S 0-0; Rogers, Ta 0-0; Santillan 1-0; Phillips 0-1; Pallante 9-2; Maton, P 1-0; King, Jo 0-1; Romero, J 2-0; O'Brien 0-0. <span class="note-label">Batters faced—</span>Singer 24; Barlow, S 3; Rogers, Ta 4; Santillan 3; Phillips 5; Pallante 21; Maton, P 2; King, Jo 4; Romero, J 3; O'Brien 3. <span class="note-label">Inherited runners-scored—</span>Rogers, Ta 2-2; Santillan 3-3; Maton, P 1-0; Romero, J 2-0. <span class="note-label">Umpires—</span>HP: Dan Iassogna. 1B: CB Bucknor. 2B: Scott Barry. 3B: Adam Beck.  <span class="note-label">Weather—</span>89 degrees, Clear. <span class="note-label">Wind—</span>9 mph, Out To LF. <span class="note-label">First pitch—</span>6:16 PM. <span class="note-label">Att—</span>35,334. <span class="note-label">Venue—</span>Busch Stadium. T—2:44.</div>
+      <div class="game-notes"><span class="note-label">HBP—</span>Scott II 2 (by Singer, by Barlow, S). <span class="note-label">Att—</span>35,334. T—2:44.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>Seattle Mariners at Chicago Cubs — Wrigley Field</span>
+        <span>Seattle Mariners at Chicago Cubs</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -2461,10 +2613,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">SEATTLE MARINERS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">SEATTLE MARINERS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Kirby, G.</td>
       <td>5.0</td><td>7</td><td>4</td>
       <td>4</td><td>1</td><td>3</td>
@@ -2489,11 +2643,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>1</td><td>0</td>
       <td>0</td><td>0</td><td>1</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">CHICAGO CUBS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">CHICAGO CUBS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Boyd, M.</td>
       <td>5.0</td><td>2</td><td>2</td>
       <td>2</td><td>2</td><td>6</td>
@@ -2514,13 +2670,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>4</td><td>3</td>
       <td>3</td><td>0</td><td>1</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">Pitches-strikes—</span>Kirby 85-60; Bazardo 7-5; Vargas 16-8; Speier 6-4; Brash 14-7; Legumina 6-6; Boyd 76-48; Pressly 29-14; Thielbar 18-13; Brasier 18-12; Cabrera, G 31-21. <span class="note-label">Groundouts-flyouts—</span>Kirby 2-5; Bazardo 1-0; Vargas 0-1; Speier 1-0; Brash 2-0; Legumina 1-0; Boyd 3-1; Pressly 1-1; Thielbar 0-1; Brasier 1-0; Cabrera, G 0-2. <span class="note-label">Batters faced—</span>Kirby 22; Bazardo 3; Vargas 3; Speier 1; Brash 4; Legumina 3; Boyd 19; Pressly 7; Thielbar 5; Brasier 5; Cabrera, G 7. <span class="note-label">Inherited runners-scored—</span>Speier 1-0; Brasier 1-0. <span class="note-label">Umpires—</span>HP: Chris Guccione. 1B: Chad Whitson. 2B: Edwin Moscoso. 3B: Dexter Kelley.  <span class="note-label">Weather—</span>82 degrees, Partly Cloudy. <span class="note-label">Wind—</span>12 mph, Out To CF. <span class="note-label">First pitch—</span>1:20 PM. <span class="note-label">Att—</span>40,787. <span class="note-label">Venue—</span>Wrigley Field. T—2:52.</div>
+      <div class="game-notes"><span class="note-label">Att—</span>40,787. T—2:52.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>New York Mets at Philadelphia Phillies — Citizens Bank Park</span>
+        <span>New York Mets at Philadelphia Phillies</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -2638,10 +2796,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">NEW YORK METS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">NEW YORK METS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Tidwell, B.</td>
       <td>3.2</td><td>4</td><td>2</td>
       <td>2</td><td>3</td><td>4</td>
@@ -2662,11 +2822,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>2.0</td><td>4</td><td>4</td>
       <td>4</td><td>1</td><td>1</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">PHILADELPHIA PHILLIES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">PHILADELPHIA PHILLIES</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Wheeler, Z.</td>
       <td>5.0</td><td>4</td><td>0</td>
       <td>0</td><td>3</td><td>8</td>
@@ -2683,13 +2845,15 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>2.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>1</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">Pitch timer violations—</span>Buttó (pitcher). <span class="note-label">Pitches-strikes—</span>Tidwell 74-43; Castillo, J 5-5; Buttó 28-18; Garrett, R 20-11; Garza 35-21; Wheeler 98-59; Walker, T 14-8; Banks 26-16; Lazar 17-14. <span class="note-label">Groundouts-flyouts—</span>Tidwell 3-3; Castillo, J 1-0; Buttó 3-0; Garrett, R 0-0; Garza 2-2; Wheeler 2-2; Walker, T 0-0; Banks 2-0; Lazar 2-1. <span class="note-label">Batters faced—</span>Tidwell 17; Castillo, J 3; Buttó 6; Garrett, R 4; Garza 11; Wheeler 21; Walker, T 4; Banks 5; Lazar 6. <span class="note-label">Inherited runners-scored—</span>Castillo, J 2-1; Buttó 1-0; Garza 2-2; Banks 1-0. <span class="note-label">Umpires—</span>HP: Jonathan Parra. 1B: Clint Vondrak. 2B: David Rackley. 3B: Phil Cuzzi.  <span class="note-label">Weather—</span>84 degrees, Partly Cloudy. <span class="note-label">Wind—</span>14 mph, Out To RF. <span class="note-label">First pitch—</span>7:16 PM. <span class="note-label">Att—</span>44,432. <span class="note-label">Venue—</span>Citizens Bank Park. T—2:59.</div>
+      <div class="game-notes"><span class="note-label">Att—</span>44,432. T—2:59.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
-        <span>Atlanta Braves at Miami Marlins — loanDepot park</span>
+        <span>Atlanta Braves at Miami Marlins</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -2813,10 +2977,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">ATLANTA BRAVES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">ATLANTA BRAVES</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Fuentes, D. L</td>
       <td>5.0</td><td>6</td><td>4</td>
       <td>4</td><td>1</td><td>3</td>
@@ -2833,11 +2999,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>1</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">MIAMI MARLINS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">MIAMI MARLINS</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Junk, J. W</td>
       <td>5.0</td><td>5</td><td>1</td>
       <td>1</td><td>0</td><td>5</td>
@@ -2858,149 +3026,20 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>0</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">Pitches-strikes—</span>Fuentes 87-58; Bummer 28-11; Johnson 20-14; Dodd 13-8; Junk 79-61; Henriquez, R 14-9; Phillips 8-6; Piña 17-11; Faucher 7-5. <span class="note-label">Groundouts-flyouts—</span>Fuentes 4-4; Bummer 1-0; Johnson 0-0; Dodd 0-2; Junk 6-3; Henriquez, R 1-0; Phillips 1-1; Piña 2-1; Faucher 2-1. <span class="note-label">Batters faced—</span>Fuentes 22; Bummer 7; Johnson 4; Dodd 3; Junk 20; Henriquez, R 4; Phillips 4; Piña 4; Faucher 3. <span class="note-label">Inherited runners-scored—</span>Johnson 1-1. <span class="note-label">Umpires—</span>HP: Lance Barksdale. 1B: Will Little. 2B: John Bacon. 3B: Ryan Additon.  <span class="note-label">Weather—</span>72 degrees, Roof Closed. <span class="note-label">Wind—</span>0 mph, None. <span class="note-label">First pitch—</span>7:11 PM. <span class="note-label">Att—</span>12,146. <span class="note-label">Venue—</span>loanDepot park. T—2:35.</div>
+      <div class="game-notes"><span class="note-label">Att—</span>12,146. T—2:35.</div>
     </div></div>
+    </div>
   </div>
-  </div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-hed">Standings — Through Friday, June 20, 2025</h2>
-    <div class="standings-grid"><div class="div-block">
-      <div class="div-hed">AL East</div>
-      <table class="standings-tbl">
-        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
-        <tbody><tr class="div-leader">
-        <td>N.Y. Yankees</td>
-        <td>43</td><td>32</td><td>—</td><td>.573</td>
-      </tr><tr class="">
-        <td>Tampa Bay</td>
-        <td>42</td><td>34</td><td>1.5</td><td>.553</td>
-      </tr><tr class="">
-        <td>Toronto</td>
-        <td>40</td><td>35</td><td>3.0</td><td>.533</td>
-      </tr><tr class="">
-        <td>Boston</td>
-        <td>40</td><td>37</td><td>4.0</td><td>.519</td>
-      </tr><tr class="">
-        <td>Baltimore</td>
-        <td>33</td><td>42</td><td>10.0</td><td>.440</td>
-      </tr></tbody>
-      </table>
-    </div><div class="div-block">
-      <div class="div-hed">AL Central</div>
-      <table class="standings-tbl">
-        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
-        <tbody><tr class="div-leader">
-        <td>Detroit</td>
-        <td>48</td><td>29</td><td>—</td><td>.623</td>
-      </tr><tr class="">
-        <td>Cleveland</td>
-        <td>37</td><td>37</td><td>9.5</td><td>.500</td>
-      </tr><tr class="">
-        <td>Kansas City</td>
-        <td>38</td><td>38</td><td>9.5</td><td>.500</td>
-      </tr><tr class="">
-        <td>Minnesota</td>
-        <td>37</td><td>38</td><td>10.0</td><td>.493</td>
-      </tr><tr class="">
-        <td>Chi. Sox</td>
-        <td>24</td><td>52</td><td>23.5</td><td>.316</td>
-      </tr></tbody>
-      </table>
-    </div><div class="div-block">
-      <div class="div-hed">AL West</div>
-      <table class="standings-tbl">
-        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
-        <tbody><tr class="div-leader">
-        <td>Houston</td>
-        <td>44</td><td>32</td><td>—</td><td>.579</td>
-      </tr><tr class="">
-        <td>Seattle</td>
-        <td>38</td><td>36</td><td>5.0</td><td>.514</td>
-      </tr><tr class="">
-        <td>Texas</td>
-        <td>37</td><td>39</td><td>7.0</td><td>.487</td>
-      </tr><tr class="">
-        <td>L.A. Angels</td>
-        <td>36</td><td>39</td><td>7.5</td><td>.480</td>
-      </tr><tr class="">
-        <td>Athletics</td>
-        <td>32</td><td>46</td><td>13.0</td><td>.410</td>
-      </tr></tbody>
-      </table>
-    </div><div class="div-block">
-      <div class="div-hed">NL East</div>
-      <table class="standings-tbl">
-        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
-        <tbody><tr class="div-leader">
-        <td>Philadelphia</td>
-        <td>46</td><td>30</td><td>—</td><td>.605</td>
-      </tr><tr class="">
-        <td>N.Y. Mets</td>
-        <td>45</td><td>31</td><td>1.0</td><td>.592</td>
-      </tr><tr class="">
-        <td>Atlanta</td>
-        <td>34</td><td>40</td><td>11.0</td><td>.459</td>
-      </tr><tr class="">
-        <td>Washington</td>
-        <td>31</td><td>45</td><td>15.0</td><td>.408</td>
-      </tr><tr class="">
-        <td>Miami</td>
-        <td>30</td><td>44</td><td>15.0</td><td>.405</td>
-      </tr></tbody>
-      </table>
-    </div><div class="div-block">
-      <div class="div-hed">NL Central</div>
-      <table class="standings-tbl">
-        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
-        <tbody><tr class="div-leader">
-        <td>Chi. Cubs</td>
-        <td>45</td><td>30</td><td>—</td><td>.600</td>
-      </tr><tr class="">
-        <td>Milwaukee</td>
-        <td>41</td><td>35</td><td>4.5</td><td>.539</td>
-      </tr><tr class="">
-        <td>St. Louis</td>
-        <td>41</td><td>35</td><td>4.5</td><td>.539</td>
-      </tr><tr class="">
-        <td>Cincinnati</td>
-        <td>39</td><td>37</td><td>6.5</td><td>.513</td>
-      </tr><tr class="">
-        <td>Pittsburgh</td>
-        <td>30</td><td>47</td><td>16.0</td><td>.390</td>
-      </tr></tbody>
-      </table>
-    </div><div class="div-block">
-      <div class="div-hed">NL West</div>
-      <table class="standings-tbl">
-        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
-        <tbody><tr class="div-leader">
-        <td>L.A. Dodgers</td>
-        <td>47</td><td>30</td><td>—</td><td>.610</td>
-      </tr><tr class="">
-        <td>San Francisco</td>
-        <td>42</td><td>34</td><td>4.5</td><td>.553</td>
-      </tr><tr class="">
-        <td>San Diego</td>
-        <td>40</td><td>35</td><td>6.0</td><td>.533</td>
-      </tr><tr class="">
-        <td>Arizona</td>
-        <td>38</td><td>37</td><td>8.0</td><td>.507</td>
-      </tr><tr class="">
-        <td>Colorado</td>
-        <td>17</td><td>59</td><td>29.5</td><td>.224</td>
-      </tr></tbody>
-      </table>
-    </div></div>
   </section>
 
   <section class="section">
     <h2 class="section-hed">League Leaders</h2>
     <div class="league-leaders-layout">
-    <div class="league-section">
+      <div class="league-section">
     <div class="league-section-hed">American League Leaders</div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Batting Average</div><table class="leaders-tbl"><tbody><tr>
@@ -3065,7 +3104,37 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
     <td><span class="rank">10.</span>Vinnie Pasquantino <span class="player-team"></span></td>
     <td>32</td>
   </tr></tbody></table></div>
-      <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Cal Raleigh <span class="player-team"></span></td>
+    <td>125</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Aaron Judge <span class="player-team"></span></td>
+    <td>114</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Vinnie Pasquantino <span class="player-team"></span></td>
+    <td>113</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Riley Greene <span class="player-team"></span></td>
+    <td>111</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Junior Caminero <span class="player-team"></span></td>
+    <td>110</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Taylor Ward <span class="player-team"></span></td>
+    <td>103</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Salvador Perez <span class="player-team"></span></td>
+    <td>100</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Jo Adell <span class="player-team"></span></td>
+    <td>98</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Cody Bellinger <span class="player-team"></span></td>
+    <td>98</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Trevor Story <span class="player-team"></span></td>
+    <td>96</td>
+  </tr></tbody></table></div>
     </div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Wins</div><table class="leaders-tbl"><tbody><tr>
@@ -3163,7 +3232,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr></tbody></table></div>
     </div>
   </div>
-    <div class="league-section">
+      <div class="league-section">
     <div class="league-section-hed">National League Leaders</div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Batting Average</div><table class="leaders-tbl"><tbody><tr>
@@ -3228,7 +3297,37 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
     <td><span class="rank">10.</span>Hunter Goodman <span class="player-team"></span></td>
     <td>31</td>
   </tr></tbody></table></div>
-      <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Kyle Schwarber <span class="player-team"></span></td>
+    <td>132</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Pete Alonso <span class="player-team"></span></td>
+    <td>126</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Juan Soto <span class="player-team"></span></td>
+    <td>105</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Seiya Suzuki <span class="player-team"></span></td>
+    <td>103</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Christian Yelich <span class="player-team"></span></td>
+    <td>103</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Shohei Ohtani <span class="player-team"></span></td>
+    <td>102</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Geraldo Perdomo <span class="player-team"></span></td>
+    <td>100</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Pete Crow-Armstrong <span class="player-team"></span></td>
+    <td>95</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Manny Machado <span class="player-team"></span></td>
+    <td>95</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Matt Olson <span class="player-team"></span></td>
+    <td>95</td>
+  </tr></tbody></table></div>
     </div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Wins</div><table class="leaders-tbl"><tbody><tr>
@@ -3326,7 +3425,57 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr></tbody></table></div>
     </div>
   </div>
-  </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-hed">Today's Matchups — Saturday, June 21, 2025</h2>
+    <div class="matchups-layout"><div class="matchup-league"><div class="matchup-league-hed">American League</div><div class="matchup-line">
+        <span class="matchup-teams">Detroit (Gipson-Long) at Tampa Bay (Pepiot 11-12)</span>
+        <span class="matchup-time">9:10 a.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Baltimore (Eflin) at N.Y. Yankees (Schmidt)</span>
+        <span class="matchup-time">10:05 a.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Milwaukee (Quintana) at Minnesota (Woods Richardson)</span>
+        <span class="matchup-time">11:10 a.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Chi. Sox (Civale) at Toronto (Berríos 9-5)</span>
+        <span class="matchup-time">12:07 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Houston (Walter) at L.A. Angels (Soriano 10-11)</span>
+        <span class="matchup-time">6:38 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Cleveland (Ortiz) at Athletics (Spence)</span>
+        <span class="matchup-time">7:05 p.m. PT</span>
+      </div></div><div class="matchup-league"><div class="matchup-league-hed">National League</div><div class="matchup-line">
+        <span class="matchup-teams">Cincinnati (Suter) at St. Louis (Gray 14-8)</span>
+        <span class="matchup-time">11:15 a.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Seattle (Hancock) at Chi. Cubs (Horton)</span>
+        <span class="matchup-time">11:20 a.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Boston (Bello 11-9) at San Francisco (Roupp)</span>
+        <span class="matchup-time">1:05 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Texas (Rocker) at Pittsburgh (Keller 6-15)</span>
+        <span class="matchup-time">1:05 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Atlanta (Holmes) at Miami (Pérez)</span>
+        <span class="matchup-time">1:10 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Kansas City (Cameron) at San Diego (Cease 8-12)</span>
+        <span class="matchup-time">4:15 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">N.Y. Mets (Canning) at Philadelphia (Abel)</span>
+        <span class="matchup-time">4:15 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Arizona (Kelly 12-9) at Colorado (Palmquist)</span>
+        <span class="matchup-time">6:10 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Washington (Irvin) at L.A. Dodgers (May)</span>
+        <span class="matchup-time">7:10 p.m. PT</span>
+      </div></div></div>
   </section>
 
   <footer class="paper-footer">
