@@ -21,44 +21,6 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .section{padding:0 24px 20px}.section+.section{border-top:3px double var(--rule)}
 .section-hed{font-family:'Playfair Display SC',serif;font-size:13px;letter-spacing:.2em;text-align:center;padding:8px 0 6px;border-bottom:1px solid var(--rule);margin-bottom:14px}
 .loading{text-align:center;padding:30px;font-style:italic;color:var(--faint)}
-.matchups-layout{display:flex;flex-direction:column;gap:0}
-.matchup-league-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.18em;color:var(--faint);padding:6px 0 3px;border-bottom:1px solid var(--faint2);margin-bottom:4px}
-.matchup-league{margin-bottom:10px}
-.matchup-line{font-size:11.5px;padding:2px 0;border-bottom:1px dotted #d4c9b0;display:flex;justify-content:space-between;gap:8px}
-.matchup-line:last-child{border-bottom:none}
-.matchup-teams{flex:1}.matchup-time{white-space:nowrap;color:var(--faint);font-size:10.5px}
-.scores-layout{display:flex;flex-direction:column;gap:18px}
-.league-subsection{display:flex;flex-direction:column;gap:12px}
-.league-subsection-hed{font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.2em;color:var(--faint);padding:4px 0 3px;border-top:1px solid var(--faint2);border-bottom:1px solid var(--faint2)}
-.other-games-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.box-full{border:1px solid var(--rule)}.box-full.featured{border-width:2px}
-.box-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;display:flex;justify-content:space-between}
-.batting-columns{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
-.batting-col+.batting-col{border-left:1px solid var(--rule)}
-.team-label{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:.1em;padding:2px 5px;background:var(--paper-dark);border-bottom:1px solid var(--rule)}
-.batting-table{width:100%;border-collapse:collapse;font-size:10.5px}
-.batting-table th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;padding:1px 3px;text-align:right;color:var(--faint);border-bottom:1px solid var(--faint2)}
-.batting-table th:first-child{text-align:left}
-.batting-table td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}
-.batting-table td:first-child{text-align:left;white-space:nowrap;overflow:hidden;max-width:145px}
-.batting-table tr.totals-row td{border-top:1px solid var(--rule);border-bottom:none;font-weight:700;background:var(--paper-dark)}
-.batting-table tr.totals-row td:first-child{font-size:8.5px}
-.batting-table tr.sub-row td:first-child{padding-left:10px}
-.pos-abbr{font-size:8.5px;color:var(--faint);margin-right:2px}
-.linescore-section{padding:4px 8px;border-bottom:1px solid var(--rule)}
-.linescore-tbl{width:100%;border-collapse:collapse;font-size:11px}
-.linescore-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.06em;color:var(--faint);text-align:center;padding:0 2px;border-bottom:1px solid var(--faint2)}
-.linescore-tbl th:first-child{text-align:left;width:100px}
-.linescore-tbl td{text-align:center;padding:1px 2px}.linescore-tbl td:first-child{text-align:left;font-weight:700}
-.linescore-tbl td.sep{border-left:1px solid var(--rule);font-weight:700}.linescore-tbl td.x{color:var(--faint)}
-.pitching-section{padding:4px 8px;border-bottom:1px solid var(--rule)}
-.pitching-label{font-family:'Playfair Display SC',serif;font-size:8.5px;letter-spacing:.1em;color:var(--faint);margin-bottom:2px}
-.pitching-tbl{width:100%;border-collapse:collapse;font-size:10.5px}
-.pitching-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;color:var(--faint);text-align:right;padding:0 3px;border-bottom:1px solid var(--faint2)}
-.pitching-tbl th:first-child{text-align:left}
-.pitching-tbl td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}.pitching-tbl td:first-child{text-align:left}.pitching-tbl tr:last-child td{border-bottom:none}
-.game-notes{padding:4px 8px;font-size:10px;line-height:1.55}
-.note-label{font-weight:700;font-size:9px}
 .standings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .div-block{border:1px solid var(--rule)}
 .div-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;text-align:center}
@@ -68,6 +30,39 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .standings-tbl td{padding:2px 6px;border-bottom:1px dotted #d4c9b0}.standings-tbl td:first-child{font-weight:700}.standings-tbl td:not(:first-child){text-align:right}
 .standings-tbl tr.div-leader td:first-child{border-left:3px solid var(--ink);padding-left:3px}
 .standings-tbl tr:last-child td{border-bottom:none}
+.scores-layout{display:flex;flex-direction:column;gap:18px}
+.league-subsection{display:flex;flex-direction:column;gap:12px}
+.league-subsection-hed{font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.2em;color:var(--faint);padding:4px 0 3px;border-top:1px solid var(--faint2);border-bottom:1px solid var(--faint2)}
+.games-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.box-full{border:1px solid var(--rule)}
+.box-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;display:flex;justify-content:space-between}
+.batting-columns{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
+.batting-col+.batting-col{border-left:1px solid var(--rule)}
+.team-label{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:.1em;padding:2px 5px;background:var(--paper-dark);border-bottom:1px solid var(--rule)}
+.batting-table{width:100%;border-collapse:collapse;font-size:10.5px}
+.batting-table th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;padding:1px 3px;text-align:right;color:var(--faint);border-bottom:1px solid var(--faint2)}
+.batting-table th:first-child{text-align:left}
+.batting-table td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}
+.batting-table td:first-child{text-align:left;white-space:nowrap;overflow:hidden;max-width:130px}
+.batting-table tr.totals-row td{border-top:1px solid var(--rule);border-bottom:none;font-weight:700;background:var(--paper-dark)}
+.batting-table tr.totals-row td:first-child{font-size:8.5px}
+.batting-table tr.sub-row td:first-child{padding-left:10px}
+.pos-abbr{font-size:8.5px;color:var(--faint);margin-right:2px}
+.linescore-section{padding:4px 8px;border-bottom:1px solid var(--rule)}
+.linescore-tbl{width:100%;border-collapse:collapse;font-size:11px}
+.linescore-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.06em;color:var(--faint);text-align:center;padding:0 2px;border-bottom:1px solid var(--faint2)}
+.linescore-tbl th:first-child{text-align:left;width:90px}
+.linescore-tbl td{text-align:center;padding:1px 2px}.linescore-tbl td:first-child{text-align:left;font-weight:700}
+.linescore-tbl td.sep{border-left:1px solid var(--rule);font-weight:700}.linescore-tbl td.x{color:var(--faint)}
+.pitching-section{border-bottom:1px solid var(--rule)}
+.pitching-columns{display:grid;grid-template-columns:1fr 1fr}
+.pitching-col{padding:4px 5px}.pitching-col+.pitching-col{border-left:1px solid var(--rule)}
+.pitching-tbl{width:100%;border-collapse:collapse;font-size:10.5px}
+.pitching-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;color:var(--faint);text-align:right;padding:0 3px;border-bottom:1px solid var(--faint2)}
+.pitching-tbl th:first-child{text-align:left}
+.pitching-tbl td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}.pitching-tbl td:first-child{text-align:left}.pitching-tbl tr:last-child td{border-bottom:none}
+.game-notes{padding:4px 8px;font-size:10px;line-height:1.6}
+.note-label{font-weight:700;font-size:9px}
 .league-leaders-layout{display:flex;flex-direction:column;gap:14px}
 .league-section{border:1px solid var(--rule)}
 .league-section-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:11px;letter-spacing:.18em;padding:4px 10px;text-align:center}
@@ -79,8 +74,14 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .leaders-tbl tr:last-child td{border-bottom:none}
 .rank{font-family:'Playfair Display SC',serif;font-size:8.5px;color:var(--faint);margin-right:3px}
 .player-team{font-size:9px;color:var(--faint);font-style:italic}
+.matchups-layout{display:flex;flex-direction:column;gap:0}
+.matchup-league-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.18em;color:var(--faint);padding:6px 0 3px;border-bottom:1px solid var(--faint2);margin-bottom:4px}
+.matchup-league{margin-bottom:10px}
+.matchup-line{font-size:11.5px;padding:2px 0;border-bottom:1px dotted #d4c9b0;display:flex;justify-content:space-between;gap:8px}
+.matchup-line:last-child{border-bottom:none}
+.matchup-teams{flex:1}.matchup-time{white-space:nowrap;color:var(--faint);font-size:10.5px}
 .paper-footer{border-top:3px double var(--rule);text-align:center;font-size:9px;color:var(--faint);padding:8px;font-style:italic;letter-spacing:.05em}
-@media(max-width:700px){.masthead-name{font-size:48px}.standings-grid{grid-template-columns:1fr 1fr}.other-games-grid{grid-template-columns:1fr}.batting-columns{grid-template-columns:1fr}.batting-col+.batting-col{border-left:none;border-top:1px solid var(--rule)}.leaders-row{grid-template-columns:1fr}.leaders-block+.leaders-block{border-left:none;border-top:1px solid var(--rule)}}
+@media(max-width:700px){.masthead-name{font-size:48px}.standings-grid{grid-template-columns:1fr 1fr}.games-grid{grid-template-columns:1fr}.batting-columns,.pitching-columns{grid-template-columns:1fr}.batting-col+.batting-col,.pitching-col+.pitching-col{border-left:none;border-top:1px solid var(--rule)}.leaders-row{grid-template-columns:1fr}.leaders-block+.leaders-block{border-left:none;border-top:1px solid var(--rule)}}
 </style>
 </head>
 <body>
@@ -102,8 +103,8 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </header>
 
   <section class="section">
-    <h2 class="section-hed">Today's Matchups — Friday, October 2, 2026</h2>
-    <div class="loading">No games scheduled.</div>
+    <h2 class="section-hed">Standings — Through Thursday, October 1, 2026</h2>
+    <div class="standings-grid"></div>
   </section>
 
   <section class="section">
@@ -111,12 +112,11 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
     <div class="scores-layout">
     
     <div class="league-subsection">
-    <div class="league-subsection-hed">National League</div>
-    
-    <div class="other-games-grid">
+      <div class="league-subsection-hed">National League</div>
+      <div class="games-grid">
     <div class="box-full">
       <div class="box-header">
-        <span>Philadelphia Phillies at Atlanta Braves — Truist Park</span>
+        <span>Philadelphia Phillies at Atlanta Braves</span>
         <span>Final</span>
       </div>
       <div class="batting-columns">
@@ -249,10 +249,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         </table>
       </div>
       <div class="pitching-section">
-        <div class="pitching-label">PHILADELPHIA PHILLIES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+        <div class="pitching-columns">
+          <div class="pitching-col">
+            <div class="team-label">PHILADELPHIA PHILLIES</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Nola, A. L</td>
       <td>1.2</td><td>2</td><td>3</td>
       <td>3</td><td>2</td><td>1</td>
@@ -273,11 +275,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.0</td><td>0</td><td>0</td>
       <td>0</td><td>0</td><td>2</td>
     </tr></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">ATLANTA BRAVES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody><tr>
+            </table>
+          </div>
+          <div class="pitching-col">
+            <div class="team-label">ATLANTA BRAVES</div>
+            <table class="pitching-tbl">
+              <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+              <tbody><tr>
       <td>Kerr, R.</td>
       <td>3.1</td><td>1</td><td>0</td>
       <td>0</td><td>1</td><td>2</td>
@@ -302,23 +306,20 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
       <td>1.1</td><td>1</td><td>0</td>
       <td>0</td><td>0</td><td>3</td>
     </tr></tbody>
-        </table>
+            </table>
+          </div>
+        </div>
       </div>
-      <div class="game-notes"><span class="note-label">WP—</span>Holmes, G. <span class="note-label">HBP—</span>Harris II (by Bowlan). <span class="note-label">ABS Challenge—</span>Acuña Jr. (Strike-Overturned to Ball); Realmuto (Ball-Overturned to Strike); Baldwin, D (Ball-Confirmed). <span class="note-label">Pitches-strikes—</span>Nola, A 38-19; Mayza 6-3; Wheeler 68-42; Bowlan 16-10; Duran, J 15-10; Kerr 47-29; Holmes, G 28-17; Suarez, R 11-9; Fuentes 13-9; Dodd 14-8; Sale 21-14. <span class="note-label">Groundouts-flyouts—</span>Nola, A 0-2; Mayza 1-0; Wheeler 2-0; Bowlan 2-0; Duran, J 0-1; Kerr 4-3; Holmes, G 3-1; Suarez, R 1-1; Fuentes 2-0; Dodd 0-2; Sale 0-0. <span class="note-label">Batters faced—</span>Nola, A 9; Mayza 1; Wheeler 17; Bowlan 5; Duran, J 3; Kerr 12; Holmes, G 8; Suarez, R 3; Fuentes 3; Dodd 3; Sale 5. <span class="note-label">Inherited runners-scored—</span>Mayza 1-0; Holmes, G 1-0; Suarez, R 1-1. <span class="note-label">Umpires—</span>HP: Mark Ripperger. 1B: Jordan Baker. 2B: Nestor Ceja. 3B: Charlie Ramos. LF: Dan Merzel. RF: Adam Beck.  <span class="note-label">Weather—</span>84 degrees, Partly Cloudy. <span class="note-label">Wind—</span>5 mph, L To R. <span class="note-label">First pitch—</span>8:15 PM. <span class="note-label">Att—</span>41,731. <span class="note-label">Venue—</span>Truist Park. T—2:46.</div>
+      <div class="game-notes"><span class="note-label">WP—</span>Holmes, G. <span class="note-label">HBP—</span>Harris II (by Bowlan). <span class="note-label">ABS Challenge—</span>Acuña Jr. (Strike-Overturned to Ball); Realmuto (Ball-Overturned to Strike); Baldwin, D (Ball-Confirmed). <span class="note-label">Att—</span>41,731. T—2:46.</div>
     </div></div>
+    </div>
   </div>
-  </div>
-  </section>
-
-  <section class="section">
-    <h2 class="section-hed">Standings — Through Thursday, October 1, 2026</h2>
-    <div class="standings-grid"></div>
   </section>
 
   <section class="section">
     <h2 class="section-hed">League Leaders</h2>
     <div class="league-leaders-layout">
-    <div class="league-section">
+      <div class="league-section">
     <div class="league-section-hed">American League Leaders</div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Batting Average</div><table class="leaders-tbl"><tbody><tr>
@@ -383,7 +384,37 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
     <td><span class="rank">10.</span>Vinnie Pasquantino <span class="player-team"></span></td>
     <td>32</td>
   </tr></tbody></table></div>
-      <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Cal Raleigh <span class="player-team"></span></td>
+    <td>125</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Aaron Judge <span class="player-team"></span></td>
+    <td>114</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Vinnie Pasquantino <span class="player-team"></span></td>
+    <td>113</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Riley Greene <span class="player-team"></span></td>
+    <td>111</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Junior Caminero <span class="player-team"></span></td>
+    <td>110</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Taylor Ward <span class="player-team"></span></td>
+    <td>103</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Salvador Perez <span class="player-team"></span></td>
+    <td>100</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Jo Adell <span class="player-team"></span></td>
+    <td>98</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Cody Bellinger <span class="player-team"></span></td>
+    <td>98</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Trevor Story <span class="player-team"></span></td>
+    <td>96</td>
+  </tr></tbody></table></div>
     </div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Wins</div><table class="leaders-tbl"><tbody><tr>
@@ -481,7 +512,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr></tbody></table></div>
     </div>
   </div>
-    <div class="league-section">
+      <div class="league-section">
     <div class="league-section-hed">National League Leaders</div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Batting Average</div><table class="leaders-tbl"><tbody><tr>
@@ -546,7 +577,37 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
     <td><span class="rank">10.</span>Hunter Goodman <span class="player-team"></span></td>
     <td>31</td>
   </tr></tbody></table></div>
-      <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Kyle Schwarber <span class="player-team"></span></td>
+    <td>132</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Pete Alonso <span class="player-team"></span></td>
+    <td>126</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Juan Soto <span class="player-team"></span></td>
+    <td>105</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Seiya Suzuki <span class="player-team"></span></td>
+    <td>103</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Christian Yelich <span class="player-team"></span></td>
+    <td>103</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Shohei Ohtani <span class="player-team"></span></td>
+    <td>102</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Geraldo Perdomo <span class="player-team"></span></td>
+    <td>100</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Pete Crow-Armstrong <span class="player-team"></span></td>
+    <td>95</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Manny Machado <span class="player-team"></span></td>
+    <td>95</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Matt Olson <span class="player-team"></span></td>
+    <td>95</td>
+  </tr></tbody></table></div>
     </div>
     <div class="leaders-row">
       <div class="leaders-block"><div class="leaders-hed">Wins</div><table class="leaders-tbl"><tbody><tr>
@@ -644,7 +705,12 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr></tbody></table></div>
     </div>
   </div>
-  </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-hed">Today's Matchups — Friday, October 2, 2026</h2>
+    <div class="loading">No games scheduled.</div>
   </section>
 
   <footer class="paper-footer">
