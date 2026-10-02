@@ -35,327 +35,92 @@
     }
 
     /* ── MASTHEAD ── */
-    .masthead {
-      border-bottom: 4px double var(--rule);
-      padding: 16px 24px 10px;
-      text-align: center;
-    }
-
-    .masthead-meta {
-      display: flex;
-      justify-content: space-between;
-      font-size: 9.5px;
-      color: var(--faint);
-      margin-bottom: 4px;
-      letter-spacing: 0.05em;
-    }
-
-    .masthead-name {
-      font-family: 'UnifrakturMaguntia', cursive;
-      font-size: 72px;
-      line-height: 1;
-      color: var(--ink);
-    }
-
+    .masthead { border-bottom: 4px double var(--rule); padding: 16px 24px 10px; text-align: center; }
+    .masthead-meta { display: flex; justify-content: space-between; font-size: 9.5px; color: var(--faint); margin-bottom: 4px; letter-spacing: 0.05em; }
+    .masthead-name { font-family: 'UnifrakturMaguntia', cursive; font-size: 72px; line-height: 1; color: var(--ink); }
     .masthead-rule { border: none; border-top: 1px solid var(--rule); margin: 6px 0 4px; }
-
-    .masthead-tagline {
-      font-family: 'Playfair Display SC', serif;
-      font-size: 10.5px;
-      letter-spacing: 0.18em;
-      color: var(--faint);
-      margin-bottom: 5px;
-    }
-
-    .masthead-date-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 9.5px;
-      color: var(--faint);
-      letter-spacing: 0.06em;
-      padding: 3px 0;
-      border-top: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-    }
+    .masthead-tagline { font-family: 'Playfair Display SC', serif; font-size: 10.5px; letter-spacing: 0.18em; color: var(--faint); margin-bottom: 5px; }
+    .masthead-date-bar { display: flex; justify-content: space-between; align-items: center; font-size: 9.5px; color: var(--faint); letter-spacing: 0.06em; padding: 3px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
 
     /* ── SECTIONS ── */
     .section { padding: 0 24px 20px; }
     .section + .section { border-top: 3px double var(--rule); }
-
-    .section-hed {
-      font-family: 'Playfair Display SC', serif;
-      font-size: 13px;
-      letter-spacing: 0.2em;
-      text-align: center;
-      padding: 8px 0 6px;
-      border-bottom: 1px solid var(--rule);
-      margin-bottom: 14px;
-    }
-
-    .loading, .error {
-      text-align: center;
-      padding: 30px;
-      font-style: italic;
-      color: var(--faint);
-    }
+    .section-hed { font-family: 'Playfair Display SC', serif; font-size: 13px; letter-spacing: 0.2em; text-align: center; padding: 8px 0 6px; border-bottom: 1px solid var(--rule); margin-bottom: 14px; }
+    .loading, .error { text-align: center; padding: 30px; font-style: italic; color: var(--faint); }
     .error { color: #8b2020; }
 
-    /* ── GAMES LAYOUT ── */
-    /* Featured game spans full width; others in a grid below */
+    /* ── BOX SCORE GRID ── */
+    /* Featured (Giants) spans full width; others 2-per-row */
     .scores-layout { display: flex; flex-direction: column; gap: 16px; }
+    .other-games-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
-    .games-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
-      gap: 12px;
-    }
-
-    /* ── CLASSIC FULL BOX SCORE (featured game) ── */
-    .box-full {
-      border: 2px solid var(--rule);
-    }
+    /* ── BOX SCORE CARD ── */
+    .box-full { border: 1px solid var(--rule); }
+    .box-full.featured { border-width: 2px; }
 
     .box-header {
-      background: var(--ink);
-      color: var(--paper);
-      font-family: 'Playfair Display SC', serif;
-      font-size: 11px;
-      letter-spacing: 0.1em;
-      padding: 4px 10px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    /* Two-column batting layout side by side */
-    .batting-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .batting-col { }
-    .batting-col + .batting-col { border-left: 1px solid var(--rule); }
-
-    .team-label {
-      font-family: 'Playfair Display SC', serif;
-      font-size: 9.5px;
-      letter-spacing: 0.12em;
-      padding: 3px 6px;
-      background: var(--paper-dark);
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .batting-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 11px;
-    }
-
-    .batting-table th {
-      font-family: 'Playfair Display SC', serif;
-      font-weight: 400;
-      font-size: 8.5px;
-      letter-spacing: 0.1em;
-      padding: 1px 4px;
-      text-align: right;
-      color: var(--faint);
-      border-bottom: 1px solid var(--faint2);
-    }
-
-    .batting-table th:first-child { text-align: left; }
-
-    .batting-table td {
-      padding: 1px 4px;
-      text-align: right;
-      border-bottom: 1px dotted #d8cfbc;
-    }
-
-    .batting-table td:first-child {
-      text-align: left;
-      white-space: nowrap;
-      overflow: hidden;
-      max-width: 160px;
-    }
-
-    .batting-table tr.totals-row td {
-      border-top: 1px solid var(--rule);
-      border-bottom: none;
-      font-weight: 700;
-      background: var(--paper-dark);
-    }
-
-    .batting-table tr.totals-row td:first-child { font-size: 9px; letter-spacing: 0.05em; }
-
-    .pos-abbr {
-      font-size: 9px;
-      color: var(--faint);
-      margin-right: 2px;
-    }
-
-    /* ── CLASSIC LINESCORE (full box) ── */
-    .linescore-section {
-      padding: 6px 10px;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .linescore-tbl {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 11.5px;
-    }
-
-    .linescore-tbl th {
-      font-family: 'Playfair Display SC', serif;
-      font-weight: 400;
-      font-size: 9px;
-      letter-spacing: 0.08em;
-      color: var(--faint);
-      text-align: center;
-      padding: 0 3px;
-      border-bottom: 1px solid var(--faint2);
-    }
-
-    .linescore-tbl th:first-child { text-align: left; width: 120px; }
-
-    .linescore-tbl td { text-align: center; padding: 2px 3px; }
-    .linescore-tbl td:first-child { text-align: left; font-weight: 700; }
-    .linescore-tbl td.sep { border-left: 1px solid var(--rule); font-weight: 700; }
-    .linescore-tbl td.x { color: var(--faint); }
-
-    /* ── PITCHING TABLE (full box) ── */
-    .pitching-section {
-      padding: 6px 10px;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .pitching-label {
-      font-family: 'Playfair Display SC', serif;
-      font-size: 9px;
-      letter-spacing: 0.12em;
-      color: var(--faint);
-      margin-bottom: 3px;
-    }
-
-    .pitching-tbl {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 11px;
-    }
-
-    .pitching-tbl th {
-      font-family: 'Playfair Display SC', serif;
-      font-weight: 400;
-      font-size: 8.5px;
-      letter-spacing: 0.1em;
-      color: var(--faint);
-      text-align: right;
-      padding: 0 4px;
-      border-bottom: 1px solid var(--faint2);
-    }
-
-    .pitching-tbl th:first-child { text-align: left; }
-
-    .pitching-tbl td {
-      padding: 1px 4px;
-      text-align: right;
-      border-bottom: 1px dotted #d8cfbc;
-    }
-
-    .pitching-tbl td:first-child { text-align: left; }
-    .pitching-tbl tr:last-child td { border-bottom: none; }
-
-    /* ── GAME NOTES ── */
-    .game-notes {
-      padding: 6px 10px;
-      font-size: 10.5px;
-      line-height: 1.6;
-      color: var(--ink);
-    }
-
-    .game-notes .note-item { display: inline; }
-    .note-label { font-weight: 700; font-size: 9.5px; }
-
-    /* ── CONDENSED GAME CARD (non-featured) ── */
-    .game-card { border: 1px solid var(--rule); }
-
-    .gc-header {
-      background: var(--ink);
-      color: var(--paper);
-      font-family: 'Playfair Display SC', serif;
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      padding: 3px 8px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .gc-linescore {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 11px;
-    }
-
-    .gc-linescore th {
-      font-family: 'Playfair Display SC', serif;
-      font-weight: 400;
-      font-size: 8.5px;
-      letter-spacing: 0.08em;
-      color: var(--faint);
-      text-align: center;
-      padding: 1px 3px;
-      border-bottom: 1px solid var(--faint2);
-    }
-
-    .gc-linescore th:first-child { text-align: left; width: 110px; }
-    .gc-linescore td { text-align: center; padding: 2px 3px; }
-    .gc-linescore td:first-child { text-align: left; font-weight: 700; padding-left: 6px; }
-    .gc-linescore td.sep { border-left: 1px solid var(--rule); font-weight: 700; }
-    .gc-linescore tr.winner td:first-child::after { content: ' ✓'; font-weight: 400; color: var(--faint); font-size: 9px; }
-    .gc-linescore tr:last-child { background: var(--paper-dark); }
-    .gc-footer {
-      font-size: 9.5px;
-      padding: 2px 8px;
-      color: var(--faint);
-      border-top: 1px dotted var(--rule);
-      font-style: italic;
-    }
-
-    /* ── STANDINGS ── */
-    .standings-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .div-block { border: 1px solid var(--rule); }
-
-    .div-hed {
       background: var(--ink);
       color: var(--paper);
       font-family: 'Playfair Display SC', serif;
       font-size: 10px;
       letter-spacing: 0.1em;
       padding: 3px 8px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
     }
 
-    .standings-tbl {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 11.5px;
-    }
+    /* Two-column batting layout */
+    .batting-columns { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--rule); }
+    .batting-col + .batting-col { border-left: 1px solid var(--rule); }
 
-    .standings-tbl th {
+    .team-label {
       font-family: 'Playfair Display SC', serif;
-      font-weight: 400;
-      font-size: 8.5px;
+      font-size: 9px;
       letter-spacing: 0.1em;
-      padding: 2px 6px;
+      padding: 2px 5px;
+      background: var(--paper-dark);
       border-bottom: 1px solid var(--rule);
-      color: var(--faint);
     }
 
+    .batting-table { width: 100%; border-collapse: collapse; font-size: 10.5px; }
+    .batting-table th { font-family: 'Playfair Display SC', serif; font-weight: 400; font-size: 8px; letter-spacing: 0.08em; padding: 1px 3px; text-align: right; color: var(--faint); border-bottom: 1px solid var(--faint2); }
+    .batting-table th:first-child { text-align: left; }
+    .batting-table td { padding: 1px 3px; text-align: right; border-bottom: 1px dotted #d8cfbc; }
+    .batting-table td:first-child { text-align: left; white-space: nowrap; overflow: hidden; max-width: 145px; }
+    .batting-table tr.totals-row td { border-top: 1px solid var(--rule); border-bottom: none; font-weight: 700; background: var(--paper-dark); }
+    .batting-table tr.totals-row td:first-child { font-size: 8.5px; letter-spacing: 0.05em; }
+    .pos-abbr { font-size: 8.5px; color: var(--faint); margin-right: 2px; }
+
+    /* Linescore */
+    .linescore-section { padding: 4px 8px; border-bottom: 1px solid var(--rule); }
+    .linescore-tbl { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .linescore-tbl th { font-family: 'Playfair Display SC', serif; font-weight: 400; font-size: 8px; letter-spacing: 0.06em; color: var(--faint); text-align: center; padding: 0 2px; border-bottom: 1px solid var(--faint2); }
+    .linescore-tbl th:first-child { text-align: left; width: 100px; }
+    .linescore-tbl td { text-align: center; padding: 1px 2px; }
+    .linescore-tbl td:first-child { text-align: left; font-weight: 700; }
+    .linescore-tbl td.sep { border-left: 1px solid var(--rule); font-weight: 700; }
+    .linescore-tbl td.x { color: var(--faint); }
+
+    /* Pitching */
+    .pitching-section { padding: 4px 8px; border-bottom: 1px solid var(--rule); }
+    .pitching-label { font-family: 'Playfair Display SC', serif; font-size: 8.5px; letter-spacing: 0.1em; color: var(--faint); margin-bottom: 2px; }
+    .pitching-tbl { width: 100%; border-collapse: collapse; font-size: 10.5px; }
+    .pitching-tbl th { font-family: 'Playfair Display SC', serif; font-weight: 400; font-size: 8px; letter-spacing: 0.08em; color: var(--faint); text-align: right; padding: 0 3px; border-bottom: 1px solid var(--faint2); }
+    .pitching-tbl th:first-child { text-align: left; }
+    .pitching-tbl td { padding: 1px 3px; text-align: right; border-bottom: 1px dotted #d8cfbc; }
+    .pitching-tbl td:first-child { text-align: left; }
+    .pitching-tbl tr:last-child td { border-bottom: none; }
+
+    /* Game notes */
+    .game-notes { padding: 4px 8px; font-size: 10px; line-height: 1.55; }
+    .note-label { font-weight: 700; font-size: 9px; }
+
+    /* ── STANDINGS ── */
+    .standings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .div-block { border: 1px solid var(--rule); }
+    .div-hed { background: var(--ink); color: var(--paper); font-family: 'Playfair Display SC', serif; font-size: 10px; letter-spacing: 0.1em; padding: 3px 8px; text-align: center; }
+    .standings-tbl { width: 100%; border-collapse: collapse; font-size: 11.5px; }
+    .standings-tbl th { font-family: 'Playfair Display SC', serif; font-weight: 400; font-size: 8.5px; letter-spacing: 0.1em; padding: 2px 6px; border-bottom: 1px solid var(--rule); color: var(--faint); }
     .standings-tbl th:first-child { text-align: left; }
     .standings-tbl th:not(:first-child) { text-align: right; }
     .standings-tbl td { padding: 2px 6px; border-bottom: 1px dotted #d4c9b0; }
@@ -365,44 +130,54 @@
     .standings-tbl tr:last-child td { border-bottom: none; }
 
     /* ── LEADERS ── */
-    .leaders-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .league-leaders-layout { display: flex; flex-direction: column; gap: 14px; }
 
-    .leaders-block { border: 1px solid var(--rule); }
+    .league-section { border: 1px solid var(--rule); }
 
-    .leaders-hed {
+    .league-section-hed {
       background: var(--ink);
       color: var(--paper);
       font-family: 'Playfair Display SC', serif;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      padding: 3px 8px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      padding: 4px 10px;
       text-align: center;
     }
 
-    .leaders-tbl { width: 100%; border-collapse: collapse; font-size: 11.5px; }
-    .leaders-tbl td { padding: 3px 8px; border-bottom: 1px dotted #d4c9b0; }
-    .leaders-tbl td:last-child { text-align: right; font-weight: 700; }
-    .leaders-tbl tr:first-child td { font-size: 12.5px; font-weight: 700; }
+    .leaders-row { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .leaders-row + .leaders-row { border-top: 1px solid var(--rule); }
+
+    .leaders-block { }
+    .leaders-block + .leaders-block { border-left: 1px solid var(--rule); }
+
+    .leaders-hed {
+      font-family: 'Playfair Display SC', serif;
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      padding: 3px 8px;
+      background: var(--paper-dark);
+      border-bottom: 1px solid var(--faint2);
+      color: var(--ink);
+    }
+
+    .leaders-tbl { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .leaders-tbl td { padding: 2px 8px; border-bottom: 1px dotted #d4c9b0; }
+    .leaders-tbl td:last-child { text-align: right; font-weight: 700; white-space: nowrap; }
     .leaders-tbl tr:last-child td { border-bottom: none; }
-    .rank { font-family: 'Playfair Display SC', serif; font-size: 9.5px; color: var(--faint); margin-right: 4px; }
-    .player-team { font-size: 9.5px; color: var(--faint); font-style: italic; }
+    .rank { font-family: 'Playfair Display SC', serif; font-size: 8.5px; color: var(--faint); margin-right: 3px; }
+    .player-team { font-size: 9px; color: var(--faint); font-style: italic; }
 
     /* ── FOOTER ── */
-    .paper-footer {
-      border-top: 3px double var(--rule);
-      text-align: center;
-      font-size: 9px;
-      color: var(--faint);
-      padding: 8px;
-      font-style: italic;
-      letter-spacing: 0.05em;
-    }
+    .paper-footer { border-top: 3px double var(--rule); text-align: center; font-size: 9px; color: var(--faint); padding: 8px; font-style: italic; letter-spacing: 0.05em; }
 
     @media (max-width: 700px) {
       .masthead-name { font-size: 48px; }
-      .standings-grid, .leaders-grid { grid-template-columns: 1fr 1fr; }
+      .standings-grid { grid-template-columns: 1fr 1fr; }
+      .other-games-grid { grid-template-columns: 1fr; }
       .batting-columns { grid-template-columns: 1fr; }
       .batting-col + .batting-col { border-left: none; border-top: 1px solid var(--rule); }
+      .leaders-row { grid-template-columns: 1fr; }
+      .leaders-block + .leaders-block { border-left: none; border-top: 1px solid var(--rule); }
     }
   </style>
 </head>
@@ -426,7 +201,7 @@
     </div>
   </header>
 
-  <section class="section" id="scores-section">
+  <section class="section">
     <h2 class="section-hed" id="scores-hed">Scores &amp; Box Scores</h2>
     <div id="games-container"><div class="loading">Fetching scores from the wire&hellip;</div></div>
   </section>
@@ -441,16 +216,13 @@
     <div id="leaders-container"><div class="loading">Loading leaders&hellip;</div></div>
   </section>
 
-  <footer class="paper-footer" id="paper-footer">
-    Data via MLB Stats API &mdash; San Francisco Edition
-  </footer>
+  <footer class="paper-footer" id="paper-footer">Data via MLB Stats API &mdash; San Francisco Edition</footer>
 
 </article>
 
 <script>
-// ── CONFIG ───────────────────────────────────────────────────────────────────
+// ── CONFIG ────────────────────────────────────────────────────────────────────
 
-// URL param ?date=YYYY-MM-DD overrides default (yesterday in PT)
 function getTargetDate() {
   const params = new URLSearchParams(window.location.search);
   if (params.get('date')) return params.get('date');
@@ -463,39 +235,35 @@ const DATE = getTargetDate();
 const MLB = 'https://statsapi.mlb.com/api/v1';
 const FEATURED_TEAM = 137; // San Francisco Giants
 
-// ── DATES ────────────────────────────────────────────────────────────────────
+// ── DATE HELPERS ──────────────────────────────────────────────────────────────
+
+const DAYS   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 function formatDisplayDate(dateStr) {
-  // dateStr = "YYYY-MM-DD"
   const [y, m, d] = dateStr.split('-').map(Number);
-  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months = ['January','February','March','April','May','June',
-                  'July','August','September','October','November','December'];
   const dt = new Date(y, m - 1, d);
-  return `${days[dt.getDay()]}, ${months[m-1]} ${d}, ${y}`;
+  return `${DAYS[dt.getDay()]}, ${MONTHS[m-1]} ${d}, ${y}`;
 }
 
 function addDays(dateStr, n) {
   const [y, m, d] = dateStr.split('-').map(Number);
-  const dt = new Date(y, m - 1, d + n);
-  return dt.toISOString().split('T')[0];
+  return new Date(y, m - 1, d + n).toISOString().split('T')[0];
 }
 
 function setupMasthead() {
   const gameDate = formatDisplayDate(DATE);
-  const pubDateStr = addDays(DATE, 1);
-  const pubDate = formatDisplayDate(pubDateStr);
-
+  const pubDate  = formatDisplayDate(addDays(DATE, 1));
   document.title = `The Baseball Gazette — ${gameDate}`;
   document.getElementById('pub-date-left').textContent = pubDate.toUpperCase();
   document.getElementById('scores-date-right').textContent = `SCORES FROM ${gameDate.toUpperCase()}`;
-  document.getElementById('scores-hed').textContent = `${formatDisplayDate(DATE).split(',')[0]}'s Scores & Box Scores`;
+  document.getElementById('scores-hed').textContent = `${DAYS[new Date(...DATE.split('-').map((v,i)=>i===1?v-1:+v)).getDay()]}'s Scores & Box Scores`;
   document.getElementById('standings-hed').textContent = `Standings — Through ${gameDate}`;
   document.getElementById('paper-footer').textContent =
     `Data via MLB Stats API — Printed for the morning of ${pubDate} — San Francisco Edition`;
 }
 
-// ── UTILITIES ────────────────────────────────────────────────────────────────
+// ── FETCH ─────────────────────────────────────────────────────────────────────
 
 async function fetchJSON(url) {
   const r = await fetch(url);
@@ -503,10 +271,7 @@ async function fetchJSON(url) {
   return r.json();
 }
 
-function isFeatured(game) {
-  const t = game.teams;
-  return t.away.team.id === FEATURED_TEAM || t.home.team.id === FEATURED_TEAM;
-}
+// ── SHARED BOX SCORE HELPERS ──────────────────────────────────────────────────
 
 function teamAbbr(name) {
   const map = {
@@ -530,19 +295,162 @@ function teamAbbr(name) {
   return map[name] || name;
 }
 
-function winPct(w, l) {
-  const t = w + l;
-  if (!t) return '.000';
-  return '.' + String(Math.round((w/t)*1000)).padStart(3,'0');
+function shortName(fullName) {
+  const [first, ...rest] = (fullName || '?').split(' ');
+  const last = rest.join(' ');
+  return last ? `${last}, ${first[0]}.` : fullName;
 }
 
-function formatAvg(v) {
-  const n = parseFloat(v);
-  if (isNaN(n)) return v;
-  return '.' + String(Math.round(n*1000)).padStart(3,'0');
+function batterRows(teamBs) {
+  const batters = teamBs.batters || [];
+  const players = teamBs.players || {};
+  let totAb=0, totR=0, totH=0, totBi=0;
+  let html = '';
+  for (const id of batters) {
+    const p = players[`ID${id}`];
+    if (!p) continue;
+    const s = p.stats?.batting || {};
+    const pos   = p.position?.abbreviation || '';
+    const isSub = (parseInt(p.battingOrder || '0') % 100) !== 0;
+    const ab = s.atBats??0, r = s.runs??0, h = s.hits??0, bi = s.rbi??0;
+    totAb+=ab; totR+=r; totH+=h; totBi+=bi;
+    html += `<tr>
+      <td><span class="pos-abbr">${pos}</span>${isSub ? '&thinsp;' : ''}${shortName(p.person?.fullName)}</td>
+      <td>${ab}</td><td>${r}</td><td>${h}</td><td>${bi}</td>
+    </tr>`;
+  }
+  html += `<tr class="totals-row"><td>Totals</td><td>${totAb}</td><td>${totR}</td><td>${totH}</td><td>${totBi}</td></tr>`;
+  return html;
 }
 
-// ── SCORES ───────────────────────────────────────────────────────────────────
+function pitcherRows(teamBs, decisions) {
+  const pitchers = teamBs.pitchers || [];
+  const players  = teamBs.players  || {};
+  const wId = decisions?.winner?.id, lId = decisions?.loser?.id, sId = decisions?.save?.id;
+  return pitchers.map(id => {
+    const p = players[`ID${id}`];
+    if (!p) return '';
+    const s = p.stats?.pitching || {};
+    let name = shortName(p.person?.fullName);
+    if (id === wId) name += ' W';
+    if (id === lId) name += ' L';
+    if (id === sId) name += ' S';
+    return `<tr>
+      <td>${name}</td>
+      <td>${s.inningsPitched??'0.0'}</td><td>${s.hits??0}</td><td>${s.runs??0}</td>
+      <td>${s.earnedRuns??0}</td><td>${s.baseOnBalls??0}</td><td>${s.strikeOuts??0}</td>
+    </tr>`;
+  }).join('');
+}
+
+function buildBoxScore(game, featured) {
+  const t    = game.teams;
+  const away = t.away, home = t.home;
+  const bs   = game.boxscore || {};
+  const ls   = game.linescore || {};
+  const innings = ls.innings || [];
+  const status  = game.status?.detailedState || '';
+  const isOver  = status.startsWith('Final');
+  const awayRuns = away.score ?? 0, homeRuns = home.score ?? 0;
+  const awayWon  = isOver && awayRuns > homeRuns;
+  const homeWon  = isOver && homeRuns > awayRuns;
+  const numInn   = Math.max(9, innings.length);
+  const venue    = game.venue?.name || '';
+
+  const awayBs = bs.teams?.away || {};
+  const homeBs = bs.teams?.home || {};
+
+  // Linescore headers & cells
+  let innHdr = '';
+  for (let i = 1; i <= numInn; i++) innHdr += `<th>${i}</th>`;
+
+  function innCells(key) {
+    let out = '';
+    for (let i = 0; i < numInn; i++) {
+      const inn = innings[i];
+      let v = inn ? (inn[key]?.runs ?? '·') : (key === 'home' && isOver && homeWon ? 'x' : '·');
+      out += `<td class="${v==='x'?'x':''}">${v}</td>`;
+    }
+    return out;
+  }
+
+  const awayH = ls.teams?.away?.hits ?? '–';
+  const homeH = ls.teams?.home?.hits ?? '–';
+  const awayE = ls.teams?.away?.errors ?? '–';
+  const homeE = ls.teams?.home?.errors ?? '–';
+
+  // Game notes
+  const info = bs.info || [];
+  const noteLines = info
+    .filter(n => n.label && n.value && !['T','A'].includes(n.label))
+    .map(n => `<span class="note-label">${n.label}—</span>${n.value}`);
+  const tEntry = info.find(n => n.label==='T'), aEntry = info.find(n => n.label==='A');
+  if (tEntry || aEntry) {
+    const parts = [];
+    if (tEntry) parts.push(`T—${tEntry.value}`);
+    if (aEntry) parts.push(`A—${Number(aEntry.value.replace(/,/g,'')).toLocaleString()}`);
+    noteLines.push(parts.join('. '));
+  }
+  const notes = noteLines.join(' ');
+
+  const div = document.createElement('div');
+  div.className = featured ? 'box-full featured' : 'box-full';
+  div.innerHTML = `
+    <div class="box-header">
+      <span>${featured?'★ ':''}${away.team.name} at ${home.team.name} — ${venue}</span>
+      <span>${isOver?'Final':status}${numInn>9?` (${numInn} inn.)`:''}${featured?' ★':''}</span>
+    </div>
+    <div class="batting-columns">
+      <div class="batting-col">
+        <div class="team-label">${away.team.name.toUpperCase()}</div>
+        <table class="batting-table">
+          <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+          <tbody>${batterRows(awayBs)}</tbody>
+        </table>
+      </div>
+      <div class="batting-col">
+        <div class="team-label">${home.team.name.toUpperCase()}</div>
+        <table class="batting-table">
+          <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+          <tbody>${batterRows(homeBs)}</tbody>
+        </table>
+      </div>
+    </div>
+    <div class="linescore-section">
+      <table class="linescore-tbl">
+        <thead><tr><th></th>${innHdr}<th class="sep">R</th><th>H</th><th>E</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>${teamAbbr(away.team.name)}${awayWon?' ✓':''}</td>
+            ${innCells('away')}
+            <td class="sep">${awayRuns}</td><td>${awayH}</td><td>${awayE}</td>
+          </tr>
+          <tr>
+            <td>${teamAbbr(home.team.name)}${homeWon?' ✓':''}</td>
+            ${innCells('home')}
+            <td class="sep">${homeRuns}</td><td>${homeH}</td><td>${homeE}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pitching-section">
+      <div class="pitching-label">${away.team.name.toUpperCase()}</div>
+      <table class="pitching-tbl">
+        <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+        <tbody>${pitcherRows(awayBs, game.decisions)}</tbody>
+      </table>
+      <div class="pitching-label" style="margin-top:5px">${home.team.name.toUpperCase()}</div>
+      <table class="pitching-tbl">
+        <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+        <tbody>${pitcherRows(homeBs, game.decisions)}</tbody>
+      </table>
+    </div>
+    ${notes ? `<div class="game-notes">${notes}</div>` : ''}
+  `;
+  return div;
+}
+
+// ── SCORES ────────────────────────────────────────────────────────────────────
 
 async function loadScores() {
   const container = document.getElementById('games-container');
@@ -550,35 +458,38 @@ async function loadScores() {
     const data = await fetchJSON(
       `${MLB}/schedule?sportId=1&date=${DATE}&hydrate=linescore,boxscore,decisions`
     );
-
     const dates = data.dates || [];
-    if (!dates.length || !dates[0].games.length) {
+    if (!dates.length || !dates[0].games?.length) {
       container.innerHTML = '<div class="loading">No games scheduled for this date.</div>';
       return;
     }
 
-    const games = dates[0].games;
-    games.sort((a, b) => (isFeatured(a) ? -1 : isFeatured(b) ? 1 : a.gamePk - b.gamePk));
+    const games = [...dates[0].games].sort((a, b) => {
+      const af = a.teams.away.team.id === FEATURED_TEAM || a.teams.home.team.id === FEATURED_TEAM;
+      const bf = b.teams.away.team.id === FEATURED_TEAM || b.teams.home.team.id === FEATURED_TEAM;
+      return (af ? -1 : bf ? 1 : a.gamePk - b.gamePk);
+    });
 
     const layout = document.createElement('div');
     layout.className = 'scores-layout';
 
-    let first = true;
-    const othersGrid = document.createElement('div');
-    othersGrid.className = 'games-grid';
+    let firstDone = false;
+    const grid = document.createElement('div');
+    grid.className = 'other-games-grid';
 
     for (const game of games) {
-      if (first && isFeatured(game)) {
-        layout.appendChild(buildFullBoxScore(game));
-        first = false;
+      const featured = !firstDone &&
+        (game.teams.away.team.id === FEATURED_TEAM || game.teams.home.team.id === FEATURED_TEAM);
+      if (featured) {
+        layout.appendChild(buildBoxScore(game, true));
+        firstDone = true;
       } else {
-        othersGrid.appendChild(buildCondensedCard(game));
-        first = false;
+        grid.appendChild(buildBoxScore(game, false));
+        firstDone = true;
       }
     }
 
-    if (othersGrid.children.length) layout.appendChild(othersGrid);
-
+    if (grid.children.length) layout.appendChild(grid);
     container.innerHTML = '';
     container.appendChild(layout);
   } catch(e) {
@@ -586,317 +497,15 @@ async function loadScores() {
   }
 }
 
-// ── FULL CLASSIC BOX SCORE ───────────────────────────────────────────────────
+// ── STANDINGS ─────────────────────────────────────────────────────────────────
 
-function buildFullBoxScore(game) {
-  const t = game.teams;
-  const away = t.away;
-  const home = t.home;
-  const bs = game.boxscore || {};
-  const ls = game.linescore || {};
-  const innings = ls.innings || [];
-  const status = game.status?.detailedState || '';
-  const isOver = status.startsWith('Final');
+const DIVISION_NAMES = {201:'AL East',202:'AL Central',200:'AL West',204:'NL East',205:'NL Central',203:'NL West'};
+const DIVISION_ORDER = [201,202,200,204,205,203];
 
-  const awayRuns = away.score ?? 0;
-  const homeRuns = home.score ?? 0;
-  const awayWon = isOver && awayRuns > homeRuns;
-  const homeWon = isOver && homeRuns > awayRuns;
-
-  const venue = game.venue?.name || '';
-  const numInnings = Math.max(9, innings.length);
-
-  // --- BATTING DATA ---
-  function getBatters(teamKey) {
-    const teamBs = bs.teams?.[teamKey] || {};
-    const batters = teamBs.batters || [];
-    const players = teamBs.players || {};
-    return batters.map(id => {
-      const p = players[`ID${id}`];
-      if (!p) return null;
-      const s = p.stats?.batting || {};
-      const pos = p.position?.abbreviation || '';
-      const order = parseInt(p.battingOrder || '0');
-      const isSub = order % 100 !== 0;
-      const name = p.person?.fullName || '?';
-      // Shorten name: Last, F. format
-      const [first, ...rest] = name.split(' ');
-      const lastName = rest.join(' ');
-      const display = lastName ? `${lastName}, ${first[0]}.` : name;
-      return {
-        display: (isSub ? '  ' : '') + display,
-        pos,
-        ab: s.atBats ?? 0,
-        r:  s.runs ?? 0,
-        h:  s.hits ?? 0,
-        bi: s.rbi ?? 0,
-        bb: s.baseOnBalls ?? 0,
-        so: s.strikeOuts ?? 0,
-      };
-    }).filter(Boolean);
-  }
-
-  function batterRows(batters) {
-    let totAb=0, totR=0, totH=0, totBi=0;
-    let rows = batters.map(b => {
-      totAb+=b.ab; totR+=b.r; totH+=b.h; totBi+=b.bi;
-      return `<tr>
-        <td><span class="pos-abbr">${b.pos}</span>${b.display}</td>
-        <td>${b.ab}</td><td>${b.r}</td><td>${b.h}</td><td>${b.bi}</td>
-      </tr>`;
-    }).join('');
-    rows += `<tr class="totals-row">
-      <td>Totals</td>
-      <td>${totAb}</td><td>${totR}</td><td>${totH}</td><td>${totBi}</td>
-    </tr>`;
-    return rows;
-  }
-
-  const awayBatters = getBatters('away');
-  const homeBatters = getBatters('home');
-
-  // --- PITCHING DATA ---
-  function getPitchers(teamKey) {
-    const teamBs = bs.teams?.[teamKey] || {};
-    const pitchers = teamBs.pitchers || [];
-    const players = teamBs.players || {};
-    const dec = game.decisions || {};
-    const winnerId = dec.winner?.id;
-    const loserId = dec.loser?.id;
-    const saveId = dec.save?.id;
-    return pitchers.map(id => {
-      const p = players[`ID${id}`];
-      if (!p) return null;
-      const s = p.stats?.pitching || {};
-      const name = p.person?.fullName || '?';
-      const [first, ...rest] = name.split(' ');
-      const lastName = rest.join(' ');
-      let display = lastName ? `${lastName}, ${first[0]}.` : name;
-      if (id === winnerId) display += ` W`;
-      if (id === loserId)  display += ` L`;
-      if (id === saveId)   display += ` S`;
-      return {
-        display,
-        ip: s.inningsPitched ?? '0.0',
-        h:  s.hits ?? 0,
-        r:  s.runs ?? 0,
-        er: s.earnedRuns ?? 0,
-        bb: s.baseOnBalls ?? 0,
-        so: s.strikeOuts ?? 0,
-      };
-    }).filter(Boolean);
-  }
-
-  function pitcherRows(pitchers) {
-    return pitchers.map(p => `<tr>
-      <td>${p.display}</td>
-      <td>${p.ip}</td><td>${p.h}</td><td>${p.r}</td>
-      <td>${p.er}</td><td>${p.bb}</td><td>${p.so}</td>
-    </tr>`).join('');
-  }
-
-  const awayPitchers = getPitchers('away');
-  const homePitchers = getPitchers('home');
-
-  // --- LINESCORE CELLS ---
-  function inningRunCells(teamKey) {
-    let out = '';
-    for (let i = 0; i < numInnings; i++) {
-      const inn = innings[i];
-      let val;
-      if (inn) {
-        val = inn[teamKey]?.runs ?? '·';
-      } else {
-        // Bottom of 9th may not be played
-        val = (teamKey === 'home' && isOver && homeWon) ? 'x' : '·';
-      }
-      out += `<td class="${val === 'x' ? 'x' : ''}">${val}</td>`;
-    }
-    return out;
-  }
-
-  let inningHeaders = '';
-  for (let i = 1; i <= numInnings; i++) inningHeaders += `<th>${i}</th>`;
-
-  const awayH = ls.teams?.away?.hits ?? '–';
-  const homeH = ls.teams?.home?.hits ?? '–';
-  const awayE = ls.teams?.away?.errors ?? '–';
-  const homeE = ls.teams?.home?.errors ?? '–';
-
-  // --- GAME NOTES ---
-  function buildNotes() {
-    const info = bs.info || [];
-    if (!info.length) return '';
-    const lines = info
-      .filter(n => n.label && n.value && !['T','A'].includes(n.label))
-      .map(n => `<span class="note-label">${n.label}—</span>${n.value}`);
-    // Attendance & time
-    const t = info.find(n => n.label === 'T');
-    const a = info.find(n => n.label === 'A');
-    if (t || a) {
-      const parts = [];
-      if (t) parts.push(`T—${t.value}`);
-      if (a) parts.push(`A—${Number(a.value.replace(/,/g,'')).toLocaleString()}`);
-      lines.push(parts.join('. '));
-    }
-    return lines.join(' ');
-  }
-
-  const notes = buildNotes();
-
-  const div = document.createElement('div');
-  div.className = 'box-full';
-  div.innerHTML = `
-    <div class="box-header">
-      <span>★ ${away.team.name} at ${home.team.name} — ${venue}</span>
-      <span>${isOver ? 'Final' : status}${numInnings > 9 ? ` (${numInnings} inn.)` : ''}</span>
-    </div>
-
-    <div class="batting-columns">
-      <div class="batting-col">
-        <div class="team-label">${away.team.name.toUpperCase()}</div>
-        <table class="batting-table">
-          <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-          <tbody>${batterRows(awayBatters)}</tbody>
-        </table>
-      </div>
-      <div class="batting-col">
-        <div class="team-label">${home.team.name.toUpperCase()}</div>
-        <table class="batting-table">
-          <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-          <tbody>${batterRows(homeBatters)}</tbody>
-        </table>
-      </div>
-    </div>
-
-    <div class="linescore-section">
-      <table class="linescore-tbl">
-        <thead>
-          <tr>
-            <th></th>
-            ${inningHeaders}
-            <th class="sep">R</th><th>H</th><th>E</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>${teamAbbr(away.team.name)}${awayWon ? ' ✓' : ''}</td>
-            ${inningRunCells('away')}
-            <td class="sep">${awayRuns}</td><td>${awayH}</td><td>${awayE}</td>
-          </tr>
-          <tr>
-            <td>${teamAbbr(home.team.name)}${homeWon ? ' ✓' : ''}</td>
-            ${inningRunCells('home')}
-            <td class="sep">${homeRuns}</td><td>${homeH}</td><td>${homeE}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="pitching-section">
-      <div class="pitching-label">${away.team.name.toUpperCase()}</div>
-      <table class="pitching-tbl">
-        <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-        <tbody>${pitcherRows(awayPitchers)}</tbody>
-      </table>
-      <div class="pitching-label" style="margin-top:6px">${home.team.name.toUpperCase()}</div>
-      <table class="pitching-tbl">
-        <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-        <tbody>${pitcherRows(homePitchers)}</tbody>
-      </table>
-    </div>
-
-    ${notes ? `<div class="game-notes">${notes}</div>` : ''}
-  `;
-
-  return div;
+function winPct(w, l) {
+  const t = w + l;
+  return t ? '.' + String(Math.round((w/t)*1000)).padStart(3,'0') : '.000';
 }
-
-// ── CONDENSED CARD ───────────────────────────────────────────────────────────
-
-function buildCondensedCard(game) {
-  const t = game.teams;
-  const away = t.away;
-  const home = t.home;
-  const ls = game.linescore || {};
-  const innings = ls.innings || [];
-  const status = game.status?.detailedState || '';
-  const isOver = status.startsWith('Final');
-
-  const awayRuns = away.score ?? 0;
-  const homeRuns = home.score ?? 0;
-  const awayWon = isOver && awayRuns > homeRuns;
-  const homeWon = isOver && homeRuns > awayRuns;
-  const numInnings = Math.max(9, innings.length);
-
-  let inningHeaders = '';
-  for (let i = 1; i <= numInnings; i++) inningHeaders += `<th>${i}</th>`;
-
-  function inningCells(teamKey) {
-    let out = '';
-    for (let i = 0; i < numInnings; i++) {
-      const inn = innings[i];
-      let val = inn ? (inn[teamKey]?.runs ?? '·') : '·';
-      if (!inn && teamKey === 'home' && isOver && homeWon) val = 'x';
-      out += `<td>${val}</td>`;
-    }
-    return out;
-  }
-
-  const awayH = ls.teams?.away?.hits ?? '–';
-  const homeH = ls.teams?.home?.hits ?? '–';
-  const awayE = ls.teams?.away?.errors ?? '–';
-  const homeE = ls.teams?.home?.errors ?? '–';
-
-  const dec = game.decisions || {};
-  let decStr = '';
-  if (dec.winner) {
-    const parts = [];
-    const wn = dec.winner.fullName?.split(' ').pop() || dec.winner.fullName;
-    const ln = dec.loser?.fullName?.split(' ').pop() || dec.loser?.fullName;
-    const sn = dec.save?.fullName?.split(' ').pop() || dec.save?.fullName;
-    if (wn) parts.push(`W: ${wn}`);
-    if (ln) parts.push(`L: ${ln}`);
-    if (sn) parts.push(`S: ${sn}`);
-    decStr = parts.join(' · ');
-  }
-
-  const div = document.createElement('div');
-  div.className = 'game-card';
-  div.innerHTML = `
-    <div class="gc-header">
-      <span>${game.venue?.name || ''}</span>
-      <span>${isOver ? 'Final' : status}${numInnings > 9 ? ` (${numInnings})` : ''}</span>
-    </div>
-    <table class="gc-linescore">
-      <thead>
-        <tr><th></th>${inningHeaders}<th class="sep">R</th><th>H</th><th>E</th></tr>
-      </thead>
-      <tbody>
-        <tr class="${awayWon ? 'winner' : ''}">
-          <td>${teamAbbr(away.team.name)}</td>
-          ${inningCells('away')}
-          <td class="sep">${awayRuns}</td><td>${awayH}</td><td>${awayE}</td>
-        </tr>
-        <tr class="${homeWon ? 'winner' : ''}">
-          <td>${teamAbbr(home.team.name)}</td>
-          ${inningCells('home')}
-          <td class="sep">${homeRuns}</td><td>${homeH}</td><td>${homeE}</td>
-        </tr>
-      </tbody>
-    </table>
-    ${decStr ? `<div class="gc-footer">${decStr}</div>` : ''}
-  `;
-  return div;
-}
-
-// ── STANDINGS ────────────────────────────────────────────────────────────────
-
-const DIVISION_NAMES = {
-  201:'AL East',202:'AL Central',203:'AL West',
-  204:'NL East',205:'NL Central',206:'NL West'
-};
-const DIVISION_ORDER = [201,202,203,204,205,206];
 
 async function loadStandings() {
   const container = document.getElementById('standings-container');
@@ -904,11 +513,8 @@ async function loadStandings() {
     const data = await fetchJSON(
       `${MLB}/standings?leagueId=103,104&season=2025&standingsType=regularSeason&date=${DATE}&hydrate=team`
     );
-
     const divMap = {};
-    for (const rec of (data.records || [])) {
-      divMap[rec.division?.id] = rec.teamRecords || [];
-    }
+    for (const rec of (data.records || [])) divMap[rec.division?.id] = rec.teamRecords || [];
 
     const grid = document.createElement('div');
     grid.className = 'standings-grid';
@@ -916,18 +522,17 @@ async function loadStandings() {
     for (const divId of DIVISION_ORDER) {
       const teams = divMap[divId];
       if (!teams) continue;
-      const block = document.createElement('div');
-      block.className = 'div-block';
       let rows = '';
       teams.forEach((t, i) => {
         const rec = t.leagueRecord;
-        const gb = (!t.gamesBack || t.gamesBack === '-' || t.gamesBack === '0') ? '—' : t.gamesBack;
+        const gb  = (!t.gamesBack || t.gamesBack==='-' || t.gamesBack==='0') ? '—' : t.gamesBack;
         rows += `<tr class="${i===0?'div-leader':''}">
           <td>${teamAbbr(t.team.name)}</td>
-          <td>${rec.wins}</td><td>${rec.losses}</td>
-          <td>${gb}</td><td>${winPct(rec.wins,rec.losses)}</td>
+          <td>${rec.wins}</td><td>${rec.losses}</td><td>${gb}</td><td>${winPct(rec.wins,rec.losses)}</td>
         </tr>`;
       });
+      const block = document.createElement('div');
+      block.className = 'div-block';
       block.innerHTML = `
         <div class="div-hed">${DIVISION_NAMES[divId]}</div>
         <table class="standings-tbl">
@@ -944,48 +549,75 @@ async function loadStandings() {
   }
 }
 
-// ── LEADERS ──────────────────────────────────────────────────────────────────
+// ── LEADERS ───────────────────────────────────────────────────────────────────
+
+function formatAvg(v) {
+  const n = parseFloat(v);
+  return isNaN(n) ? v : '.' + String(Math.round(n*1000)).padStart(3,'0');
+}
+
+function buildLeadersBlock(title, leaders, fmt) {
+  const ranks = ['1.','2.','3.','4.','5.','6.','7.','8.','9.','10.'];
+  const rows = leaders.slice(0,10).map((l,i) => `<tr>
+    <td><span class="rank">${ranks[i]}</span>${l.person?.fullName||'—'} <span class="player-team">${l.team?.abbreviation||''}</span></td>
+    <td>${fmt(l.value)}</td>
+  </tr>`).join('');
+  return `<div class="leaders-block">
+    <div class="leaders-hed">${title}</div>
+    <table class="leaders-tbl"><tbody>${rows}</tbody></table>
+  </div>`;
+}
+
+function buildLeagueSection(leagueName, hitting, pitching) {
+  function extract(data, cat) {
+    return (data.leagueLeaders||[]).find(c=>c.leaderCategory===cat)?.leaders || [];
+  }
+  const ba   = extract(hitting,  'battingAverage');
+  const hr   = extract(hitting,  'homeRuns');
+  const rbi  = extract(hitting,  'rbi');
+  const wins = extract(pitching, 'wins');
+  const sv   = extract(pitching, 'saves');
+  const so   = extract(pitching, 'strikeouts');
+
+  return `<div class="league-section">
+    <div class="league-section-hed">${leagueName}</div>
+    <div class="leaders-row">
+      ${buildLeadersBlock('Batting Average', ba,   formatAvg)}
+      ${buildLeadersBlock('Home Runs',       hr,   v=>v)}
+      ${buildLeadersBlock('RBI',             rbi,  v=>v)}
+    </div>
+    <div class="leaders-row">
+      ${buildLeadersBlock('Wins',            wins, v=>v)}
+      ${buildLeadersBlock('Saves',           sv,   v=>v)}
+      ${buildLeadersBlock('Strikeouts',      so,   v=>v)}
+    </div>
+  </div>`;
+}
 
 async function loadLeaders() {
   const container = document.getElementById('leaders-container');
   try {
-    const [avg, hr, era] = await Promise.all([
-      fetchJSON(`${MLB}/stats/leaders?leaderCategories=battingAverage&season=2025&limit=5&statGroup=hitting&sportId=1`),
-      fetchJSON(`${MLB}/stats/leaders?leaderCategories=homeRuns&season=2025&limit=5&statGroup=hitting&sportId=1`),
-      fetchJSON(`${MLB}/stats/leaders?leaderCategories=earnedRunAverage&season=2025&limit=5&statGroup=pitching&sportId=1`),
+    const [alHit, nlHit, alPit, nlPit] = await Promise.all([
+      fetchJSON(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,rbi&season=2025&limit=10&statGroup=hitting&sportId=1&leagueId=103`),
+      fetchJSON(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,rbi&season=2025&limit=10&statGroup=hitting&sportId=1&leagueId=104`),
+      fetchJSON(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts&season=2025&limit=10&statGroup=pitching&sportId=1&leagueId=103`),
+      fetchJSON(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts&season=2025&limit=10&statGroup=pitching&sportId=1&leagueId=104`),
     ]);
 
-    const grid = document.createElement('div');
-    grid.className = 'leaders-grid';
-
-    function extractLeaders(data, cat) {
-      return ((data.leagueLeaders||[]).find(c=>c.leaderCategory===cat)?.leaders||[]).slice(0,5);
-    }
-
-    function buildBlock(title, leaders, fmt) {
-      const block = document.createElement('div');
-      block.className = 'leaders-block';
-      const ranks = ['1st','2nd','3rd','4th','5th'];
-      let rows = leaders.map((l, i) => `<tr>
-        <td><span class="rank">${ranks[i]}</span>${l.person?.fullName||'—'} <span class="player-team">${l.team?.abbreviation||''}</span></td>
-        <td>${fmt(l.value)}</td>
-      </tr>`).join('');
-      block.innerHTML = `<div class="leaders-hed">${title}</div><table class="leaders-tbl"><tbody>${rows}</tbody></table>`;
-      return block;
-    }
-
-    grid.appendChild(buildBlock('Batting Average', extractLeaders(avg,'battingAverage'), formatAvg));
-    grid.appendChild(buildBlock('Home Runs',       extractLeaders(hr,'homeRuns'),       v=>v));
-    grid.appendChild(buildBlock('ERA',             extractLeaders(era,'earnedRunAverage'), v=>parseFloat(v).toFixed(2)));
+    const layout = document.createElement('div');
+    layout.className = 'league-leaders-layout';
+    layout.innerHTML =
+      buildLeagueSection('American League Leaders', alHit, alPit) +
+      buildLeagueSection('National League Leaders', nlHit, nlPit);
 
     container.innerHTML = '';
-    container.appendChild(grid);
+    container.appendChild(layout);
   } catch(e) {
     container.innerHTML = `<div class="error">Could not load leaders: ${e.message}</div>`;
   }
 }
 
-// ── INIT ─────────────────────────────────────────────────────────────────────
+// ── INIT ──────────────────────────────────────────────────────────────────────
 setupMasthead();
 Promise.all([loadScores(), loadStandings(), loadLeaders()]);
 </script>
