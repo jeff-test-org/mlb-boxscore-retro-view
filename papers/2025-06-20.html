@@ -21,8 +21,16 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .section{padding:0 24px 20px}.section+.section{border-top:3px double var(--rule)}
 .section-hed{font-family:'Playfair Display SC',serif;font-size:13px;letter-spacing:.2em;text-align:center;padding:8px 0 6px;border-bottom:1px solid var(--rule);margin-bottom:14px}
 .loading{text-align:center;padding:30px;font-style:italic;color:var(--faint)}
-.scores-layout{display:flex;flex-direction:column;gap:16px}
-.other-games-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.matchups-layout{display:flex;flex-direction:column;gap:0}
+.matchup-league-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.18em;color:var(--faint);padding:6px 0 3px;border-bottom:1px solid var(--faint2);margin-bottom:4px}
+.matchup-league{margin-bottom:10px}
+.matchup-line{font-size:11.5px;padding:2px 0;border-bottom:1px dotted #d4c9b0;display:flex;justify-content:space-between;gap:8px}
+.matchup-line:last-child{border-bottom:none}
+.matchup-teams{flex:1}.matchup-time{white-space:nowrap;color:var(--faint);font-size:10.5px}
+.scores-layout{display:flex;flex-direction:column;gap:18px}
+.league-subsection{display:flex;flex-direction:column;gap:12px}
+.league-subsection-hed{font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.2em;color:var(--faint);padding:4px 0 3px;border-top:1px solid var(--faint2);border-bottom:1px solid var(--faint2)}
+.other-games-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .box-full{border:1px solid var(--rule)}.box-full.featured{border-width:2px}
 .box-header{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;display:flex;justify-content:space-between}
 .batting-columns{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}
@@ -34,7 +42,8 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .batting-table td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}
 .batting-table td:first-child{text-align:left;white-space:nowrap;overflow:hidden;max-width:145px}
 .batting-table tr.totals-row td{border-top:1px solid var(--rule);border-bottom:none;font-weight:700;background:var(--paper-dark)}
-.batting-table tr.totals-row td:first-child{font-size:8.5px;letter-spacing:.05em}
+.batting-table tr.totals-row td:first-child{font-size:8.5px}
+.batting-table tr.sub-row td:first-child{padding-left:10px}
 .pos-abbr{font-size:8.5px;color:var(--faint);margin-right:2px}
 .linescore-section{padding:4px 8px;border-bottom:1px solid var(--rule)}
 .linescore-tbl{width:100%;border-collapse:collapse;font-size:11px}
@@ -64,7 +73,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .league-section-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:11px;letter-spacing:.18em;padding:4px 10px;text-align:center}
 .leaders-row{display:grid;grid-template-columns:repeat(3,1fr)}.leaders-row+.leaders-row{border-top:1px solid var(--rule)}
 .leaders-block+.leaders-block{border-left:1px solid var(--rule)}
-.leaders-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.12em;padding:3px 8px;background:var(--paper-dark);border-bottom:1px solid var(--faint2);color:var(--ink)}
+.leaders-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.12em;padding:3px 8px;background:var(--paper-dark);border-bottom:1px solid var(--faint2)}
 .leaders-tbl{width:100%;border-collapse:collapse;font-size:11px}
 .leaders-tbl td{padding:2px 8px;border-bottom:1px dotted #d4c9b0}.leaders-tbl td:last-child{text-align:right;font-weight:700;white-space:nowrap}
 .leaders-tbl tr:last-child td{border-bottom:none}
@@ -93,166 +102,62 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </header>
 
   <section class="section">
+    <h2 class="section-hed">Today's Matchups — Saturday, June 21, 2025</h2>
+    <div class="matchups-layout"><div class="matchup-league"><div class="matchup-league-hed">American League</div><div class="matchup-line">
+        <span class="matchup-teams">Detroit (Gipson-Long) at Tampa Bay (Pepiot 11-12)</span>
+        <span class="matchup-time">9:10 a.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Baltimore (Eflin) at N.Y. Yankees (Schmidt)</span>
+        <span class="matchup-time">10:05 a.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Milwaukee (Quintana) at Minnesota (Woods Richardson)</span>
+        <span class="matchup-time">11:10 a.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Chi. Sox (Civale) at Toronto (Berríos 9-5)</span>
+        <span class="matchup-time">12:07 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Houston (Walter) at L.A. Angels (Soriano 10-11)</span>
+        <span class="matchup-time">6:38 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Cleveland (Ortiz) at Athletics (Spence)</span>
+        <span class="matchup-time">7:05 p.m. PT</span>
+      </div></div><div class="matchup-league"><div class="matchup-league-hed">National League</div><div class="matchup-line">
+        <span class="matchup-teams">Cincinnati (Suter) at St. Louis (Gray 14-8)</span>
+        <span class="matchup-time">11:15 a.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Seattle (Hancock) at Chi. Cubs (Horton)</span>
+        <span class="matchup-time">11:20 a.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Boston (Bello 11-9) at San Francisco (Roupp)</span>
+        <span class="matchup-time">1:05 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Texas (Rocker) at Pittsburgh (Keller 6-15)</span>
+        <span class="matchup-time">1:05 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Atlanta (Holmes) at Miami (Pérez)</span>
+        <span class="matchup-time">1:10 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Kansas City (Cameron) at San Diego (Cease 8-12)</span>
+        <span class="matchup-time">4:15 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">N.Y. Mets (Canning) at Philadelphia (Abel)</span>
+        <span class="matchup-time">4:15 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Arizona (Kelly 12-9) at Colorado (Palmquist)</span>
+        <span class="matchup-time">6:10 p.m. PT</span>
+      </div><div class="matchup-line">
+        <span class="matchup-teams">Washington (Irvin) at L.A. Dodgers (May)</span>
+        <span class="matchup-time">7:10 p.m. PT</span>
+      </div></div></div>
+  </section>
+
+  <section class="section">
     <h2 class="section-hed">Friday's Scores &amp; Box Scores</h2>
     <div class="scores-layout">
+    <div class="league-subsection">
+    <div class="league-subsection-hed">American League</div>
     
-    <div class="box-full featured">
-      <div class="box-header">
-        <span>★ Boston Red Sox at San Francisco Giants — Oracle Park</span>
-        <span>Final</span>
-      </div>
-      <div class="batting-columns">
-        <div class="batting-col">
-          <div class="team-label">BOSTON RED SOX</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-        <div class="batting-col">
-          <div class="team-label">SAN FRANCISCO GIANTS</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="linescore-section">
-        <table class="linescore-tbl">
-          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Boston ✓</td>
-              <td class="">0</td><td class="">0</td><td class="">2</td><td class="">1</td><td class="">2</td><td class="">1</td><td class="">1</td><td class="">0</td><td class="">0</td>
-              <td class="sep">7</td><td>11</td><td>1</td>
-            </tr>
-            <tr>
-              <td>San Francisco</td>
-              <td class="">1</td><td class="">2</td><td class="">0</td><td class="">1</td><td class="">1</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td>
-              <td class="sep">5</td><td>7</td><td>1</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="pitching-section">
-        <div class="pitching-label">BOSTON RED SOX</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">SAN FRANCISCO GIANTS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      
-    </div>
     <div class="other-games-grid">
-    <div class="box-full">
-      <div class="box-header">
-        <span>Kansas City Royals at San Diego Padres — Petco Park</span>
-        <span>Final</span>
-      </div>
-      <div class="batting-columns">
-        <div class="batting-col">
-          <div class="team-label">KANSAS CITY ROYALS</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-        <div class="batting-col">
-          <div class="team-label">SAN DIEGO PADRES</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="linescore-section">
-        <table class="linescore-tbl">
-          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Kansas City ✓</td>
-              <td class="">1</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">3</td><td class="">0</td><td class="">0</td><td class="">2</td><td class="">0</td>
-              <td class="sep">6</td><td>11</td><td>0</td>
-            </tr>
-            <tr>
-              <td>San Diego</td>
-              <td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">1</td><td class="">2</td><td class="">0</td><td class="">1</td>
-              <td class="sep">5</td><td>12</td><td>0</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="pitching-section">
-        <div class="pitching-label">KANSAS CITY ROYALS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">SAN DIEGO PADRES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      
-    </div>
-    <div class="box-full">
-      <div class="box-header">
-        <span>Washington Nationals at Los Angeles Dodgers — Dodger Stadium</span>
-        <span>Final</span>
-      </div>
-      <div class="batting-columns">
-        <div class="batting-col">
-          <div class="team-label">WASHINGTON NATIONALS</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-        <div class="batting-col">
-          <div class="team-label">LOS ANGELES DODGERS</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="linescore-section">
-        <table class="linescore-tbl">
-          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Washington</td>
-              <td class="">1</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">2</td><td class="">0</td><td class="">1</td>
-              <td class="sep">5</td><td>9</td><td>1</td>
-            </tr>
-            <tr>
-              <td>L.A. Dodgers ✓</td>
-              <td class="">0</td><td class="">0</td><td class="">3</td><td class="">1</td><td class="">0</td><td class="">2</td><td class="">0</td><td class="">0</td><td class="">·</td>
-              <td class="sep">6</td><td>9</td><td>0</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="pitching-section">
-        <div class="pitching-label">WASHINGTON NATIONALS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">LOS ANGELES DODGERS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      
-    </div>
     <div class="box-full">
       <div class="box-header">
         <span>Houston Astros at Los Angeles Angels — Angel Stadium</span>
@@ -263,14 +168,113 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
           <div class="team-label">HOUSTON ASTROS</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">SS</span>Peña, J.</td>
+      <td>4</td><td>1</td><td>3</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Paredes, I.</td>
+      <td>4</td><td>1</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Altuve, J.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Diaz, Y.</td>
+      <td>5</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Smith, C.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Walker, C.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Meyers, J.</td>
+      <td>4</td><td>0</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Hummel, C.</td>
+      <td>3</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">2B</span>Guillorme, L.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">PH</span>Caratini, V.</td>
+      <td>1</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">2B</span>Whitcomb, S.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Dubón, M.</td>
+      <td>4</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Brown, H.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Dubin, S.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>King, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Abreu, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Hader, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Sousa, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>37</td><td>3</td><td>9</td><td>2</td></tr></tbody>
           </table>
         </div>
         <div class="batting-col">
           <div class="team-label">LOS ANGELES ANGELS</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">SS</span>Neto, Z.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Schanuel, N.</td>
+      <td>5</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Trout, M.</td>
+      <td>2</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Ward, T.</td>
+      <td>5</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>d'Arnaud, T.</td>
+      <td>5</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Adell, J.</td>
+      <td>4</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Wade Jr., L.</td>
+      <td>2</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">PH</span>O'Hoppe, L.</td>
+      <td>1</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">RF</span>Campero, G.</td>
+      <td>1</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Rengifo, L.</td>
+      <td>3</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Moore, C.</td>
+      <td>4</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Kikuchi, Y.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Detmers, R.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Jansen, K.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Strickland, H.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>36</td><td>2</td><td>6</td><td>2</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -295,15 +299,55 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         <div class="pitching-label">HOUSTON ASTROS</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Brown, H.</td>
+      <td>5.0</td><td>2</td><td>1</td>
+      <td>1</td><td>2</td><td>4</td>
+    </tr><tr>
+      <td>Dubin, S.</td>
+      <td>0.1</td><td>1</td><td>0</td>
+      <td>0</td><td>1</td><td>1</td>
+    </tr><tr>
+      <td>King, B.</td>
+      <td>1.2</td><td>1</td><td>1</td>
+      <td>1</td><td>0</td><td>3</td>
+    </tr><tr>
+      <td>Abreu, B.</td>
+      <td>1.0</td><td>2</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr><tr>
+      <td>Hader, J. W</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Sousa, B. S</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr></tbody>
         </table>
         <div class="pitching-label" style="margin-top:5px">LOS ANGELES ANGELS</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Kikuchi, Y.</td>
+      <td>7.0</td><td>6</td><td>2</td>
+      <td>2</td><td>0</td><td>9</td>
+    </tr><tr>
+      <td>Detmers, R.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>2</td><td>1</td>
+    </tr><tr>
+      <td>Jansen, K.</td>
+      <td>1.0</td><td>2</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Strickland, H. L</td>
+      <td>1.0</td><td>1</td><td>1</td>
+      <td>0</td><td>1</td><td>1</td>
+    </tr></tbody>
         </table>
       </div>
-      
+      <div class="game-notes"><span class="note-label">WP—</span>Strickland. <span class="note-label">IBB—</span>Altuve (by Strickland). <span class="note-label">HBP—</span>Neto (by Brown, H); Trout (by Dubin); Rengifo (by Abreu, B). <span class="note-label">Pitches-strikes—</span>Brown, H 87-48; Dubin 17-7; King, B 27-18; Abreu, B 30-18; Hader 9-7; Sousa 10-8; Kikuchi 103-69; Detmers 22-12; Jansen, K 17-12; Strickland 19-12. <span class="note-label">Groundouts-flyouts—</span>Brown, H 6-2; Dubin 0-0; King, B 2-0; Abreu, B 0-0; Hader 0-1; Sousa 1-0; Kikuchi 4-4; Detmers 0-0; Jansen, K 0-2; Strickland 0-1. <span class="note-label">Batters faced—</span>Brown, H 20; Dubin 4; King, B 6; Abreu, B 6; Hader 3; Sousa 3; Kikuchi 26; Detmers 5; Jansen, K 5; Strickland 4. <span class="note-label">Inherited runners-scored—</span>King, B 3-0. <span class="note-label">Umpires—</span>HP: John Libka. 1B: D.J. Reyburn. 2B: Tom Hanahan. 3B: Sean Barber.  <span class="note-label">Weather—</span>71 degrees, Clear. <span class="note-label">Wind—</span>9 mph, Out To CF. <span class="note-label">First pitch—</span>6:38 PM. <span class="note-label">Att—</span>29,580. <span class="note-label">Venue—</span>Angel Stadium. T—3:15.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
@@ -315,14 +359,89 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
           <div class="team-label">CLEVELAND GUARDIANS</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">LF</span>Kwan, S.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Thomas, L.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Ramírez, J.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Fry, D.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">PH</span>Manzardo, K.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Santana, C.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Arias, G.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">PH</span>Schneemann, D.</td>
+      <td>1</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Rodríguez, J.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Martínez, A.</td>
+      <td>3</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Hedges, A.</td>
+      <td>1</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">C</span>Naylor, B.</td>
+      <td>1</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Bibee, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>31</td><td>1</td><td>4</td><td>1</td></tr></tbody>
           </table>
         </div>
         <div class="batting-col">
           <div class="team-label">ATHLETICS</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">RF</span>Butler, L.</td>
+      <td>4</td><td>0</td><td>3</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Wilson, J.</td>
+      <td>4</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Rooker, B.</td>
+      <td>4</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Kurtz, N.</td>
+      <td>4</td><td>1</td><td>1</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Muncy, M.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Soderstrom, T.</td>
+      <td>4</td><td>2</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Urías, L.</td>
+      <td>4</td><td>0</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Wynns, A.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Clarke, D.</td>
+      <td>3</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Springs, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Kelly, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Miller, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>34</td><td>5</td><td>11</td><td>5</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -347,67 +466,31 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         <div class="pitching-label">CLEVELAND GUARDIANS</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Bibee, T. L</td>
+      <td>8.0</td><td>11</td><td>5</td>
+      <td>5</td><td>0</td><td>10</td>
+    </tr></tbody>
         </table>
         <div class="pitching-label" style="margin-top:5px">ATHLETICS</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Springs, J. W</td>
+      <td>7.1</td><td>3</td><td>1</td>
+      <td>1</td><td>1</td><td>6</td>
+    </tr><tr>
+      <td>Kelly, M.</td>
+      <td>0.2</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Miller, M.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>1</td><td>1</td>
+    </tr></tbody>
         </table>
       </div>
-      
-    </div>
-    <div class="box-full">
-      <div class="box-header">
-        <span>Arizona Diamondbacks at Colorado Rockies — Coors Field</span>
-        <span>Final</span>
-      </div>
-      <div class="batting-columns">
-        <div class="batting-col">
-          <div class="team-label">ARIZONA DIAMONDBACKS</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-        <div class="batting-col">
-          <div class="team-label">COLORADO ROCKIES</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="linescore-section">
-        <table class="linescore-tbl">
-          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Arizona ✓</td>
-              <td class="">1</td><td class="">1</td><td class="">0</td><td class="">4</td><td class="">3</td><td class="">2</td><td class="">2</td><td class="">1</td><td class="">0</td>
-              <td class="sep">14</td><td>21</td><td>0</td>
-            </tr>
-            <tr>
-              <td>Colorado</td>
-              <td class="">0</td><td class="">0</td><td class="">1</td><td class="">6</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td>
-              <td class="sep">8</td><td>12</td><td>0</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="pitching-section">
-        <div class="pitching-label">ARIZONA DIAMONDBACKS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">COLORADO ROCKIES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      
+      <div class="game-notes"><span class="note-label">Pitch timer violations—</span>Wynns, A (batter timer). <span class="note-label">Pitches-strikes—</span>Bibee 105-75; Springs 104-69; Kelly, Mi 17-9; Miller, M 18-11. <span class="note-label">Groundouts-flyouts—</span>Bibee 9-5; Springs 3-5; Kelly, Mi 0-1; Miller, M 1-0. <span class="note-label">Batters faced—</span>Bibee 35; Springs 26; Kelly, Mi 3; Miller, M 4. <span class="note-label">Umpires—</span>HP: Tripp Gibson. 1B: Ryan Blakney. 2B: Jacob Metz. 3B: Marvin Hudson.  <span class="note-label">Weather—</span>75 degrees, Clear. <span class="note-label">Wind—</span>14 mph, Out To CF. <span class="note-label">First pitch—</span>7:06 PM. <span class="note-label">Att—</span>8,578. <span class="note-label">Venue—</span>Sutter Health Park. T—2:13.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
@@ -419,14 +502,95 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
           <div class="team-label">DETROIT TIGERS</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">3B</span>Keith, C.</td>
+      <td>5</td><td>1</td><td>1</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Torres, G.</td>
+      <td>2</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">PH</span>Jones, J.</td>
+      <td>1</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Carpenter, K.</td>
+      <td>5</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Greene, R.</td>
+      <td>3</td><td>3</td><td>3</td><td>4</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Torkelson, S.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Dingler, D.</td>
+      <td>3</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Meadows, P.</td>
+      <td>4</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Báez, J.</td>
+      <td>3</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Sweeney, T.</td>
+      <td>4</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Flaherty, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Gage, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Lee, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Hernández, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Hanifee, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>34</td><td>8</td><td>8</td><td>8</td></tr></tbody>
           </table>
         </div>
         <div class="batting-col">
           <div class="team-label">TAMPA BAY RAYS</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">DH</span>Díaz, Y.</td>
+      <td>5</td><td>2</td><td>3</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Lowe, B.</td>
+      <td>5</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Mangum, J.</td>
+      <td>5</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Aranda, J.</td>
+      <td>4</td><td>2</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Mead, C.</td>
+      <td>2</td><td>3</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Lowe, J.</td>
+      <td>4</td><td>3</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Thaiss, M.</td>
+      <td>4</td><td>2</td><td>3</td><td>4</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Walls, T.</td>
+      <td>5</td><td>1</td><td>2</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Misner, K.</td>
+      <td>5</td><td>0</td><td>2</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Baz, S.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Whitley, F.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Orze, E.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>39</td><td>14</td><td>16</td><td>12</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -451,119 +615,47 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         <div class="pitching-label">DETROIT TIGERS</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Flaherty, J. L</td>
+      <td>2.1</td><td>6</td><td>8</td>
+      <td>8</td><td>3</td><td>3</td>
+    </tr><tr>
+      <td>Gage, M.</td>
+      <td>1.2</td><td>2</td><td>0</td>
+      <td>0</td><td>1</td><td>1</td>
+    </tr><tr>
+      <td>Lee, C.</td>
+      <td>1.0</td><td>1</td><td>1</td>
+      <td>1</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Hernández, C.</td>
+      <td>1.0</td><td>3</td><td>2</td>
+      <td>2</td><td>1</td><td>2</td>
+    </tr><tr>
+      <td>Hanifee, B.</td>
+      <td>2.0</td><td>4</td><td>3</td>
+      <td>2</td><td>1</td><td>0</td>
+    </tr></tbody>
         </table>
         <div class="pitching-label" style="margin-top:5px">TAMPA BAY RAYS</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Baz, S. W</td>
+      <td>5.1</td><td>4</td><td>5</td>
+      <td>5</td><td>4</td><td>6</td>
+    </tr><tr>
+      <td>Whitley, F.</td>
+      <td>1.2</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Orze, E.</td>
+      <td>2.0</td><td>3</td><td>3</td>
+      <td>3</td><td>0</td><td>2</td>
+    </tr></tbody>
         </table>
       </div>
-      
-    </div>
-    <div class="box-full">
-      <div class="box-header">
-        <span>Texas Rangers at Pittsburgh Pirates — PNC Park</span>
-        <span>Final</span>
-      </div>
-      <div class="batting-columns">
-        <div class="batting-col">
-          <div class="team-label">TEXAS RANGERS</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-        <div class="batting-col">
-          <div class="team-label">PITTSBURGH PIRATES</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="linescore-section">
-        <table class="linescore-tbl">
-          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Texas ✓</td>
-              <td class="">2</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">1</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">1</td>
-              <td class="sep">6</td><td>13</td><td>0</td>
-            </tr>
-            <tr>
-              <td>Pittsburgh</td>
-              <td class="">0</td><td class="">0</td><td class="">0</td><td class="">2</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td>
-              <td class="sep">2</td><td>9</td><td>1</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="pitching-section">
-        <div class="pitching-label">TEXAS RANGERS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">PITTSBURGH PIRATES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      
-    </div>
-    <div class="box-full">
-      <div class="box-header">
-        <span>Cincinnati Reds at St. Louis Cardinals — Busch Stadium</span>
-        <span>Final</span>
-      </div>
-      <div class="batting-columns">
-        <div class="batting-col">
-          <div class="team-label">CINCINNATI REDS</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-        <div class="batting-col">
-          <div class="team-label">ST. LOUIS CARDINALS</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="linescore-section">
-        <table class="linescore-tbl">
-          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Cincinnati</td>
-              <td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td>
-              <td class="sep">1</td><td>5</td><td>1</td>
-            </tr>
-            <tr>
-              <td>St. Louis ✓</td>
-              <td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">5</td><td class="">0</td><td class="">·</td>
-              <td class="sep">6</td><td>7</td><td>1</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="pitching-section">
-        <div class="pitching-label">CINCINNATI REDS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">ST. LOUIS CARDINALS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      
+      <div class="game-notes"><span class="note-label">WP—</span>Flaherty; Hernández, C. <span class="note-label">HBP—</span>Díaz, Y (by Flaherty). <span class="note-label">Pitch timer violations—</span>Gage (pitcher). <span class="note-label">Pitches-strikes—</span>Flaherty 74-45; Gage 28-15; Lee, C 17-11; Hernández, C 33-20; Hanifee 29-16; Baz 105-60; Whitley 22-13; Orze 34-23. <span class="note-label">Groundouts-flyouts—</span>Flaherty 0-1; Gage 1-0; Lee, C 1-0; Hernández, C 1-0; Hanifee 5-0; Baz 3-4; Whitley 0-2; Orze 1-0. <span class="note-label">Batters faced—</span>Flaherty 17; Gage 8; Lee, C 4; Hernández, C 7; Hanifee 10; Baz 24; Whitley 6; Orze 9. <span class="note-label">Inherited runners-scored—</span>Gage 1-1; Whitley 2-2. <span class="note-label">Umpires—</span>HP: Ramon De Jesus. 1B: Quinn Wolcott. 2B: Edwin Jimenez. 3B: Paul Clemons.  <span class="note-label">Weather—</span>77 degrees, Rain. <span class="note-label">Wind—</span>5 mph, L To R. <span class="note-label">First pitch—</span>7:55 PM. <span class="note-label">Att—</span>10,046. <span class="note-label">Venue—</span>George M. Steinbrenner Field. T—2:58.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
@@ -575,14 +667,113 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
           <div class="team-label">MILWAUKEE BREWERS</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">1B</span>Frelick, S.</td>
+      <td>5</td><td>3</td><td>3</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Chourio, J.</td>
+      <td>3</td><td>4</td><td>2</td><td>3</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Yelich, C.</td>
+      <td>6</td><td>0</td><td>4</td><td>8</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Contreras, W.</td>
+      <td>4</td><td>0</td><td>0</td><td>1</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">C</span>Haase, E.</td>
+      <td>1</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Turang, B.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">RF</span>Cameron, D.</td>
+      <td>1</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Hoskins, R.</td>
+      <td>3</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">2B</span>Monasterio, A.</td>
+      <td>1</td><td>2</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Collins, I.</td>
+      <td>3</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">P</span>Bauers, J.</td>
+      <td>1</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Durbin, C.</td>
+      <td>4</td><td>3</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Ortiz, J.</td>
+      <td>5</td><td>3</td><td>3</td><td>3</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Misiorowski, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Mears, N.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Hall, D.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>41</td><td>17</td><td>19</td><td>17</td></tr></tbody>
           </table>
         </div>
         <div class="batting-col">
           <div class="team-label">MINNESOTA TWINS</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">CF</span>Buxton, B.</td>
+      <td>2</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">P</span>Bride, J.</td>
+      <td>2</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Wallner, M.</td>
+      <td>4</td><td>1</td><td>1</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Castro, W.</td>
+      <td>4</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Correa, C.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">LF</span>Keirsey Jr., D.</td>
+      <td>0</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Jeffers, R.</td>
+      <td>2</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">1B</span>France, T.</td>
+      <td>1</td><td>1</td><td>1</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Lee, B.</td>
+      <td>4</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Bader, H.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Clemens, K.</td>
+      <td>3</td><td>0</td><td>0</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Vázquez, C.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Ryan, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Coulombe, D.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Topa, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Wentz, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Duran, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>32</td><td>6</td><td>5</td><td>6</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -607,15 +798,55 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         <div class="pitching-label">MILWAUKEE BREWERS</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Misiorowski, J. W</td>
+      <td>6.0</td><td>1</td><td>2</td>
+      <td>2</td><td>1</td><td>6</td>
+    </tr><tr>
+      <td>Mears, N.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>1</td><td>1</td>
+    </tr><tr>
+      <td>Hall, D.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Bauers, J.</td>
+      <td>1.0</td><td>4</td><td>4</td>
+      <td>2</td><td>2</td><td>1</td>
+    </tr></tbody>
         </table>
         <div class="pitching-label" style="margin-top:5px">MINNESOTA TWINS</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Ryan, J. L</td>
+      <td>5.1</td><td>3</td><td>3</td>
+      <td>3</td><td>3</td><td>7</td>
+    </tr><tr>
+      <td>Coulombe, D.</td>
+      <td>0.2</td><td>2</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Topa, J.</td>
+      <td>0.1</td><td>4</td><td>5</td>
+      <td>5</td><td>1</td><td>1</td>
+    </tr><tr>
+      <td>Wentz, J.</td>
+      <td>1.1</td><td>5</td><td>4</td>
+      <td>4</td><td>1</td><td>1</td>
+    </tr><tr>
+      <td>Duran, J.</td>
+      <td>0.1</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Bride, J.</td>
+      <td>1.0</td><td>5</td><td>5</td>
+      <td>5</td><td>1</td><td>1</td>
+    </tr></tbody>
         </table>
       </div>
-      
+      <div class="game-notes"><span class="note-label">WP—</span>Wentz. <span class="note-label">Pitch timer violations—</span>Bauers (pitcher). <span class="note-label">Pitches-strikes—</span>Misiorowski 86-60; Mears 12-7; Hall, D 15-9; Bauers 32-15; Ryan 101-66; Coulombe 3-3; Topa 22-13; Wentz 43-25; Duran, J 3-1; Bride 30-17. <span class="note-label">Groundouts-flyouts—</span>Misiorowski 6-2; Mears 0-2; Hall, D 1-1; Bauers 1-2; Ryan 2-1; Coulombe 1-0; Topa 0-0; Wentz 0-2; Duran, J 1-0; Bride 0-1. <span class="note-label">Batters faced—</span>Misiorowski 20; Mears 4; Hall, D 3; Bauers 10; Ryan 20; Coulombe 3; Topa 6; Wentz 10; Duran, J 1; Bride 9. <span class="note-label">Inherited runners-scored—</span>Coulombe 1-1; Wentz 3-3; Duran, J 1-0. <span class="note-label">Umpires—</span>HP: Bill Miller. 1B: Chad Fairchild. 2B: Ben May. 3B: Roberto Ortiz.  <span class="note-label">Weather—</span>85 degrees, Partly Cloudy. <span class="note-label">Wind—</span>11 mph, In From LF. <span class="note-label">First pitch—</span>7:15 PM. <span class="note-label">Att—</span>28,011. <span class="note-label">Venue—</span>Target Field. T—3:04.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
@@ -627,14 +858,104 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
           <div class="team-label">CHICAGO WHITE SOX</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">SS</span>Meidroth, C.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Benintendi, A.</td>
+      <td>5</td><td>1</td><td>2</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Vargas, M.</td>
+      <td>4</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Teel, K.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Robert Jr., L.</td>
+      <td>5</td><td>1</td><td>1</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Sosa, L.</td>
+      <td>3</td><td>2</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Noda, R.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Slater, A.</td>
+      <td>2</td><td>2</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Rojas, J.</td>
+      <td>4</td><td>0</td><td>2</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Taylor, G.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Alexander, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Altavilla, D.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>González, W.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Gilbert, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>35</td><td>7</td><td>9</td><td>7</td></tr></tbody>
           </table>
         </div>
         <div class="batting-col">
           <div class="team-label">TORONTO BLUE JAYS</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">SS</span>Bichette, B.</td>
+      <td>4</td><td>0</td><td>3</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Barger, A.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Guerrero Jr., V.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Springer, G.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Giménez, A.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Clement, E.</td>
+      <td>4</td><td>0</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Lukes, N.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Heineman, T.</td>
+      <td>2</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Clase, J.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Turnbull, S.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Fluharty, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Fisher, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Sandlin, N.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Green, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Little, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Hoffman, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>32</td><td>1</td><td>7</td><td>1</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -659,119 +980,63 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         <div class="pitching-label">CHICAGO WHITE SOX</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Taylor, G.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Alexander, T. W</td>
+      <td>4.0</td><td>4</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr><tr>
+      <td>Altavilla, D.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>González, W.</td>
+      <td>2.0</td><td>1</td><td>1</td>
+      <td>1</td><td>2</td><td>2</td>
+    </tr><tr>
+      <td>Gilbert, T.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr></tbody>
         </table>
         <div class="pitching-label" style="margin-top:5px">TORONTO BLUE JAYS</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Turnbull, S. L</td>
+      <td>2.0</td><td>5</td><td>4</td>
+      <td>4</td><td>2</td><td>2</td>
+    </tr><tr>
+      <td>Fluharty, M.</td>
+      <td>1.0</td><td>2</td><td>3</td>
+      <td>3</td><td>2</td><td>3</td>
+    </tr><tr>
+      <td>Fisher, B.</td>
+      <td>2.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>4</td>
+    </tr><tr>
+      <td>Sandlin, N.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Green, C.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Little, B.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>1</td><td>2</td>
+    </tr><tr>
+      <td>Hoffman, J.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr></tbody>
         </table>
       </div>
-      
-    </div>
-    <div class="box-full">
-      <div class="box-header">
-        <span>Seattle Mariners at Chicago Cubs — Wrigley Field</span>
-        <span>Final</span>
-      </div>
-      <div class="batting-columns">
-        <div class="batting-col">
-          <div class="team-label">SEATTLE MARINERS</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-        <div class="batting-col">
-          <div class="team-label">CHICAGO CUBS</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="linescore-section">
-        <table class="linescore-tbl">
-          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>Seattle ✓</td>
-              <td class="">1</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">2</td><td class="">2</td><td class="">0</td><td class="">3</td>
-              <td class="sep">9</td><td>13</td><td>0</td>
-            </tr>
-            <tr>
-              <td>Chi. Cubs</td>
-              <td class="">3</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td>
-              <td class="sep">4</td><td>9</td><td>0</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="pitching-section">
-        <div class="pitching-label">SEATTLE MARINERS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">CHICAGO CUBS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      
-    </div>
-    <div class="box-full">
-      <div class="box-header">
-        <span>New York Mets at Philadelphia Phillies — Citizens Bank Park</span>
-        <span>Final</span>
-      </div>
-      <div class="batting-columns">
-        <div class="batting-col">
-          <div class="team-label">NEW YORK METS</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-        <div class="batting-col">
-          <div class="team-label">PHILADELPHIA PHILLIES</div>
-          <table class="batting-table">
-            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
-          </table>
-        </div>
-      </div>
-      <div class="linescore-section">
-        <table class="linescore-tbl">
-          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>N.Y. Mets</td>
-              <td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">2</td><td class="">0</td><td class="">0</td><td class="">0</td>
-              <td class="sep">2</td><td>7</td><td>0</td>
-            </tr>
-            <tr>
-              <td>Philadelphia ✓</td>
-              <td class="">0</td><td class="">0</td><td class="">0</td><td class="">2</td><td class="">0</td><td class="">0</td><td class="">6</td><td class="">2</td><td class="">·</td>
-              <td class="sep">10</td><td>13</td><td>0</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="pitching-section">
-        <div class="pitching-label">NEW YORK METS</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-        <div class="pitching-label" style="margin-top:5px">PHILADELPHIA PHILLIES</div>
-        <table class="pitching-tbl">
-          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
-        </table>
-      </div>
-      
+      <div class="game-notes"><span class="note-label">HBP—</span>Teel (by Hoffman, J). <span class="note-label">Pitches-strikes—</span>Taylor, G 13-9; Alexander, T 49-34; Altavilla 13-7; González, W 37-24; Gilbert, T 13-9; Turnbull 45-24; Fluharty 35-18; Fisher 19-16; Sandlin 19-12; Green 19-14; Little, B 17-10; Hoffman, J 14-10. <span class="note-label">Groundouts-flyouts—</span>Taylor, G 2-0; Alexander, T 4-2; Altavilla 2-0; González, W 0-0; Gilbert, T 2-0; Turnbull 1-2; Fluharty 0-0; Fisher 0-1; Sandlin 0-0; Green 1-0; Little, B 1-0; Hoffman, J 1-0. <span class="note-label">Batters faced—</span>Taylor, G 3; Alexander, T 14; Altavilla 4; González, W 9; Gilbert, T 4; Turnbull 12; Fluharty 7; Fisher 6; Sandlin 4; Green 4; Little, B 4; Hoffman, J 4. <span class="note-label">Inherited runners-scored—</span>Fluharty 1-1. <span class="note-label">Umpires—</span>HP: Erich Bacchus. 1B: Stu Scheurwater. 2B: Jordan Baker. 3B: Charlie Ramos.  <span class="note-label">Weather—</span>69 degrees, Cloudy. <span class="note-label">Wind—</span>17 mph, Out To RF. <span class="note-label">First pitch—</span>7:08 PM. <span class="note-label">Att—</span>36,121. <span class="note-label">Venue—</span>Rogers Centre. T—2:35.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
@@ -783,14 +1048,104 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
           <div class="team-label">BALTIMORE ORIOLES</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">DH</span>Holliday, J.</td>
+      <td>5</td><td>1</td><td>3</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Westburg, J.</td>
+      <td>5</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Laureano, R.</td>
+      <td>4</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Urías, R.</td>
+      <td>5</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Cowser, C.</td>
+      <td>3</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Sánchez, G.</td>
+      <td>3</td><td>1</td><td>2</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Mayo, C.</td>
+      <td>3</td><td>0</td><td>2</td><td>1</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">1B</span>O'Hearn, R.</td>
+      <td>1</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Carlson, D.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Vázquez, L.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">SS</span>Henderson, G.</td>
+      <td>1</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Sugano, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Akin, K.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Cano, Y.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Blewett, S.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Bautista, F.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>37</td><td>5</td><td>11</td><td>5</td></tr></tbody>
           </table>
         </div>
         <div class="batting-col">
           <div class="team-label">NEW YORK YANKEES</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">1B</span>Goldschmidt, P.</td>
+      <td>4</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Grisham, T.</td>
+      <td>4</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Judge, A.</td>
+      <td>4</td><td>1</td><td>3</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Chisholm Jr., J.</td>
+      <td>5</td><td>0</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Stanton, G.</td>
+      <td>3</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Domínguez, J.</td>
+      <td>2</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Volpe, A.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Wells, A.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>LeMahieu, D.</td>
+      <td>4</td><td>0</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Fried, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Loáisiga, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Weaver, L.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Hill, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Hamilton, I.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>34</td><td>3</td><td>10</td><td>3</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -815,15 +1170,1522 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         <div class="pitching-label">BALTIMORE ORIOLES</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Sugano, T.</td>
+      <td>3.2</td><td>7</td><td>3</td>
+      <td>3</td><td>3</td><td>4</td>
+    </tr><tr>
+      <td>Akin, K.</td>
+      <td>1.1</td><td>1</td><td>0</td>
+      <td>0</td><td>2</td><td>0</td>
+    </tr><tr>
+      <td>Cano, Y.</td>
+      <td>1.0</td><td>2</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Blewett, S. W</td>
+      <td>2.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr><tr>
+      <td>Bautista, F. S</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr></tbody>
         </table>
         <div class="pitching-label" style="margin-top:5px">NEW YORK YANKEES</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Fried, M.</td>
+      <td>6.0</td><td>7</td><td>3</td>
+      <td>3</td><td>0</td><td>7</td>
+    </tr><tr>
+      <td>Loáisiga, J.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr><tr>
+      <td>Weaver, L. L</td>
+      <td>0.2</td><td>2</td><td>2</td>
+      <td>2</td><td>1</td><td>1</td>
+    </tr><tr>
+      <td>Hill, T.</td>
+      <td>0.1</td><td>2</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Hamilton, I.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr></tbody>
         </table>
       </div>
-      
+      <div class="game-notes"><span class="note-label">IBB—</span>Judge (by Sugano). <span class="note-label">HBP—</span>Laureano (by Fried); Cowser (by Fried). <span class="note-label">Pitch timer violations—</span>Westburg (batter timer). <span class="note-label">Pitches-strikes—</span>Sugano 89-56; Akin 30-18; Cano 24-13; Blewett 19-13; Bautista, F 17-11; Fried 105-67; Loáisiga 14-11; Weaver 24-14; Hill, T 6-5; Hamilton, I 10-7. <span class="note-label">Groundouts-flyouts—</span>Sugano 2-5; Akin 2-0; Cano 1-1; Blewett 2-1; Bautista, F 0-1; Fried 7-2; Loáisiga 1-0; Weaver 0-0; Hill, T 0-0; Hamilton, I 2-0. <span class="note-label">Batters faced—</span>Sugano 21; Akin 5; Cano 5; Blewett 6; Bautista, F 3; Fried 27; Loáisiga 3; Weaver 5; Hill, T 2; Hamilton, I 3. <span class="note-label">Inherited runners-scored—</span>Akin 2-0; Hill, T 2-1. <span class="note-label">Umpires—</span>HP: Adam Hamari. 1B: Andy Fletcher. 2B: Jansen Visconti. 3B: Willie Traynor.  <span class="note-label">Weather—</span>82 degrees, Partly Cloudy. <span class="note-label">Wind—</span>10 mph, Out To LF. <span class="note-label">First pitch—</span>7:10 PM. <span class="note-label">Att—</span>47,034. <span class="note-label">Venue—</span>Yankee Stadium. T—3:12.</div>
+    </div></div>
+  </div>
+    <div class="league-subsection">
+    <div class="league-subsection-hed">National League</div>
+    
+    <div class="box-full featured">
+      <div class="box-header">
+        <span>★ Boston Red Sox at San Francisco Giants — Oracle Park</span>
+        <span>Final</span>
+      </div>
+      <div class="batting-columns">
+        <div class="batting-col">
+          <div class="team-label">BOSTON RED SOX</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">LF</span>Duran, J.</td>
+      <td>5</td><td>1</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Narváez, C.</td>
+      <td>5</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Anthony, R.</td>
+      <td>4</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Toro, A.</td>
+      <td>5</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Abreu, W.</td>
+      <td>4</td><td>1</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Story, T.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Mayer, M.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Rafaela, C.</td>
+      <td>4</td><td>2</td><td>3</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Hamilton, D.</td>
+      <td>4</td><td>1</td><td>2</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Dobbins, H.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Bernardino, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Kelly, Z.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Wilson, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Weissert, G.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Whitlock, G.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Chapman, A.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>39</td><td>7</td><td>11</td><td>6</td></tr></tbody>
+          </table>
+        </div>
+        <div class="batting-col">
+          <div class="team-label">SAN FRANCISCO GIANTS</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">RF</span>Yastrzemski, M.</td>
+      <td>4</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Ramos, H.</td>
+      <td>5</td><td>1</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Devers, R.</td>
+      <td>5</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Flores, W.</td>
+      <td>5</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Hoo Lee, J.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Adames, W.</td>
+      <td>2</td><td>2</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Schmitt, C.</td>
+      <td>3</td><td>1</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Bailey, P.</td>
+      <td>1</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Koss, C.</td>
+      <td>2</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">PH</span>Johnson, D.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">2B</span>Fitzgerald, T.</td>
+      <td>1</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">PH</span>Smith, D.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">2B</span>Wisely, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Birdsong, H.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Hjelle, S.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Miller, E.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Lucchesi, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Walker, R.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Bivens, S.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>32</td><td>5</td><td>7</td><td>2</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="linescore-section">
+        <table class="linescore-tbl">
+          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Boston ✓</td>
+              <td class="">0</td><td class="">0</td><td class="">2</td><td class="">1</td><td class="">2</td><td class="">1</td><td class="">1</td><td class="">0</td><td class="">0</td>
+              <td class="sep">7</td><td>11</td><td>1</td>
+            </tr>
+            <tr>
+              <td>San Francisco</td>
+              <td class="">1</td><td class="">2</td><td class="">0</td><td class="">1</td><td class="">1</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td>
+              <td class="sep">5</td><td>7</td><td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pitching-section">
+        <div class="pitching-label">BOSTON RED SOX</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Dobbins, H.</td>
+      <td>4.0</td><td>4</td><td>5</td>
+      <td>4</td><td>5</td><td>1</td>
+    </tr><tr>
+      <td>Bernardino, B. W</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Kelly, Z.</td>
+      <td>0.2</td><td>0</td><td>0</td>
+      <td>0</td><td>1</td><td>2</td>
+    </tr><tr>
+      <td>Wilson, J.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Weissert, G.</td>
+      <td>0.1</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Whitlock, G.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>2</td><td>2</td>
+    </tr><tr>
+      <td>Chapman, A. S</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr></tbody>
+        </table>
+        <div class="pitching-label" style="margin-top:5px">SAN FRANCISCO GIANTS</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Birdsong, H.</td>
+      <td>4.1</td><td>7</td><td>5</td>
+      <td>4</td><td>1</td><td>4</td>
+    </tr><tr>
+      <td>Hjelle, S. L</td>
+      <td>1.0</td><td>2</td><td>1</td>
+      <td>1</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Miller, E.</td>
+      <td>0.2</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Lucchesi, J.</td>
+      <td>0.1</td><td>2</td><td>1</td>
+      <td>1</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Walker, R.</td>
+      <td>1.2</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr><tr>
+      <td>Bivens, S.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr></tbody>
+        </table>
+      </div>
+      <div class="game-notes"><span class="note-label">WP—</span>Wilson, J. <span class="note-label">Pitch timer violations—</span>Chapman (pitcher). <span class="note-label">Pitches-strikes—</span>Dobbins 75-39; Bernardino 13-10; Kelly, Z 14-8; Wilson, J 14-9; Weissert 4-3; Whitlock 34-20; Chapman 14-10; Birdsong 85-51; Hjelle 19-12; Miller, E 10-5; Lucchesi 8-7; Walker, R 20-15; Bivens 14-9. <span class="note-label">Groundouts-flyouts—</span>Dobbins 5-2; Bernardino 2-0; Kelly, Z 0-0; Wilson, J 0-2; Weissert 1-0; Whitlock 0-1; Chapman 0-0; Birdsong 3-3; Hjelle 3-0; Miller, E 0-0; Lucchesi 0-0; Walker, R 2-1; Bivens 0-1. <span class="note-label">Batters faced—</span>Dobbins 20; Bernardino 3; Kelly, Z 3; Wilson, J 4; Weissert 1; Whitlock 6; Chapman 3; Birdsong 22; Hjelle 5; Miller, E 2; Lucchesi 3; Walker, R 5; Bivens 3. <span class="note-label">Inherited runners-scored—</span>Bernardino 1-1; Wilson, J 1-0; Weissert 1-0; Hjelle 1-0; Miller, E 1-0; Walker, R 1-0. <span class="note-label">Umpires—</span>HP: Doug Eddings. 1B: Gabe Morales. 2B: Mike Muchlinski. 3B: Emil Jimenez.  <span class="note-label">Weather—</span>61 degrees, Partly Cloudy. <span class="note-label">Wind—</span>19 mph, Out To CF. <span class="note-label">First pitch—</span>7:15 PM. <span class="note-label">Att—</span>40,169. <span class="note-label">Venue—</span>Oracle Park. T—2:53.</div>
+    </div>
+    <div class="other-games-grid">
+    <div class="box-full">
+      <div class="box-header">
+        <span>Kansas City Royals at San Diego Padres — Petco Park</span>
+        <span>Final</span>
+      </div>
+      <div class="batting-columns">
+        <div class="batting-col">
+          <div class="team-label">KANSAS CITY ROYALS</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">2B</span>India, J.</td>
+      <td>5</td><td>1</td><td>3</td><td>3</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">2B</span>Tolbert, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Witt Jr., B.</td>
+      <td>5</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Garcia, M.</td>
+      <td>5</td><td>1</td><td>3</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Pasquantino, V.</td>
+      <td>3</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">RF</span>Rave, J.</td>
+      <td>1</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Perez, S.</td>
+      <td>4</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Caglianone, J.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Fermin, F.</td>
+      <td>3</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Loftin, N.</td>
+      <td>2</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">LF</span>Waters, D.</td>
+      <td>1</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Isbel, K.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Lorenzen, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Zerpa, A.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Erceg, L.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Cruz, S.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Estévez, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>36</td><td>6</td><td>11</td><td>6</td></tr></tbody>
+          </table>
+        </div>
+        <div class="batting-col">
+          <div class="team-label">SAN DIEGO PADRES</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">RF</span>Tatis Jr., F.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Arraez, L.</td>
+      <td>5</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Machado, M.</td>
+      <td>5</td><td>2</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Sheets, G.</td>
+      <td>5</td><td>0</td><td>1</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Bogaerts, X.</td>
+      <td>4</td><td>1</td><td>3</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Cronenworth, J.</td>
+      <td>5</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Brooks, T.</td>
+      <td>2</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">DH</span>Iglesias, J.</td>
+      <td>2</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Díaz, E.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">PR</span>Lockridge, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">C</span>Maldonado, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Wade, T.</td>
+      <td>3</td><td>0</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Pivetta, N.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Peralta, W.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Reynolds, S.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Adam, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Morgan, D.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>37</td><td>5</td><td>12</td><td>5</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="linescore-section">
+        <table class="linescore-tbl">
+          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Kansas City ✓</td>
+              <td class="">1</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">3</td><td class="">0</td><td class="">0</td><td class="">2</td><td class="">0</td>
+              <td class="sep">6</td><td>11</td><td>0</td>
+            </tr>
+            <tr>
+              <td>San Diego</td>
+              <td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">1</td><td class="">2</td><td class="">0</td><td class="">1</td>
+              <td class="sep">5</td><td>12</td><td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pitching-section">
+        <div class="pitching-label">KANSAS CITY ROYALS</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Lorenzen, M.</td>
+      <td>5.1</td><td>5</td><td>2</td>
+      <td>2</td><td>3</td><td>4</td>
+    </tr><tr>
+      <td>Zerpa, A.</td>
+      <td>0.2</td><td>2</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Erceg, L. W</td>
+      <td>1.0</td><td>3</td><td>2</td>
+      <td>2</td><td>1</td><td>0</td>
+    </tr><tr>
+      <td>Cruz, S.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>1</td><td>0</td>
+    </tr><tr>
+      <td>Estévez, C. S</td>
+      <td>1.0</td><td>1</td><td>1</td>
+      <td>1</td><td>0</td><td>0</td>
+    </tr></tbody>
+        </table>
+        <div class="pitching-label" style="margin-top:5px">SAN DIEGO PADRES</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Pivetta, N.</td>
+      <td>4.2</td><td>6</td><td>4</td>
+      <td>4</td><td>2</td><td>3</td>
+    </tr><tr>
+      <td>Peralta, W.</td>
+      <td>1.1</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Reynolds, S.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Adam, J. L</td>
+      <td>1.0</td><td>3</td><td>2</td>
+      <td>2</td><td>1</td><td>3</td>
+    </tr><tr>
+      <td>Morgan, D.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr></tbody>
+        </table>
+      </div>
+      <div class="game-notes"><span class="note-label">WP—</span>Lorenzen. <span class="note-label">Pitches-strikes—</span>Lorenzen 89-60; Zerpa 11-9; Erceg 29-18; Cruz 15-8; Estévez 24-16; Pivetta 84-54; Peralta, W 14-10; Reynolds 21-12; Adam 30-21; Morgan, D 12-8. <span class="note-label">Groundouts-flyouts—</span>Lorenzen 3-2; Zerpa 1-0; Erceg 3-0; Cruz 1-0; Estévez 0-0; Pivetta 3-4; Peralta, W 3-0; Reynolds 0-1; Adam 0-0; Morgan, D 0-1. <span class="note-label">Batters faced—</span>Lorenzen 23; Zerpa 3; Erceg 7; Cruz 5; Estévez 4; Pivetta 21; Peralta, W 4; Reynolds 4; Adam 7; Morgan, D 4. <span class="note-label">Inherited runners-scored—</span>Zerpa 1-1; Peralta, W 1-0. <span class="note-label">Umpires—</span>HP: Mark Ripperger. 1B: Nic Lentz. 2B: Vic Carapazza. 3B: Nick Mahrley.  <span class="note-label">Weather—</span>67 degrees, Partly Cloudy. <span class="note-label">Wind—</span>7 mph, L To R. <span class="note-label">First pitch—</span>6:41 PM. <span class="note-label">Att—</span>43,574. <span class="note-label">Venue—</span>Petco Park. T—3:04.</div>
+    </div>
+    <div class="box-full">
+      <div class="box-header">
+        <span>Washington Nationals at Los Angeles Dodgers — Dodger Stadium</span>
+        <span>Final</span>
+      </div>
+      <div class="batting-columns">
+        <div class="batting-col">
+          <div class="team-label">WASHINGTON NATIONALS</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">SS</span>Abrams, C.</td>
+      <td>4</td><td>2</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Rosario, A.</td>
+      <td>4</td><td>1</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Wood, J.</td>
+      <td>5</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Chaparro, A.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">DH</span>García Jr., L.</td>
+      <td>1</td><td>0</td><td>1</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Lowe, N.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>House, B.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Call, A.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Adams, R.</td>
+      <td>3</td><td>2</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Young, J.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Gore, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Rutledge, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Salazar, E.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>35</td><td>5</td><td>9</td><td>5</td></tr></tbody>
+          </table>
+        </div>
+        <div class="batting-col">
+          <div class="team-label">LOS ANGELES DODGERS</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">DH</span>Ohtani, S.</td>
+      <td>3</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Betts, M.</td>
+      <td>5</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Smith, W.</td>
+      <td>2</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Hernández, T.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Pages, A.</td>
+      <td>4</td><td>0</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Edman, T.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Conforto, M.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">CF</span>Kim, H.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Hernández, E.</td>
+      <td>3</td><td>2</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Rojas, M.</td>
+      <td>3</td><td>2</td><td>2</td><td>2</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">3B</span>Muncy, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Kershaw, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Kopech, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Vesia, A.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Yates, K.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Dreyer, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Scott, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>32</td><td>6</td><td>9</td><td>5</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="linescore-section">
+        <table class="linescore-tbl">
+          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Washington</td>
+              <td class="">1</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">2</td><td class="">0</td><td class="">1</td>
+              <td class="sep">5</td><td>9</td><td>1</td>
+            </tr>
+            <tr>
+              <td>L.A. Dodgers ✓</td>
+              <td class="">0</td><td class="">0</td><td class="">3</td><td class="">1</td><td class="">0</td><td class="">2</td><td class="">0</td><td class="">0</td><td class="">·</td>
+              <td class="sep">6</td><td>9</td><td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pitching-section">
+        <div class="pitching-label">WASHINGTON NATIONALS</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Gore, M. L</td>
+      <td>5.2</td><td>7</td><td>6</td>
+      <td>5</td><td>4</td><td>4</td>
+    </tr><tr>
+      <td>Rutledge, J.</td>
+      <td>1.1</td><td>1</td><td>0</td>
+      <td>0</td><td>1</td><td>0</td>
+    </tr><tr>
+      <td>Salazar, E.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>1</td><td>1</td>
+    </tr></tbody>
+        </table>
+        <div class="pitching-label" style="margin-top:5px">LOS ANGELES DODGERS</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Kershaw, C. W</td>
+      <td>5.0</td><td>5</td><td>2</td>
+      <td>2</td><td>2</td><td>4</td>
+    </tr><tr>
+      <td>Kopech, M.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr><tr>
+      <td>Vesia, A.</td>
+      <td>0.2</td><td>1</td><td>2</td>
+      <td>2</td><td>1</td><td>1</td>
+    </tr><tr>
+      <td>Yates, K.</td>
+      <td>0.1</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Dreyer, J.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Scott, T. S</td>
+      <td>1.0</td><td>1</td><td>1</td>
+      <td>1</td><td>0</td><td>0</td>
+    </tr></tbody>
+        </table>
+      </div>
+      <div class="game-notes"><span class="note-label">WP—</span>Salazar; Kershaw. <span class="note-label">HBP—</span>Adams, R (by Vesia). <span class="note-label">Pitches-strikes—</span>Gore 100-58; Rutledge 21-13; Salazar 27-16; Kershaw 78-45; Kopech 13-9; Vesia 21-10; Yates 9-6; Dreyer 12-8; Scott 19-13. <span class="note-label">Groundouts-flyouts—</span>Gore 5-4; Rutledge 1-2; Salazar 1-1; Kershaw 7-3; Kopech 0-1; Vesia 0-0; Yates 0-0; Dreyer 1-1; Scott 2-1. <span class="note-label">Batters faced—</span>Gore 27; Rutledge 6; Salazar 5; Kershaw 21; Kopech 4; Vesia 5; Yates 2; Dreyer 3; Scott 4. <span class="note-label">Inherited runners-scored—</span>Yates 3-2. <span class="note-label">Umpires—</span>HP: Lance Barrett. 1B: Alfonso Márquez. 2B: Carlos Torres. 3B: Brian Walsh.  <span class="note-label">Weather—</span>69 degrees, Clear. <span class="note-label">Wind—</span>8 mph, Out To RF. <span class="note-label">First pitch—</span>7:10 PM. <span class="note-label">Att—</span>46,558. <span class="note-label">Venue—</span>Dodger Stadium. T—2:44.</div>
+    </div>
+    <div class="box-full">
+      <div class="box-header">
+        <span>Arizona Diamondbacks at Colorado Rockies — Coors Field</span>
+        <span>Final</span>
+      </div>
+      <div class="batting-columns">
+        <div class="batting-col">
+          <div class="team-label">ARIZONA DIAMONDBACKS</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">DH</span>Marte, K.</td>
+      <td>6</td><td>2</td><td>3</td><td>5</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Perdomo, G.</td>
+      <td>6</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Gurriel Jr., L.</td>
+      <td>6</td><td>1</td><td>3</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Suárez, E.</td>
+      <td>6</td><td>3</td><td>4</td><td>3</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Naylor, J.</td>
+      <td>5</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Grichuk, R.</td>
+      <td>4</td><td>2</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Tawa, T.</td>
+      <td>4</td><td>2</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Vargas, I.</td>
+      <td>5</td><td>3</td><td>3</td><td>3</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Herrera, J.</td>
+      <td>3</td><td>1</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Gallen, Z.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Morillo, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Beeks, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Backhus, K.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Ginkel, K.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>45</td><td>14</td><td>21</td><td>14</td></tr></tbody>
+          </table>
+        </div>
+        <div class="batting-col">
+          <div class="team-label">COLORADO ROCKIES</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">LF</span>Beck, J.</td>
+      <td>5</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Freeman, T.</td>
+      <td>5</td><td>1</td><td>2</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Goodman, H.</td>
+      <td>5</td><td>0</td><td>1</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>McMahon, R.</td>
+      <td>5</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Toglia, M.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Doyle, B.</td>
+      <td>4</td><td>2</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Moniak, M.</td>
+      <td>4</td><td>1</td><td>2</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Arcia, O.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Ritter, R.</td>
+      <td>3</td><td>2</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Gomber, A.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Rolison, R.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Mejia, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Molina, A.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>38</td><td>8</td><td>12</td><td>8</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="linescore-section">
+        <table class="linescore-tbl">
+          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Arizona ✓</td>
+              <td class="">1</td><td class="">1</td><td class="">0</td><td class="">4</td><td class="">3</td><td class="">2</td><td class="">2</td><td class="">1</td><td class="">0</td>
+              <td class="sep">14</td><td>21</td><td>0</td>
+            </tr>
+            <tr>
+              <td>Colorado</td>
+              <td class="">0</td><td class="">0</td><td class="">1</td><td class="">6</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td>
+              <td class="sep">8</td><td>12</td><td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pitching-section">
+        <div class="pitching-label">ARIZONA DIAMONDBACKS</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Gallen, Z. W</td>
+      <td>5.0</td><td>10</td><td>7</td>
+      <td>7</td><td>1</td><td>5</td>
+    </tr><tr>
+      <td>Morillo, J.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>3</td>
+    </tr><tr>
+      <td>Beeks, J.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr><tr>
+      <td>Backhus, K.</td>
+      <td>1.0</td><td>2</td><td>1</td>
+      <td>1</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Ginkel, K.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr></tbody>
+        </table>
+        <div class="pitching-label" style="margin-top:5px">COLORADO ROCKIES</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Gomber, A. L</td>
+      <td>4.2</td><td>12</td><td>9</td>
+      <td>9</td><td>1</td><td>0</td>
+    </tr><tr>
+      <td>Rolison, R.</td>
+      <td>1.0</td><td>3</td><td>2</td>
+      <td>2</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Mejia, J.</td>
+      <td>1.1</td><td>2</td><td>2</td>
+      <td>2</td><td>1</td><td>0</td>
+    </tr><tr>
+      <td>Molina, A.</td>
+      <td>2.0</td><td>4</td><td>1</td>
+      <td>1</td><td>0</td><td>1</td>
+    </tr></tbody>
+        </table>
+      </div>
+      <div class="game-notes"><span class="note-label">Balk—</span>Rolison. <span class="note-label">Pitch timer violations—</span>Molina (pitcher). <span class="note-label">Pitches-strikes—</span>Gallen 91-62; Morillo, J 12-9; Beeks 15-9; Backhus 15-10; Ginkel 13-8; Gomber 81-57; Rolison 20-14; Mejia, J 20-13; Molina 30-22. <span class="note-label">Groundouts-flyouts—</span>Gallen 2-5; Morillo, J 0-0; Beeks 0-1; Backhus 1-0; Ginkel 0-1; Gomber 3-6; Rolison 2-0; Mejia, J 1-3; Molina 1-2. <span class="note-label">Batters faced—</span>Gallen 26; Morillo, J 3; Beeks 3; Backhus 5; Ginkel 3; Gomber 26; Rolison 6; Mejia, J 7; Molina 10. <span class="note-label">Umpires—</span>HP: Brian O'Nora. 1B: Mike Estabrook. 2B: Austin Jones. 3B: Laz Diaz.  <span class="note-label">Weather—</span>98 degrees, Clear. <span class="note-label">Wind—</span>12 mph, Out To CF. <span class="note-label">First pitch—</span>6:41 PM. <span class="note-label">Att—</span>31,851. <span class="note-label">Venue—</span>Coors Field. T—2:53.</div>
+    </div>
+    <div class="box-full">
+      <div class="box-header">
+        <span>Texas Rangers at Pittsburgh Pirates — PNC Park</span>
+        <span>Final</span>
+      </div>
+      <div class="batting-columns">
+        <div class="batting-col">
+          <div class="team-label">TEXAS RANGERS</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">DH</span>Smith, J.</td>
+      <td>5</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Haggerty, S.</td>
+      <td>3</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Seager, C.</td>
+      <td>5</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Semien, M.</td>
+      <td>5</td><td>1</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>García, A.</td>
+      <td>4</td><td>2</td><td>3</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Burger, J.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">1B</span>Duran, E.</td>
+      <td>1</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Carter, E.</td>
+      <td>3</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Jung, J.</td>
+      <td>5</td><td>0</td><td>0</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Heim, J.</td>
+      <td>4</td><td>0</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>deGrom, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Milner, H.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Martin, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Garcia, R.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>39</td><td>6</td><td>13</td><td>4</td></tr></tbody>
+          </table>
+        </div>
+        <div class="batting-col">
+          <div class="team-label">PITTSBURGH PIRATES</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">CF</span>Cruz, O.</td>
+      <td>5</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>McCutchen, A.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Gonzales, N.</td>
+      <td>4</td><td>1</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Horwitz, S.</td>
+      <td>4</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Bart, J.</td>
+      <td>4</td><td>0</td><td>3</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Triolo, J.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Frazier, A.</td>
+      <td>2</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">RF</span>Cook, B.</td>
+      <td>2</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Canario, A.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Kiner-Falefa, I.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Burrows, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Ashcraft, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Mattson, I.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Borucki, R.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Ferguson, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>36</td><td>2</td><td>9</td><td>2</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="linescore-section">
+        <table class="linescore-tbl">
+          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Texas ✓</td>
+              <td class="">2</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">1</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">1</td>
+              <td class="sep">6</td><td>13</td><td>0</td>
+            </tr>
+            <tr>
+              <td>Pittsburgh</td>
+              <td class="">0</td><td class="">0</td><td class="">0</td><td class="">2</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td>
+              <td class="sep">2</td><td>9</td><td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pitching-section">
+        <div class="pitching-label">TEXAS RANGERS</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>deGrom, J. W</td>
+      <td>6.0</td><td>5</td><td>2</td>
+      <td>2</td><td>1</td><td>7</td>
+    </tr><tr>
+      <td>Milner, H.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr><tr>
+      <td>Martin, C.</td>
+      <td>1.0</td><td>2</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Garcia, R.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr></tbody>
+        </table>
+        <div class="pitching-label" style="margin-top:5px">PITTSBURGH PIRATES</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Burrows, M. L</td>
+      <td>4.2</td><td>7</td><td>4</td>
+      <td>4</td><td>1</td><td>4</td>
+    </tr><tr>
+      <td>Ashcraft, B.</td>
+      <td>2.0</td><td>4</td><td>1</td>
+      <td>1</td><td>1</td><td>2</td>
+    </tr><tr>
+      <td>Mattson, I.</td>
+      <td>1.1</td><td>1</td><td>0</td>
+      <td>0</td><td>1</td><td>1</td>
+    </tr><tr>
+      <td>Borucki, R.</td>
+      <td>0.1</td><td>1</td><td>1</td>
+      <td>1</td><td>2</td><td>0</td>
+    </tr><tr>
+      <td>Ferguson, C.</td>
+      <td>0.2</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr></tbody>
+        </table>
+      </div>
+      <div class="game-notes"><span class="note-label">WP—</span>Burrows. <span class="note-label">HBP—</span>Carter (by Burrows). <span class="note-label">Pitches-strikes—</span>deGrom 84-62; Milner 16-13; Martin, C 11-9; Garcia, R 10-6; Burrows 88-52; Ashcraft, B 40-26; Mattson 16-9; Borucki 16-7; Ferguson, C 4-4. <span class="note-label">Groundouts-flyouts—</span>deGrom 3-4; Milner 1-0; Martin, C 2-0; Garcia, R 3-0; Burrows 1-4; Ashcraft, B 2-2; Mattson 2-0; Borucki 1-0; Ferguson, C 1-0. <span class="note-label">Batters faced—</span>deGrom 24; Milner 4; Martin, C 5; Garcia, R 4; Burrows 23; Ashcraft, B 11; Mattson 5; Borucki 4; Ferguson, C 2. <span class="note-label">Inherited runners-scored—</span>Ashcraft, B 1-0; Mattson 1-0; Ferguson, C 3-1. <span class="note-label">Umpires—</span>HP: Mark Wegner. 1B: Bruce Dreckman. 2B: Shane Livensparger. 3B: Brock Ballou.  <span class="note-label">Weather—</span>78 degrees, Cloudy. <span class="note-label">Wind—</span>5 mph, Out To CF. <span class="note-label">First pitch—</span>6:40 PM. <span class="note-label">Att—</span>31,327. <span class="note-label">Venue—</span>PNC Park. T—2:49.</div>
+    </div>
+    <div class="box-full">
+      <div class="box-header">
+        <span>Cincinnati Reds at St. Louis Cardinals — Busch Stadium</span>
+        <span>Final</span>
+      </div>
+      <div class="batting-columns">
+        <div class="batting-col">
+          <div class="team-label">CINCINNATI REDS</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">CF</span>Friedl, T.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Lux, G.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>De La Cruz, E.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Stephenson, T.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Steer, S.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Benson, W.</td>
+      <td>2</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">LF</span>Espinal, S.</td>
+      <td>2</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Trevino, J.</td>
+      <td>2</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Fraley, J.</td>
+      <td>2</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">RF</span>Joe, C.</td>
+      <td>1</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>McLain, M.</td>
+      <td>2</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Singer, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Barlow, S.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Rogers, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Santillan, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Phillips, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>30</td><td>1</td><td>5</td><td>0</td></tr></tbody>
+          </table>
+        </div>
+        <div class="batting-col">
+          <div class="team-label">ST. LOUIS CARDINALS</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">2B</span>Donovan, B.</td>
+      <td>3</td><td>2</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Winn, M.</td>
+      <td>5</td><td>1</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Burleson, A.</td>
+      <td>4</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Gorman, N.</td>
+      <td>2</td><td>1</td><td>0</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Saggese, T.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Nootbaar, L.</td>
+      <td>4</td><td>0</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Walker, J.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Pagés, P.</td>
+      <td>3</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Scott II, V.</td>
+      <td>2</td><td>1</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Pallante, A.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Maton, P.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>King, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Romero, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>O'Brien, R.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>31</td><td>6</td><td>7</td><td>4</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="linescore-section">
+        <table class="linescore-tbl">
+          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Cincinnati</td>
+              <td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td>
+              <td class="sep">1</td><td>5</td><td>1</td>
+            </tr>
+            <tr>
+              <td>St. Louis ✓</td>
+              <td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">5</td><td class="">0</td><td class="">·</td>
+              <td class="sep">6</td><td>7</td><td>1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pitching-section">
+        <div class="pitching-label">CINCINNATI REDS</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Singer, B. L</td>
+      <td>6.0</td><td>4</td><td>1</td>
+      <td>1</td><td>1</td><td>7</td>
+    </tr><tr>
+      <td>Barlow, S.</td>
+      <td>0.1</td><td>0</td><td>2</td>
+      <td>2</td><td>1</td><td>0</td>
+    </tr><tr>
+      <td>Rogers, T.</td>
+      <td>0.1</td><td>1</td><td>3</td>
+      <td>0</td><td>2</td><td>1</td>
+    </tr><tr>
+      <td>Santillan, T.</td>
+      <td>0.1</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Phillips, C.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>1</td><td>2</td>
+    </tr></tbody>
+        </table>
+        <div class="pitching-label" style="margin-top:5px">ST. LOUIS CARDINALS</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Pallante, A. W</td>
+      <td>6.0</td><td>3</td><td>0</td>
+      <td>0</td><td>1</td><td>4</td>
+    </tr><tr>
+      <td>Maton, P.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>King, J.</td>
+      <td>0.1</td><td>2</td><td>1</td>
+      <td>1</td><td>1</td><td>0</td>
+    </tr><tr>
+      <td>Romero, J.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>O'Brien, R.</td>
+      <td>0.2</td><td>0</td><td>0</td>
+      <td>0</td><td>1</td><td>2</td>
+    </tr></tbody>
+        </table>
+      </div>
+      <div class="game-notes"><span class="note-label">HBP—</span>Scott II 2 (by Singer, by Barlow, S). <span class="note-label">Pitch timer violations—</span>Romero, J (pitcher). <span class="note-label">Pitches-strikes—</span>Singer 102-65; Barlow, S 14-7; Rogers, Ta 20-10; Santillan 12-9; Phillips 21-13; Pallante 87-58; Maton, P 8-6; King, Jo 16-9; Romero, J 12-9; O'Brien 13-7. <span class="note-label">Groundouts-flyouts—</span>Singer 5-5; Barlow, S 0-0; Rogers, Ta 0-0; Santillan 1-0; Phillips 0-1; Pallante 9-2; Maton, P 1-0; King, Jo 0-1; Romero, J 2-0; O'Brien 0-0. <span class="note-label">Batters faced—</span>Singer 24; Barlow, S 3; Rogers, Ta 4; Santillan 3; Phillips 5; Pallante 21; Maton, P 2; King, Jo 4; Romero, J 3; O'Brien 3. <span class="note-label">Inherited runners-scored—</span>Rogers, Ta 2-2; Santillan 3-3; Maton, P 1-0; Romero, J 2-0. <span class="note-label">Umpires—</span>HP: Dan Iassogna. 1B: CB Bucknor. 2B: Scott Barry. 3B: Adam Beck.  <span class="note-label">Weather—</span>89 degrees, Clear. <span class="note-label">Wind—</span>9 mph, Out To LF. <span class="note-label">First pitch—</span>6:16 PM. <span class="note-label">Att—</span>35,334. <span class="note-label">Venue—</span>Busch Stadium. T—2:44.</div>
+    </div>
+    <div class="box-full">
+      <div class="box-header">
+        <span>Seattle Mariners at Chicago Cubs — Wrigley Field</span>
+        <span>Final</span>
+      </div>
+      <div class="batting-columns">
+        <div class="batting-col">
+          <div class="team-label">SEATTLE MARINERS</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">SS</span>Crawford, J.</td>
+      <td>5</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Rodríguez, J.</td>
+      <td>5</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Raleigh, C.</td>
+      <td>4</td><td>4</td><td>3</td><td>3</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Arozarena, R.</td>
+      <td>5</td><td>2</td><td>3</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Garver, M.</td>
+      <td>4</td><td>2</td><td>2</td><td>5</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Solano, D.</td>
+      <td>4</td><td>0</td><td>3</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Moore, D.</td>
+      <td>2</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">RF</span>Raley, L.</td>
+      <td>3</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Williamson, B.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Young, C.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Kirby, G.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Bazardo, E.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Vargas, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Speier, G.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Brash, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Legumina, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>40</td><td>9</td><td>13</td><td>9</td></tr></tbody>
+          </table>
+        </div>
+        <div class="batting-col">
+          <div class="team-label">CHICAGO CUBS</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">LF</span>Happ, I.</td>
+      <td>4</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Tucker, K.</td>
+      <td>3</td><td>1</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Suzuki, S.</td>
+      <td>3</td><td>1</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Crow-Armstrong, P.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Swanson, D.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Busch, M.</td>
+      <td>4</td><td>0</td><td>3</td><td>2</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Hoerner, N.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Shaw, M.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>McGuire, R.</td>
+      <td>3</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Boyd, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Pressly, R.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Thielbar, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Brasier, R.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Cabrera, G.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>33</td><td>4</td><td>9</td><td>4</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="linescore-section">
+        <table class="linescore-tbl">
+          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Seattle ✓</td>
+              <td class="">1</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">2</td><td class="">2</td><td class="">0</td><td class="">3</td>
+              <td class="sep">9</td><td>13</td><td>0</td>
+            </tr>
+            <tr>
+              <td>Chi. Cubs</td>
+              <td class="">3</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">1</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td>
+              <td class="sep">4</td><td>9</td><td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pitching-section">
+        <div class="pitching-label">SEATTLE MARINERS</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Kirby, G.</td>
+      <td>5.0</td><td>7</td><td>4</td>
+      <td>4</td><td>1</td><td>3</td>
+    </tr><tr>
+      <td>Bazardo, E. W</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Vargas, C.</td>
+      <td>0.2</td><td>0</td><td>0</td>
+      <td>0</td><td>1</td><td>0</td>
+    </tr><tr>
+      <td>Speier, G.</td>
+      <td>0.1</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Brash, M.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>1</td><td>0</td>
+    </tr><tr>
+      <td>Legumina, C.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr></tbody>
+        </table>
+        <div class="pitching-label" style="margin-top:5px">CHICAGO CUBS</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Boyd, M.</td>
+      <td>5.0</td><td>2</td><td>2</td>
+      <td>2</td><td>2</td><td>6</td>
+    </tr><tr>
+      <td>Pressly, R.</td>
+      <td>1.0</td><td>3</td><td>2</td>
+      <td>2</td><td>1</td><td>1</td>
+    </tr><tr>
+      <td>Thielbar, C. L</td>
+      <td>0.2</td><td>3</td><td>2</td>
+      <td>2</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Brasier, R.</td>
+      <td>1.1</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr><tr>
+      <td>Cabrera, G.</td>
+      <td>1.0</td><td>4</td><td>3</td>
+      <td>3</td><td>0</td><td>1</td>
+    </tr></tbody>
+        </table>
+      </div>
+      <div class="game-notes"><span class="note-label">Pitches-strikes—</span>Kirby 85-60; Bazardo 7-5; Vargas 16-8; Speier 6-4; Brash 14-7; Legumina 6-6; Boyd 76-48; Pressly 29-14; Thielbar 18-13; Brasier 18-12; Cabrera, G 31-21. <span class="note-label">Groundouts-flyouts—</span>Kirby 2-5; Bazardo 1-0; Vargas 0-1; Speier 1-0; Brash 2-0; Legumina 1-0; Boyd 3-1; Pressly 1-1; Thielbar 0-1; Brasier 1-0; Cabrera, G 0-2. <span class="note-label">Batters faced—</span>Kirby 22; Bazardo 3; Vargas 3; Speier 1; Brash 4; Legumina 3; Boyd 19; Pressly 7; Thielbar 5; Brasier 5; Cabrera, G 7. <span class="note-label">Inherited runners-scored—</span>Speier 1-0; Brasier 1-0. <span class="note-label">Umpires—</span>HP: Chris Guccione. 1B: Chad Whitson. 2B: Edwin Moscoso. 3B: Dexter Kelley.  <span class="note-label">Weather—</span>82 degrees, Partly Cloudy. <span class="note-label">Wind—</span>12 mph, Out To CF. <span class="note-label">First pitch—</span>1:20 PM. <span class="note-label">Att—</span>40,787. <span class="note-label">Venue—</span>Wrigley Field. T—2:52.</div>
+    </div>
+    <div class="box-full">
+      <div class="box-header">
+        <span>New York Mets at Philadelphia Phillies — Citizens Bank Park</span>
+        <span>Final</span>
+      </div>
+      <div class="batting-columns">
+        <div class="batting-col">
+          <div class="team-label">NEW YORK METS</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">SS</span>Lindor, F.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Nimmo, B.</td>
+      <td>4</td><td>0</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Soto, J.</td>
+      <td>2</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Alonso, P.</td>
+      <td>3</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>McNeil, J.</td>
+      <td>4</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Young, J.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Torrens, L.</td>
+      <td>4</td><td>0</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Baty, B.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Taylor, T.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Tidwell, B.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Castillo, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Buttó, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Garrett, R.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Garza, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>33</td><td>2</td><td>7</td><td>2</td></tr></tbody>
+          </table>
+        </div>
+        <div class="batting-col">
+          <div class="team-label">PHILADELPHIA PHILLIES</div>
+          <table class="batting-table">
+            <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">SS</span>Turner, T.</td>
+      <td>5</td><td>1</td><td>2</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Schwarber, K.</td>
+      <td>3</td><td>2</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Bohm, A.</td>
+      <td>5</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Castellanos, N.</td>
+      <td>5</td><td>3</td><td>3</td><td>3</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Kepler, M.</td>
+      <td>5</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Realmuto, J.</td>
+      <td>3</td><td>2</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Stott, B.</td>
+      <td>2</td><td>0</td><td>1</td><td>3</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Kemp, O.</td>
+      <td>4</td><td>0</td><td>0</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Marsh, B.</td>
+      <td>4</td><td>1</td><td>3</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Wheeler, Z.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Walker, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Banks, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Lazar, M.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>36</td><td>10</td><td>13</td><td>10</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="linescore-section">
+        <table class="linescore-tbl">
+          <thead><tr><th></th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th class="sep">R</th><th>H</th><th>E</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>N.Y. Mets</td>
+              <td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">0</td><td class="">2</td><td class="">0</td><td class="">0</td><td class="">0</td>
+              <td class="sep">2</td><td>7</td><td>0</td>
+            </tr>
+            <tr>
+              <td>Philadelphia ✓</td>
+              <td class="">0</td><td class="">0</td><td class="">0</td><td class="">2</td><td class="">0</td><td class="">0</td><td class="">6</td><td class="">2</td><td class="">·</td>
+              <td class="sep">10</td><td>13</td><td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pitching-section">
+        <div class="pitching-label">NEW YORK METS</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Tidwell, B.</td>
+      <td>3.2</td><td>4</td><td>2</td>
+      <td>2</td><td>3</td><td>4</td>
+    </tr><tr>
+      <td>Castillo, J.</td>
+      <td>0.1</td><td>2</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Buttó, J.</td>
+      <td>2.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>3</td>
+    </tr><tr>
+      <td>Garrett, R. L</td>
+      <td>0.0</td><td>3</td><td>4</td>
+      <td>4</td><td>1</td><td>0</td>
+    </tr><tr>
+      <td>Garza, J.</td>
+      <td>2.0</td><td>4</td><td>4</td>
+      <td>4</td><td>1</td><td>1</td>
+    </tr></tbody>
+        </table>
+        <div class="pitching-label" style="margin-top:5px">PHILADELPHIA PHILLIES</div>
+        <table class="pitching-tbl">
+          <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
+          <tbody><tr>
+      <td>Wheeler, Z.</td>
+      <td>5.0</td><td>4</td><td>0</td>
+      <td>0</td><td>3</td><td>8</td>
+    </tr><tr>
+      <td>Walker, T.</td>
+      <td>0.1</td><td>3</td><td>2</td>
+      <td>2</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Banks, T. W</td>
+      <td>1.2</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Lazar, M.</td>
+      <td>2.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr></tbody>
+        </table>
+      </div>
+      <div class="game-notes"><span class="note-label">Pitch timer violations—</span>Buttó (pitcher). <span class="note-label">Pitches-strikes—</span>Tidwell 74-43; Castillo, J 5-5; Buttó 28-18; Garrett, R 20-11; Garza 35-21; Wheeler 98-59; Walker, T 14-8; Banks 26-16; Lazar 17-14. <span class="note-label">Groundouts-flyouts—</span>Tidwell 3-3; Castillo, J 1-0; Buttó 3-0; Garrett, R 0-0; Garza 2-2; Wheeler 2-2; Walker, T 0-0; Banks 2-0; Lazar 2-1. <span class="note-label">Batters faced—</span>Tidwell 17; Castillo, J 3; Buttó 6; Garrett, R 4; Garza 11; Wheeler 21; Walker, T 4; Banks 5; Lazar 6. <span class="note-label">Inherited runners-scored—</span>Castillo, J 2-1; Buttó 1-0; Garza 2-2; Banks 1-0. <span class="note-label">Umpires—</span>HP: Jonathan Parra. 1B: Clint Vondrak. 2B: David Rackley. 3B: Phil Cuzzi.  <span class="note-label">Weather—</span>84 degrees, Partly Cloudy. <span class="note-label">Wind—</span>14 mph, Out To RF. <span class="note-label">First pitch—</span>7:16 PM. <span class="note-label">Att—</span>44,432. <span class="note-label">Venue—</span>Citizens Bank Park. T—2:59.</div>
     </div>
     <div class="box-full">
       <div class="box-header">
@@ -835,14 +2697,101 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
           <div class="team-label">ATLANTA BRAVES</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">RF</span>Acuña Jr., R.</td>
+      <td>4</td><td>1</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Verdugo, A.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Riley, A.</td>
+      <td>4</td><td>1</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Olson, M.</td>
+      <td>4</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Ozuna, M.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">2B</span>Albies, O.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Murphy, S.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Harris II, M.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Allen, N.</td>
+      <td>3</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Fuentes, D.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Bummer, A.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Johnson, P.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Dodd, D.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>35</td><td>2</td><td>8</td><td>2</td></tr></tbody>
           </table>
         </div>
         <div class="batting-col">
           <div class="team-label">MIAMI MARLINS</div>
           <table class="batting-table">
             <thead><tr><th></th><th>ab</th><th>r</th><th>h</th><th>bi</th></tr></thead>
-            <tbody><tr class="totals-row"><td>Totals</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody>
+            <tbody><tr class="">
+      <td><span class="pos-abbr">2B</span>Edwards, X.</td>
+      <td>3</td><td>2</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">RF</span>Sánchez, J.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">SS</span>Lopez, O.</td>
+      <td>4</td><td>1</td><td>2</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">C</span>Ramírez, A.</td>
+      <td>4</td><td>1</td><td>2</td><td>4</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">C</span>Fortes, N.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">LF</span>Stowers, K.</td>
+      <td>3</td><td>2</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">CF</span>Myers, D.</td>
+      <td>2</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">1B</span>Hicks, L.</td>
+      <td>2</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="sub-row">
+      <td><span class="pos-abbr">1B</span>Wagaman, E.</td>
+      <td>2</td><td>0</td><td>1</td><td>1</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">3B</span>Norby, C.</td>
+      <td>4</td><td>0</td><td>1</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">DH</span>Hernández, H.</td>
+      <td>4</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Junk, J.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Henriquez, R.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Phillips, T.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Piña, R.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="">
+      <td><span class="pos-abbr">P</span>Faucher, C.</td>
+      <td>0</td><td>0</td><td>0</td><td>0</td>
+    </tr><tr class="totals-row"><td>Totals</td><td>32</td><td>6</td><td>9</td><td>6</td></tr></tbody>
           </table>
         </div>
       </div>
@@ -867,16 +2816,53 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
         <div class="pitching-label">ATLANTA BRAVES</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Fuentes, D. L</td>
+      <td>5.0</td><td>6</td><td>4</td>
+      <td>4</td><td>1</td><td>3</td>
+    </tr><tr>
+      <td>Bummer, A.</td>
+      <td>1.1</td><td>1</td><td>2</td>
+      <td>2</td><td>3</td><td>0</td>
+    </tr><tr>
+      <td>Johnson, P.</td>
+      <td>0.2</td><td>2</td><td>0</td>
+      <td>0</td><td>0</td><td>2</td>
+    </tr><tr>
+      <td>Dodd, D.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr></tbody>
         </table>
         <div class="pitching-label" style="margin-top:5px">MIAMI MARLINS</div>
         <table class="pitching-tbl">
           <thead><tr><th></th><th>ip</th><th>h</th><th>r</th><th>er</th><th>bb</th><th>so</th></tr></thead>
-          <tbody></tbody>
+          <tbody><tr>
+      <td>Junk, J. W</td>
+      <td>5.0</td><td>5</td><td>1</td>
+      <td>1</td><td>0</td><td>5</td>
+    </tr><tr>
+      <td>Henriquez, R.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>1</td>
+    </tr><tr>
+      <td>Phillips, T.</td>
+      <td>1.0</td><td>1</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Piña, R.</td>
+      <td>1.0</td><td>1</td><td>1</td>
+      <td>1</td><td>0</td><td>0</td>
+    </tr><tr>
+      <td>Faucher, C.</td>
+      <td>1.0</td><td>0</td><td>0</td>
+      <td>0</td><td>0</td><td>0</td>
+    </tr></tbody>
         </table>
       </div>
-      
+      <div class="game-notes"><span class="note-label">Pitches-strikes—</span>Fuentes 87-58; Bummer 28-11; Johnson 20-14; Dodd 13-8; Junk 79-61; Henriquez, R 14-9; Phillips 8-6; Piña 17-11; Faucher 7-5. <span class="note-label">Groundouts-flyouts—</span>Fuentes 4-4; Bummer 1-0; Johnson 0-0; Dodd 0-2; Junk 6-3; Henriquez, R 1-0; Phillips 1-1; Piña 2-1; Faucher 2-1. <span class="note-label">Batters faced—</span>Fuentes 22; Bummer 7; Johnson 4; Dodd 3; Junk 20; Henriquez, R 4; Phillips 4; Piña 4; Faucher 3. <span class="note-label">Inherited runners-scored—</span>Johnson 1-1. <span class="note-label">Umpires—</span>HP: Lance Barksdale. 1B: Will Little. 2B: John Bacon. 3B: Ryan Additon.  <span class="note-label">Weather—</span>72 degrees, Roof Closed. <span class="note-label">Wind—</span>0 mph, None. <span class="note-label">First pitch—</span>7:11 PM. <span class="note-label">Att—</span>12,146. <span class="note-label">Venue—</span>loanDepot park. T—2:35.</div>
     </div></div>
+  </div>
   </div>
   </section>
 
@@ -1017,9 +3003,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
     <div class="league-section">
     <div class="league-section-hed">American League Leaders</div>
     <div class="leaders-row">
-      <div class="leaders-block">
-    <div class="leaders-hed">Batting Average</div>
-    <table class="leaders-tbl"><tbody><tr>
+      <div class="leaders-block"><div class="leaders-hed">Batting Average</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Aaron Judge <span class="player-team"></span></td>
     <td>.331</td>
   </tr><tr>
@@ -1049,11 +3033,8 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr><tr>
     <td><span class="rank">10.</span>José Ramírez <span class="player-team"></span></td>
     <td>.283</td>
-  </tr></tbody></table>
-  </div>
-      <div class="leaders-block">
-    <div class="leaders-hed">Home Runs</div>
-    <table class="leaders-tbl"><tbody><tr>
+  </tr></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">Home Runs</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Cal Raleigh <span class="player-team"></span></td>
     <td>60</td>
   </tr><tr>
@@ -1083,17 +3064,11 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr><tr>
     <td><span class="rank">10.</span>Vinnie Pasquantino <span class="player-team"></span></td>
     <td>32</td>
-  </tr></tbody></table>
-  </div>
-      <div class="leaders-block">
-    <div class="leaders-hed">RBI</div>
-    <table class="leaders-tbl"><tbody></tbody></table>
-  </div>
+  </tr></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody></tbody></table></div>
     </div>
     <div class="leaders-row">
-      <div class="leaders-block">
-    <div class="leaders-hed">Wins</div>
-    <table class="leaders-tbl"><tbody><tr>
+      <div class="leaders-block"><div class="leaders-hed">Wins</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Max Fried <span class="player-team"></span></td>
     <td>19</td>
   </tr><tr>
@@ -1123,11 +3098,8 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr><tr>
     <td><span class="rank">10.</span>Hunter Brown <span class="player-team"></span></td>
     <td>12</td>
-  </tr></tbody></table>
-  </div>
-      <div class="leaders-block">
-    <div class="leaders-hed">Saves</div>
-    <table class="leaders-tbl"><tbody><tr>
+  </tr></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">Saves</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Carlos Estévez <span class="player-team"></span></td>
     <td>42</td>
   </tr><tr>
@@ -1157,11 +3129,8 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr><tr>
     <td><span class="rank">10.</span>Mason Miller <span class="player-team"></span></td>
     <td>20</td>
-  </tr></tbody></table>
-  </div>
-      <div class="leaders-block">
-    <div class="leaders-hed">Strikeouts</div>
-    <table class="leaders-tbl"><tbody><tr>
+  </tr></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">Strikeouts</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Garrett Crochet <span class="player-team"></span></td>
     <td>255</td>
   </tr><tr>
@@ -1191,16 +3160,13 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr><tr>
     <td><span class="rank">10.</span>Framber Valdez <span class="player-team"></span></td>
     <td>187</td>
-  </tr></tbody></table>
-  </div>
+  </tr></tbody></table></div>
     </div>
   </div>
     <div class="league-section">
     <div class="league-section-hed">National League Leaders</div>
     <div class="leaders-row">
-      <div class="leaders-block">
-    <div class="leaders-hed">Batting Average</div>
-    <table class="leaders-tbl"><tbody><tr>
+      <div class="leaders-block"><div class="leaders-hed">Batting Average</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Trea Turner <span class="player-team"></span></td>
     <td>.304</td>
   </tr><tr>
@@ -1230,11 +3196,8 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr><tr>
     <td><span class="rank">10.</span>Alec Bohm <span class="player-team"></span></td>
     <td>.287</td>
-  </tr></tbody></table>
-  </div>
-      <div class="leaders-block">
-    <div class="leaders-hed">Home Runs</div>
-    <table class="leaders-tbl"><tbody><tr>
+  </tr></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">Home Runs</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Kyle Schwarber <span class="player-team"></span></td>
     <td>56</td>
   </tr><tr>
@@ -1264,17 +3227,11 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr><tr>
     <td><span class="rank">10.</span>Hunter Goodman <span class="player-team"></span></td>
     <td>31</td>
-  </tr></tbody></table>
-  </div>
-      <div class="leaders-block">
-    <div class="leaders-hed">RBI</div>
-    <table class="leaders-tbl"><tbody></tbody></table>
-  </div>
+  </tr></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">RBI</div><table class="leaders-tbl"><tbody></tbody></table></div>
     </div>
     <div class="leaders-row">
-      <div class="leaders-block">
-    <div class="leaders-hed">Wins</div>
-    <table class="leaders-tbl"><tbody><tr>
+      <div class="leaders-block"><div class="leaders-hed">Wins</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Freddy Peralta <span class="player-team"></span></td>
     <td>17</td>
   </tr><tr>
@@ -1304,11 +3261,8 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr><tr>
     <td><span class="rank">10.</span>Nick Pivetta <span class="player-team"></span></td>
     <td>13</td>
-  </tr></tbody></table>
-  </div>
-      <div class="leaders-block">
-    <div class="leaders-hed">Saves</div>
-    <table class="leaders-tbl"><tbody><tr>
+  </tr></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">Saves</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Robert Suarez <span class="player-team"></span></td>
     <td>40</td>
   </tr><tr>
@@ -1338,11 +3292,8 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr><tr>
     <td><span class="rank">10.</span>David Bednar <span class="player-team"></span></td>
     <td>17</td>
-  </tr></tbody></table>
-  </div>
-      <div class="leaders-block">
-    <div class="leaders-hed">Strikeouts</div>
-    <table class="leaders-tbl"><tbody><tr>
+  </tr></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">Strikeouts</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Logan Webb <span class="player-team"></span></td>
     <td>224</td>
   </tr><tr>
@@ -1372,8 +3323,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr><tr>
     <td><span class="rank">10.</span>Nick Pivetta <span class="player-team"></span></td>
     <td>190</td>
-  </tr></tbody></table>
-  </div>
+  </tr></tbody></table></div>
     </div>
   </div>
   </div>
