@@ -114,7 +114,7 @@ async function fetchAll() {
         const p = teamBs.players?.[`ID${id}`];
         if (!p) continue;
         const s = p.stats?.batting || {};
-        if ((s.doubles??0)>0||(s.triples??0)>0||(s.homeRuns??0)>0||(s.stolenBases??0)>0) xbhBatterIds.add(id);
+        if ((s.doubles??0)>0||(s.triples??0)>0||(s.homeRuns??0)>0||(s.stolenBases??0)>0||(s.rbi??0)>0) xbhBatterIds.add(id);
       }
     }
   }
@@ -128,7 +128,7 @@ async function fetchAll() {
         for (const split of (block.splits || [])) {
           if (split.player?.id) batterSeasonStats[split.player.id] = {
             doubles: split.stat?.doubles??0, triples: split.stat?.triples??0,
-            homeRuns: split.stat?.homeRuns??0, stolenBases: split.stat?.stolenBases??0
+            homeRuns: split.stat?.homeRuns??0, stolenBases: split.stat?.stolenBases??0, rbi: split.stat?.rbi??0
           };
         }
       }
@@ -259,8 +259,25 @@ function isExcludedNote(label) {
 
 // ── MATCHUPS ──────────────────────────────────────────────────────────────────
 
-function renderMatchups(matchupGames, pitcherStats) {
-  if (!matchupGames.length) return '<div class="loading">No games scheduled.</div>';
+function renderMatchups(matchupGames, pitcherStats, yesterdayGames = []) {
+  // Scores summary from yesterday's games
+  let summaryHtml = '';
+  if (yesterdayGames.length) {
+    const [y,m,d] = DATE.split('-').map(Number);
+    const dayName = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][new Date(y,m-1,d).getDay()];
+    const lines = yesterdayGames.map(g => {
+      const aw = g.teams.away, hm = g.teams.home;
+      const awS = aw.score??'', hmS = hm.score??'';
+      if (awS===''||hmS==='') return '';
+      const awWon = awS > hmS;
+      const awPart = awWon ? `<strong>${teamCode(aw.team.name)} ${awS}</strong>` : `${teamCode(aw.team.name)} ${awS}`;
+      const hmPart = !awWon ? `<strong>${teamCode(hm.team.name)} ${hmS}</strong>` : `${teamCode(hm.team.name)} ${hmS}`;
+      return `<span class="score-line">${awPart}, ${hmPart}</span>`;
+    }).filter(Boolean).join('');
+    if (lines) summaryHtml = `<div class="scores-summary"><div class="scores-summary-hed">${dayName}'s Scores</div><div class="scores-summary-lines">${lines}</div></div>`;
+  }
+
+  if (!matchupGames.length) return summaryHtml || '<div class="loading">No games scheduled.</div>';
 
   function pitcherLabel(pp) {
     if (!pp) return 'TBD';
@@ -283,7 +300,7 @@ function renderMatchups(matchupGames, pitcherStats) {
   const alGames = matchupGames.filter(g =>  AL_TEAMS.has(g.teams.home.team.id));
   const nlGames = matchupGames.filter(g => !AL_TEAMS.has(g.teams.home.team.id));
 
-  let html = '<div class="matchups-layout">';
+  let html = summaryHtml + '<div class="matchups-layout">';
   if (alGames.length) html += `<div class="matchup-league"><div class="matchup-league-hed">American League</div>${gameLines(alGames)}</div>`;
   if (nlGames.length) html += `<div class="matchup-league"><div class="matchup-league-hed">National League</div>${gameLines(nlGames)}</div>`;
   return html + '</div>';
@@ -292,9 +309,9 @@ function renderMatchups(matchupGames, pitcherStats) {
 // Build old-style 2B/3B/HR/SB lines with season totals in parens.
 // e.g. "HR—Judge (46, 47), Jeter (22)."
 function buildExtraBaseNotes(awayBs, homeBs, batterSeasonStats = {}) {
-  const cats=['doubles','triples','homeRuns','stolenBases'];
-  const lbls={doubles:'2B',triples:'3B',homeRuns:'HR',stolenBases:'SB'};
-  const res={doubles:[],triples:[],homeRuns:[],stolenBases:[]};
+  const cats=['doubles','triples','homeRuns','stolenBases','rbi'];
+  const lbls={doubles:'2B',triples:'3B',homeRuns:'HR',stolenBases:'SB',rbi:'RBI'};
+  const res={doubles:[],triples:[],homeRuns:[],stolenBases:[],rbi:[]};
   for (const teamBs of [awayBs,homeBs]) {
     const batters=teamBs.batters||[],players=teamBs.players||{};
     for (const id of batters) {
@@ -620,6 +637,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .leaders-tbl tr:last-child td{border-bottom:none}
 .rank{font-family:'Playfair Display SC',serif;font-size:8.5px;color:var(--faint);margin-right:3px}
 .player-team{font-size:9px;color:var(--faint);font-style:italic}
+.scores-summary{margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--rule)}.scores-summary-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.18em;color:var(--faint);padding:0 0 5px}.scores-summary-lines{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:11.5px}.score-line{white-space:nowrap}
 .matchups-layout{display:flex;flex-direction:column;gap:0}
 .matchup-league-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.18em;color:var(--faint);padding:6px 0 3px;border-bottom:1px solid var(--faint2);margin-bottom:4px}
 .matchup-league{margin-bottom:10px}
@@ -710,8 +728,13 @@ function buildHTML({ matchupsHtml, scoresHtml, standingsHtml, leadersHtml }) {
 async function main() {
   const { games, matchupGames, pitcherStats, decisionStats, batterSeasonStats, winsStats, standings, alHit, nlHit, alPit, nlPit } = await fetchAll();
 
+  if (!games.length) {
+    console.log(`No games found for ${DATE} — skipping paper generation to preserve last issue.`);
+    process.exit(0);
+  }
+
   const html = buildHTML({
-    matchupsHtml:  renderMatchups(matchupGames, pitcherStats),
+    matchupsHtml:  renderMatchups(matchupGames, pitcherStats, games),
     scoresHtml:    renderScores(games, decisionStats, batterSeasonStats),
     standingsHtml: renderStandings(standings),
     leadersHtml:   `<div class="league-leaders-layout">

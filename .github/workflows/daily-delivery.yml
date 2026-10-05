@@ -7,7 +7,9 @@ name: Daily Paper Delivery
 
 on:
   schedule:
-    - cron: '0 13 * * *'   # 6:00 AM PT (UTC-7 in summer)
+    - cron: '0 13 25-31 3 *'   # March 25–31  (Opening Day week)
+    - cron: '0 13 * 4-10 *'    # April–October (regular season + playoffs)
+    - cron: '0 13 1-7 11 *'    # Nov 1–7       (deep World Series buffer)
   push:
     branches: [main]
   workflow_dispatch:

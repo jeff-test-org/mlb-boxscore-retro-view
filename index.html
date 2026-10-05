@@ -160,6 +160,11 @@
     .player-team { font-size: 9px; color: var(--faint); font-style: italic; }
 
     /* ── TODAY'S MATCHUPS (at bottom) ── */
+    .scores-summary { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2px solid var(--rule); }
+    .scores-summary-hed { font-family: 'Playfair Display SC', serif; font-size: 9.5px; letter-spacing: 0.18em; color: var(--faint); padding: 0 0 5px; }
+    .scores-summary-lines { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 11.5px; }
+    .score-line { white-space: nowrap; }
+    .score-line .winner { font-weight: 700; }
     .matchups-layout { display: flex; flex-direction: column; gap: 0; }
     .matchup-league-hed { font-family: 'Playfair Display SC', serif; font-size: 9.5px; letter-spacing: 0.18em; color: var(--faint); padding: 6px 0 3px; border-bottom: 1px solid var(--faint2); margin-bottom: 4px; }
     .matchup-league { margin-bottom: 10px; }
@@ -385,9 +390,9 @@ function isExcludedNote(label) {
 // Build old-style 2B/3B/HR/SB lines from batting stats with season totals in parens.
 // e.g. "2B—Henderson (31). HR—Judge (46, 47), Jeter (22)."
 function buildExtraBaseNotes(awayBs, homeBs, batterSeasonStats = {}) {
-  const cats = ['doubles','triples','homeRuns','stolenBases'];
-  const lbls = {doubles:'2B', triples:'3B', homeRuns:'HR', stolenBases:'SB'};
-  const res  = {doubles:[], triples:[], homeRuns:[], stolenBases:[]};
+  const cats = ['doubles','triples','homeRuns','stolenBases','rbi'];
+  const lbls = {doubles:'2B', triples:'3B', homeRuns:'HR', stolenBases:'SB', rbi:'RBI'};
+  const res  = {doubles:[], triples:[], homeRuns:[], stolenBases:[], rbi:[]};
   for (const teamBs of [awayBs, homeBs]) {
     const batters = teamBs.batters||[], players = teamBs.players||{};
     for (const id of batters) {
@@ -630,7 +635,7 @@ async function loadScores() {
           const p = teamBs.players?.[`ID${id}`];
           if (!p) continue;
           const s = p.stats?.batting || {};
-          if ((s.doubles??0)>0||(s.triples??0)>0||(s.homeRuns??0)>0||(s.stolenBases??0)>0) xbhBatterIds.add(id);
+          if ((s.doubles??0)>0||(s.triples??0)>0||(s.homeRuns??0)>0||(s.stolenBases??0)>0||(s.rbi??0)>0) xbhBatterIds.add(id);
         }
       }
     }
@@ -644,7 +649,7 @@ async function loadScores() {
           for (const split of (block.splits || [])) {
             if (split.player?.id) batterSeasonStats[split.player.id] = {
               doubles: split.stat?.doubles??0, triples: split.stat?.triples??0,
-              homeRuns: split.stat?.homeRuns??0, stolenBases: split.stat?.stolenBases??0
+              homeRuns: split.stat?.homeRuns??0, stolenBases: split.stat?.stolenBases??0, rbi: split.stat?.rbi??0
             };
           }
         }
@@ -828,12 +833,33 @@ async function loadLeaders() {
 async function loadMatchups() {
   const container = document.getElementById('matchups-container');
   try {
-    const schedData = await fetchJSON(
-      `${MLB}/schedule?sportId=1&date=${TODAY}&hydrate=probablePitcher`
-    );
+    // Fetch yesterday's scores summary and today's matchups in parallel
+    const [yesterdayData, schedData] = await Promise.all([
+      fetchJSON(`${MLB}/schedule?sportId=1&date=${DATE}`).catch(() => null),
+      fetchJSON(`${MLB}/schedule?sportId=1&date=${TODAY}&hydrate=probablePitcher`),
+    ]);
+
+    // Build scores summary block
+    const yesterdayGames = yesterdayData?.dates?.[0]?.games || [];
+    let summaryHtml = '';
+    if (yesterdayGames.length) {
+      const dayName = new Date(...DATE.split('-').map((v,i)=>i===1?Number(v)-1:Number(v))).toLocaleDateString('en-US',{weekday:'long'});
+      const lines = yesterdayGames.map(g => {
+        const aw = g.teams.away, hm = g.teams.home;
+        const awS = aw.score??'', hmS = hm.score??'';
+        const isFinal = (g.status?.detailedState||'').startsWith('Final');
+        if (!isFinal || awS==='' || hmS==='') return '';
+        const awWon = awS > hmS;
+        const awPart = awWon ? `<span class="winner">${teamCode(aw.team.name)} ${awS}</span>` : `${teamCode(aw.team.name)} ${awS}`;
+        const hmPart = !awWon ? `<span class="winner">${teamCode(hm.team.name)} ${hmS}</span>` : `${teamCode(hm.team.name)} ${hmS}`;
+        return `<span class="score-line">${awPart}, ${hmPart}</span>`;
+      }).filter(Boolean).join('');
+      if (lines) summaryHtml = `<div class="scores-summary"><div class="scores-summary-hed">${dayName}'s Scores</div><div class="scores-summary-lines">${lines}</div></div>`;
+    }
+
     const dates = schedData.dates || [];
     if (!dates.length || !dates[0].games?.length) {
-      container.innerHTML = '<div class="loading">No games scheduled today.</div>';
+      container.innerHTML = summaryHtml + '<div class="loading">No games scheduled today.</div>';
       return;
     }
     const games = dates[0].games;
@@ -877,7 +903,7 @@ async function loadMatchups() {
     const alGames = games.filter(g =>  AL_TEAMS.has(g.teams.home.team.id));
     const nlGames = games.filter(g => !AL_TEAMS.has(g.teams.home.team.id));
 
-    let html = '<div class="matchups-layout">';
+    let html = summaryHtml + '<div class="matchups-layout">';
     if (alGames.length) html += `<div class="matchup-league"><div class="matchup-league-hed">American League</div>${gameLines(alGames)}</div>`;
     if (nlGames.length) html += `<div class="matchup-league"><div class="matchup-league-hed">National League</div>${gameLines(nlGames)}</div>`;
     html += '</div>';
