@@ -348,6 +348,28 @@ function formatERA(v) {
   return isNaN(n) ? v : n.toFixed(2);
 }
 
+function teamCode(name) {
+  const map = {
+    'Arizona Diamondbacks':'ARI','Atlanta Braves':'ATL',
+    'Baltimore Orioles':'BAL','Boston Red Sox':'BOS',
+    'Chicago Cubs':'CHC','Chicago White Sox':'CHW',
+    'Cincinnati Reds':'CIN','Cleveland Guardians':'CLE',
+    'Colorado Rockies':'COL','Detroit Tigers':'DET',
+    'Houston Astros':'HOU','Kansas City Royals':'KC',
+    'Los Angeles Angels':'LAA','Los Angeles Dodgers':'LAD',
+    'Miami Marlins':'MIA','Milwaukee Brewers':'MIL',
+    'Minnesota Twins':'MIN','New York Mets':'NYM',
+    'New York Yankees':'NYY','Oakland Athletics':'OAK',
+    'Philadelphia Phillies':'PHI','Pittsburgh Pirates':'PIT',
+    'San Diego Padres':'SD','San Francisco Giants':'SF',
+    'Seattle Mariners':'SEA','St. Louis Cardinals':'STL',
+    'Tampa Bay Rays':'TB','Texas Rangers':'TEX',
+    'Toronto Blue Jays':'TOR','Washington Nationals':'WSH',
+    'Athletics':'ATH',
+  };
+  return map[name] || (name||'').slice(0,3).toUpperCase();
+}
+
 // Game notes: keep only classic baseball notes + T and A.
 // Exclude modern analytics labels by prefix/keyword match.
 function isExcludedNote(label) {
@@ -724,7 +746,7 @@ async function loadStandings() {
 function buildLeadersBlock(title, leaders, fmt) {
   const ranks = ['1.','2.','3.','4.','5.','6.','7.','8.','9.','10.'];
   const rows = (leaders||[]).slice(0,10).map((l,i) => `<tr>
-    <td><span class="rank">${ranks[i]}</span>${l.person?.fullName||'—'} <span class="player-team">${l.team?.abbreviation||''}</span></td>
+    <td><span class="rank">${ranks[i]}</span>${l.person?.fullName||'—'} <span class="player-team">${teamCode(l.team?.name)}</span></td>
     <td>${fmt(l.value)}</td>
   </tr>`).join('');
   return `<div class="leaders-block">
@@ -744,10 +766,11 @@ function buildLeagueSection(leagueName, hitting, pitching, winsStats = {}) {
   });
   return `<div class="league-section">
     <div class="league-section-hed">${leagueName}</div>
-    <div class="leaders-row">
+    <div class="leaders-row four-col">
       ${buildLeadersBlock('Batting Average', extract(hitting,'battingAverage'), formatAvg)}
       ${buildLeadersBlock('Home Runs',       extract(hitting,'homeRuns'),       v=>v)}
       ${buildLeadersBlock('RBI',             extract(hitting,'runsBattedIn'),   v=>v)}
+      ${buildLeadersBlock('Hits',            extract(hitting,'hits'),           v=>v)}
     </div>
     <div class="leaders-row four-col">
       ${buildLeadersBlock('Wins',       winsLeaders,                             v=>v)}
@@ -763,13 +786,13 @@ async function loadLeaders() {
   try {
     const season = DATE.split('-')[0];
     const [alHit, nlHit, alPit, nlPit] = await Promise.all([
-      fetchJSON(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,runsBattedIn&season=${season}&limit=10&statGroup=hitting&sportId=1&leagueId=103`),
-      fetchJSON(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,runsBattedIn&season=${season}&limit=10&statGroup=hitting&sportId=1&leagueId=104`),
+      fetchJSON(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,runsBattedIn,hits&season=${season}&limit=10&statGroup=hitting&sportId=1&leagueId=103`),
+      fetchJSON(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,runsBattedIn,hits&season=${season}&limit=10&statGroup=hitting&sportId=1&leagueId=104`),
       fetchJSON(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts,earnedRunAverage&season=${season}&limit=10&statGroup=pitching&sportId=1&leagueId=103`),
       fetchJSON(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts,earnedRunAverage&season=${season}&limit=10&statGroup=pitching&sportId=1&leagueId=104`),
     ]);
 
-    // Batch-fetch W-L for wins leaders to display "21-3" format
+    // Individual calls for wins leaders W-L — batch endpoint drops players unreliably
     function extract(data, cat) {
       return (data.leagueLeaders||[]).find(c=>c.leaderCategory===cat)?.leaders || [];
     }
@@ -778,16 +801,14 @@ async function loadLeaders() {
       ...extract(nlPit,'wins').map(l=>l.person?.id),
     ].filter(Boolean))];
     const winsStats = {};
-    if (winsIds.length > 0) {
-      try {
-        const wd = await fetchJSON(`${MLB}/stats?stats=season&playerIds=${winsIds.join(',')}&group=pitching&season=${season}&sportId=1`);
-        for (const block of (wd.stats||[])) {
-          for (const split of (block.splits||[])) {
-            if (split.player?.id) winsStats[split.player.id] = { wins: split.stat?.wins??0, losses: split.stat?.losses??0 };
-          }
-        }
-      } catch { /* optional */ }
-    }
+    await Promise.all(winsIds.map(id =>
+      fetchJSON(`${MLB}/people/${id}/stats?stats=season&group=pitching&season=${season}&sportId=1`)
+        .then(d => {
+          const split = (d.stats||[]).flatMap(b=>b.splits||[]).find(s=>s.stat);
+          if (split) winsStats[id] = { wins: split.stat.wins??0, losses: split.stat.losses??0 };
+        })
+        .catch(() => {})
+    ));
 
     const layout = document.createElement('div');
     layout.className = 'league-leaders-layout';
