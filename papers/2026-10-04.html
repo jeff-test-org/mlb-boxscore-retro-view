@@ -65,7 +65,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .league-leaders-layout{display:flex;flex-direction:column;gap:14px}
 .league-section{border:1px solid var(--rule)}
 .league-section-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:11px;letter-spacing:.18em;padding:4px 10px;text-align:center}
-.leaders-row{display:grid;grid-template-columns:repeat(3,1fr)}.leaders-row+.leaders-row{border-top:1px solid var(--rule)}
+.leaders-row{display:grid;grid-template-columns:repeat(3,1fr)}.leaders-row.four-col{grid-template-columns:repeat(4,1fr)}.leaders-row+.leaders-row{border-top:1px solid var(--rule)}
 .leaders-block+.leaders-block{border-left:1px solid var(--rule)}
 .leaders-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.12em;padding:3px 8px;background:var(--paper-dark);border-bottom:1px solid var(--faint2)}
 .leaders-tbl{width:100%;border-collapse:collapse;font-size:11px}
@@ -103,7 +103,133 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 
   <section class="section">
     <h2 class="section-hed">Standings</h2>
-    <div class="standings-grid"></div>
+    <div class="standings-grid"><div class="div-block">
+      <div class="div-hed">AL East</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>Tampa Bay</td>
+        <td>98</td><td>64</td><td>—</td><td>.605</td>
+      </tr><tr class="">
+        <td>N.Y. Yankees</td>
+        <td>93</td><td>68</td><td>4.5</td><td>.578</td>
+      </tr><tr class="">
+        <td>Boston</td>
+        <td>87</td><td>75</td><td>11.0</td><td>.537</td>
+      </tr><tr class="">
+        <td>Baltimore</td>
+        <td>79</td><td>82</td><td>18.5</td><td>.491</td>
+      </tr><tr class="">
+        <td>Toronto</td>
+        <td>79</td><td>83</td><td>19.0</td><td>.488</td>
+      </tr></tbody>
+      </table>
+    </div><div class="div-block">
+      <div class="div-hed">AL Central</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>Cleveland</td>
+        <td>85</td><td>77</td><td>—</td><td>.525</td>
+      </tr><tr class="">
+        <td>Chi. Sox</td>
+        <td>84</td><td>78</td><td>1.0</td><td>.519</td>
+      </tr><tr class="">
+        <td>Minnesota</td>
+        <td>77</td><td>85</td><td>8.0</td><td>.475</td>
+      </tr><tr class="">
+        <td>Detroit</td>
+        <td>76</td><td>86</td><td>9.0</td><td>.469</td>
+      </tr><tr class="">
+        <td>Kansas City</td>
+        <td>69</td><td>93</td><td>16.0</td><td>.426</td>
+      </tr></tbody>
+      </table>
+    </div><div class="div-block">
+      <div class="div-hed">AL West</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>Houston</td>
+        <td>81</td><td>81</td><td>—</td><td>.500</td>
+      </tr><tr class="">
+        <td>Texas</td>
+        <td>80</td><td>82</td><td>1.0</td><td>.494</td>
+      </tr><tr class="">
+        <td>Seattle</td>
+        <td>76</td><td>86</td><td>5.0</td><td>.469</td>
+      </tr><tr class="">
+        <td>Athletics</td>
+        <td>64</td><td>98</td><td>17.0</td><td>.395</td>
+      </tr><tr class="">
+        <td>L.A. Angels</td>
+        <td>62</td><td>100</td><td>19.0</td><td>.383</td>
+      </tr></tbody>
+      </table>
+    </div><div class="div-block">
+      <div class="div-hed">NL East</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>Atlanta</td>
+        <td>94</td><td>68</td><td>—</td><td>.580</td>
+      </tr><tr class="">
+        <td>Philadelphia</td>
+        <td>88</td><td>74</td><td>6.0</td><td>.543</td>
+      </tr><tr class="">
+        <td>Miami</td>
+        <td>80</td><td>82</td><td>14.0</td><td>.494</td>
+      </tr><tr class="">
+        <td>Washington</td>
+        <td>77</td><td>85</td><td>17.0</td><td>.475</td>
+      </tr><tr class="">
+        <td>N.Y. Mets</td>
+        <td>74</td><td>88</td><td>20.0</td><td>.457</td>
+      </tr></tbody>
+      </table>
+    </div><div class="div-block">
+      <div class="div-hed">NL Central</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>Milwaukee</td>
+        <td>103</td><td>59</td><td>—</td><td>.636</td>
+      </tr><tr class="">
+        <td>Chi. Cubs</td>
+        <td>89</td><td>73</td><td>14.0</td><td>.549</td>
+      </tr><tr class="">
+        <td>Pittsburgh</td>
+        <td>82</td><td>80</td><td>21.0</td><td>.506</td>
+      </tr><tr class="">
+        <td>St. Louis</td>
+        <td>77</td><td>85</td><td>26.0</td><td>.475</td>
+      </tr><tr class="">
+        <td>Cincinnati</td>
+        <td>75</td><td>87</td><td>28.0</td><td>.463</td>
+      </tr></tbody>
+      </table>
+    </div><div class="div-block">
+      <div class="div-hed">NL West</div>
+      <table class="standings-tbl">
+        <thead><tr><th>Club</th><th>W</th><th>L</th><th>GB</th><th>Pct</th></tr></thead>
+        <tbody><tr class="div-leader">
+        <td>L.A. Dodgers</td>
+        <td>100</td><td>62</td><td>—</td><td>.617</td>
+      </tr><tr class="">
+        <td>San Diego</td>
+        <td>91</td><td>71</td><td>9.0</td><td>.562</td>
+      </tr><tr class="">
+        <td>Arizona</td>
+        <td>86</td><td>76</td><td>14.0</td><td>.531</td>
+      </tr><tr class="">
+        <td>San Francisco</td>
+        <td>65</td><td>97</td><td>35.0</td><td>.401</td>
+      </tr><tr class="">
+        <td>Colorado</td>
+        <td>58</td><td>104</td><td>42.0</td><td>.358</td>
+      </tr></tbody>
+      </table>
+    </div></div>
   </section>
 
   <section class="section">
@@ -631,37 +757,37 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
     <td>92</td>
   </tr></tbody></table></div>
     </div>
-    <div class="leaders-row">
+    <div class="leaders-row four-col">
       <div class="leaders-block"><div class="leaders-hed">Wins</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Sonny Gray <span class="player-team"></span></td>
-    <td>18</td>
+    <td>18-5</td>
   </tr><tr>
     <td><span class="rank">2.</span>Drew Rasmussen <span class="player-team"></span></td>
-    <td>16</td>
+    <td>16-5</td>
   </tr><tr>
     <td><span class="rank">3.</span>Nick Martinez <span class="player-team"></span></td>
-    <td>15</td>
+    <td>15-6</td>
   </tr><tr>
     <td><span class="rank">4.</span>Cam Schlittler <span class="player-team"></span></td>
-    <td>14</td>
+    <td>14-6</td>
   </tr><tr>
     <td><span class="rank">5.</span>Gavin Williams <span class="player-team"></span></td>
-    <td>14</td>
+    <td>14-8</td>
   </tr><tr>
     <td><span class="rank">6.</span>Taj Bradley <span class="player-team"></span></td>
-    <td>12</td>
+    <td>12-6</td>
   </tr><tr>
     <td><span class="rank">7.</span>Logan Gilbert <span class="player-team"></span></td>
-    <td>12</td>
+    <td>12-11</td>
   </tr><tr>
     <td><span class="rank">8.</span>Parker Messick <span class="player-team"></span></td>
-    <td>12</td>
+    <td>12-9</td>
   </tr><tr>
     <td><span class="rank">9.</span>José Soriano <span class="player-team"></span></td>
-    <td>12</td>
+    <td>12-8</td>
   </tr><tr>
     <td><span class="rank">10.</span>Bryan Woo <span class="player-team"></span></td>
-    <td>12</td>
+    <td>12-10</td>
   </tr></tbody></table></div>
       <div class="leaders-block"><div class="leaders-hed">Saves</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Bryan Baker <span class="player-team"></span></td>
@@ -724,6 +850,37 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   </tr><tr>
     <td><span class="rank">10.</span>Bryan Woo <span class="player-team"></span></td>
     <td>175</td>
+  </tr></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">ERA</div><table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Cam Schlittler <span class="player-team"></span></td>
+    <td>1.95</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Dylan Cease <span class="player-team"></span></td>
+    <td>2.40</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Parker Messick <span class="player-team"></span></td>
+    <td>2.56</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Drew Rasmussen <span class="player-team"></span></td>
+    <td>2.67</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Sonny Gray <span class="player-team"></span></td>
+    <td>2.72</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Nick Martinez <span class="player-team"></span></td>
+    <td>3.10</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Michael Wacha <span class="player-team"></span></td>
+    <td>3.32</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Sean Burke <span class="player-team"></span></td>
+    <td>3.34</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Reid Detmers <span class="player-team"></span></td>
+    <td>3.36</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Logan Gilbert <span class="player-team"></span></td>
+    <td>3.73</td>
   </tr></tbody></table></div>
     </div>
   </div>
@@ -824,37 +981,37 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
     <td>94</td>
   </tr></tbody></table></div>
     </div>
-    <div class="leaders-row">
+    <div class="leaders-row four-col">
       <div class="leaders-block"><div class="leaders-hed">Wins</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Cristopher Sánchez <span class="player-team"></span></td>
-    <td>18</td>
+    <td>18-7</td>
   </tr><tr>
     <td><span class="rank">2.</span>Jacob Misiorowski <span class="player-team"></span></td>
-    <td>16</td>
+    <td>16-5</td>
   </tr><tr>
     <td><span class="rank">3.</span>Eduardo Rodriguez <span class="player-team"></span></td>
-    <td>16</td>
+    <td>16-7</td>
   </tr><tr>
     <td><span class="rank">4.</span>Chase Burns <span class="player-team"></span></td>
     <td>15</td>
   </tr><tr>
     <td><span class="rank">5.</span>Braxton Ashcraft <span class="player-team"></span></td>
-    <td>14</td>
+    <td>14-6</td>
   </tr><tr>
     <td><span class="rank">6.</span>Jesús Luzardo <span class="player-team"></span></td>
-    <td>14</td>
+    <td>14-5</td>
   </tr><tr>
     <td><span class="rank">7.</span>Chris Sale <span class="player-team"></span></td>
-    <td>14</td>
+    <td>14-9</td>
   </tr><tr>
     <td><span class="rank">8.</span>Zack Wheeler <span class="player-team"></span></td>
-    <td>14</td>
+    <td>14-5</td>
   </tr><tr>
     <td><span class="rank">9.</span>Yoshinobu Yamamoto <span class="player-team"></span></td>
-    <td>14</td>
+    <td>14-9</td>
   </tr><tr>
     <td><span class="rank">10.</span>Sandy Alcantara <span class="player-team"></span></td>
-    <td>13</td>
+    <td>13-11</td>
   </tr></tbody></table></div>
       <div class="leaders-block"><div class="leaders-hed">Saves</div><table class="leaders-tbl"><tbody><tr>
     <td><span class="rank">1.</span>Mason Miller <span class="player-team"></span></td>
@@ -918,6 +1075,37 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
     <td><span class="rank">10.</span>Yoshinobu Yamamoto <span class="player-team"></span></td>
     <td>182</td>
   </tr></tbody></table></div>
+      <div class="leaders-block"><div class="leaders-hed">ERA</div><table class="leaders-tbl"><tbody><tr>
+    <td><span class="rank">1.</span>Jacob Misiorowski <span class="player-team"></span></td>
+    <td>1.80</td>
+  </tr><tr>
+    <td><span class="rank">2.</span>Chris Sale <span class="player-team"></span></td>
+    <td>2.16</td>
+  </tr><tr>
+    <td><span class="rank">3.</span>Yoshinobu Yamamoto <span class="player-team"></span></td>
+    <td>2.53</td>
+  </tr><tr>
+    <td><span class="rank">4.</span>Jesús Luzardo <span class="player-team"></span></td>
+    <td>2.86</td>
+  </tr><tr>
+    <td><span class="rank">5.</span>Eduardo Rodriguez <span class="player-team"></span></td>
+    <td>2.89</td>
+  </tr><tr>
+    <td><span class="rank">6.</span>Cristopher Sánchez <span class="player-team"></span></td>
+    <td>2.91</td>
+  </tr><tr>
+    <td><span class="rank">7.</span>Zack Wheeler <span class="player-team"></span></td>
+    <td>3.00</td>
+  </tr><tr>
+    <td><span class="rank">8.</span>Cade Cavalli <span class="player-team"></span></td>
+    <td>3.02</td>
+  </tr><tr>
+    <td><span class="rank">9.</span>Nolan McLean <span class="player-team"></span></td>
+    <td>3.16</td>
+  </tr><tr>
+    <td><span class="rank">10.</span>Michael King <span class="player-team"></span></td>
+    <td>3.21</td>
+  </tr></tbody></table></div>
     </div>
   </div>
     </div>
@@ -926,7 +1114,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
   <section class="section">
     <h2 class="section-hed">Today's Matchups — Monday, October 5, 2026</h2>
     <div class="matchups-layout"><div class="matchup-league"><div class="matchup-league-hed">American League</div><div class="matchup-line">
-        <span class="matchup-teams">Chi. Sox (Kay) at Cleveland (Williams 14-8)</span>
+        <span class="matchup-teams">Chi. Sox (Kay 10-9) at Cleveland (Williams 14-8)</span>
         <span class="matchup-time">2:00 p.m. PT</span>
       </div><div class="matchup-line">
         <span class="matchup-teams">N.Y. Yankees (Schlittler 14-6) at Tampa Bay (Peralta 10-11)</span>

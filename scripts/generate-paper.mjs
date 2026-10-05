@@ -67,26 +67,36 @@ async function fetchAll() {
 
   const season = DATE.split('-')[0];
 
-  // Collect pitcher IDs: matchup probable starters + decision pitchers (winner/loser/save)
-  const pitcherIds = new Set();
-  for (const g of matchupGames) {
-    if (g.teams.away.probablePitcher?.id) pitcherIds.add(g.teams.away.probablePitcher.id);
-    if (g.teams.home.probablePitcher?.id) pitcherIds.add(g.teams.home.probablePitcher.id);
-  }
+  // Collect decision pitcher IDs (for box score W-L fallback)
+  const decisionPitcherIds = new Set();
   for (const g of games) {
-    if (g.decisions?.winner?.id) pitcherIds.add(g.decisions.winner.id);
-    if (g.decisions?.loser?.id)  pitcherIds.add(g.decisions.loser.id);
-    if (g.decisions?.save?.id)   pitcherIds.add(g.decisions.save.id);
+    if (g.decisions?.winner?.id) decisionPitcherIds.add(g.decisions.winner.id);
+    if (g.decisions?.loser?.id)  decisionPitcherIds.add(g.decisions.loser.id);
+    if (g.decisions?.save?.id)   decisionPitcherIds.add(g.decisions.save.id);
+  }
+  // Matchup probable starters fetched individually (batch endpoint drops players unreliably)
+  const matchupPitcherIds = new Set();
+  for (const g of matchupGames) {
+    if (g.teams.away.probablePitcher?.id) matchupPitcherIds.add(g.teams.away.probablePitcher.id);
+    if (g.teams.home.probablePitcher?.id) matchupPitcherIds.add(g.teams.home.probablePitcher.id);
   }
   const allPitcherStats = {};
-  if (pitcherIds.size > 0) {
+  // Individual calls for matchup pitchers (reliable)
+  await Promise.all([...matchupPitcherIds].map(id =>
+    get(`${MLB}/people/${id}/stats?stats=season&group=pitching&season=${season}&sportId=1`)
+      .then(d => {
+        const split = (d.stats||[]).flatMap(b=>b.splits||[]).find(s=>s.stat);
+        if (split) allPitcherStats[id] = { wins: split.stat.wins??0, losses: split.stat.losses??0, saves: split.stat.saves??0 };
+      })
+      .catch(() => {})
+  ));
+  // Batch call for decision pitchers (fallback; boxscore seasonStats is primary)
+  if (decisionPitcherIds.size > 0) {
     try {
-      const sd = await get(
-        `${MLB}/stats?stats=season&playerIds=${[...pitcherIds].join(',')}&group=pitching&season=${season}&sportId=1`
-      );
+      const sd = await get(`${MLB}/stats?stats=season&playerIds=${[...decisionPitcherIds].join(',')}&group=pitching&season=${season}&sportId=1`);
       for (const block of (sd.stats || [])) {
         for (const split of (block.splits || [])) {
-          if (split.player?.id) allPitcherStats[split.player.id] = {
+          if (split.player?.id && !allPitcherStats[split.player.id]) allPitcherStats[split.player.id] = {
             wins: split.stat?.wins??0, losses: split.stat?.losses??0, saves: split.stat?.saves??0
           };
         }
@@ -125,15 +135,38 @@ async function fetchAll() {
     } catch { /* optional */ }
   }
 
-  const [standings, alHit, nlHit, alPit, nlPit] = await Promise.all([
-    get(`${MLB}/standings?leagueId=103,104&season=2025&standingsType=regularSeason&date=${DATE}&hydrate=team`),
+  let standings = await get(`${MLB}/standings?leagueId=103,104&season=${season}&standingsType=regularSeason&date=${DATE}&hydrate=team`);
+  // Post-season: date-filtered standings may be empty; fall back to final regular season standings
+  if (!(standings.records || []).some(r => r.teamRecords?.length)) {
+    standings = await get(`${MLB}/standings?leagueId=103,104&season=${season}&standingsType=regularSeason&hydrate=team`).catch(() => standings);
+  }
+
+  const [alHit, nlHit, alPit, nlPit] = await Promise.all([
     get(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,runsBattedIn&season=${season}&limit=10&statGroup=hitting&sportId=1&leagueId=103`),
     get(`${MLB}/stats/leaders?leaderCategories=battingAverage,homeRuns,runsBattedIn&season=${season}&limit=10&statGroup=hitting&sportId=1&leagueId=104`),
-    get(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts&season=${season}&limit=10&statGroup=pitching&sportId=1&leagueId=103`),
-    get(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts&season=${season}&limit=10&statGroup=pitching&sportId=1&leagueId=104`),
+    get(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts,earnedRunAverage&season=${season}&limit=10&statGroup=pitching&sportId=1&leagueId=103`),
+    get(`${MLB}/stats/leaders?leaderCategories=wins,saves,strikeouts,earnedRunAverage&season=${season}&limit=10&statGroup=pitching&sportId=1&leagueId=104`),
   ]);
 
-  return { games, matchupGames, pitcherStats: allPitcherStats, decisionStats: allPitcherStats, batterSeasonStats, standings, alHit, nlHit, alPit, nlPit };
+  // Batch-fetch W-L for wins leaders to format as "21-3"
+  function extractLeaders(data, cat) { return (data.leagueLeaders||[]).find(c=>c.leaderCategory===cat)?.leaders||[]; }
+  const winsIds = [...new Set([
+    ...extractLeaders(alPit,'wins').map(l=>l.person?.id),
+    ...extractLeaders(nlPit,'wins').map(l=>l.person?.id),
+  ].filter(Boolean))];
+  const winsStats = {};
+  if (winsIds.length > 0) {
+    try {
+      const wd = await get(`${MLB}/stats?stats=season&playerIds=${winsIds.join(',')}&group=pitching&season=${season}&sportId=1`);
+      for (const block of (wd.stats||[])) {
+        for (const split of (block.splits||[])) {
+          if (split.player?.id) winsStats[split.player.id] = { wins: split.stat?.wins??0, losses: split.stat?.losses??0 };
+        }
+      }
+    } catch { /* optional */ }
+  }
+
+  return { games, matchupGames, pitcherStats: allPitcherStats, decisionStats: allPitcherStats, batterSeasonStats, standings, alHit, nlHit, alPit, nlPit, winsStats };
 }
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
@@ -174,6 +207,11 @@ function winPct(w, l) {
 function formatAvg(v) {
   const n = parseFloat(v);
   return isNaN(n) ? v : '.' + String(Math.round(n*1000)).padStart(3,'0');
+}
+
+function formatERA(v) {
+  const n = parseFloat(v);
+  return isNaN(n) ? v : n.toFixed(2);
 }
 
 function formatGameTime(utcStr) {
@@ -469,8 +507,12 @@ function renderLeadersBlock(title, leaders, fmt) {
   return `<div class="leaders-block"><div class="leaders-hed">${title}</div><table class="leaders-tbl"><tbody>${rows}</tbody></table></div>`;
 }
 
-function renderLeagueSection(leagueName, hitting, pitching) {
+function renderLeagueSection(leagueName, hitting, pitching, winsStats = {}) {
   function extract(data,cat){return (data.leagueLeaders||[]).find(c=>c.leaderCategory===cat)?.leaders||[];}
+  const winsLeaders=extract(pitching,'wins').map(l=>{
+    const rec=winsStats[l.person?.id];
+    return {...l,value:rec?`${rec.wins}-${rec.losses}`:l.value};
+  });
   return `<div class="league-section">
     <div class="league-section-hed">${leagueName}</div>
     <div class="leaders-row">
@@ -478,10 +520,11 @@ function renderLeagueSection(leagueName, hitting, pitching) {
       ${renderLeadersBlock('Home Runs',extract(hitting,'homeRuns'),v=>v)}
       ${renderLeadersBlock('RBI',extract(hitting,'runsBattedIn'),v=>v)}
     </div>
-    <div class="leaders-row">
-      ${renderLeadersBlock('Wins',extract(pitching,'wins'),v=>v)}
+    <div class="leaders-row four-col">
+      ${renderLeadersBlock('Wins',winsLeaders,v=>v)}
       ${renderLeadersBlock('Saves',extract(pitching,'saves'),v=>v)}
       ${renderLeadersBlock('Strikeouts',extract(pitching,'strikeouts'),v=>v)}
+      ${renderLeadersBlock('ERA',extract(pitching,'earnedRunAverage'),formatERA)}
     </div>
   </div>`;
 }
@@ -546,7 +589,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .league-leaders-layout{display:flex;flex-direction:column;gap:14px}
 .league-section{border:1px solid var(--rule)}
 .league-section-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:11px;letter-spacing:.18em;padding:4px 10px;text-align:center}
-.leaders-row{display:grid;grid-template-columns:repeat(3,1fr)}.leaders-row+.leaders-row{border-top:1px solid var(--rule)}
+.leaders-row{display:grid;grid-template-columns:repeat(3,1fr)}.leaders-row.four-col{grid-template-columns:repeat(4,1fr)}.leaders-row+.leaders-row{border-top:1px solid var(--rule)}
 .leaders-block+.leaders-block{border-left:1px solid var(--rule)}
 .leaders-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.12em;padding:3px 8px;background:var(--paper-dark);border-bottom:1px solid var(--faint2)}
 .leaders-tbl{width:100%;border-collapse:collapse;font-size:11px}
@@ -642,15 +685,15 @@ function buildHTML({ matchupsHtml, scoresHtml, standingsHtml, leadersHtml }) {
 // ── MAIN ──────────────────────────────────────────────────────────────────────
 
 async function main() {
-  const { games, matchupGames, pitcherStats, decisionStats, batterSeasonStats, standings, alHit, nlHit, alPit, nlPit } = await fetchAll();
+  const { games, matchupGames, pitcherStats, decisionStats, batterSeasonStats, winsStats, standings, alHit, nlHit, alPit, nlPit } = await fetchAll();
 
   const html = buildHTML({
     matchupsHtml:  renderMatchups(matchupGames, pitcherStats),
     scoresHtml:    renderScores(games, decisionStats, batterSeasonStats),
     standingsHtml: renderStandings(standings),
     leadersHtml:   `<div class="league-leaders-layout">
-      ${renderLeagueSection('American League Leaders', alHit, alPit)}
-      ${renderLeagueSection('National League Leaders', nlHit, nlPit)}
+      ${renderLeagueSection('American League Leaders', alHit, alPit, winsStats)}
+      ${renderLeagueSection('National League Leaders', nlHit, nlPit, winsStats)}
     </div>`,
   });
 
