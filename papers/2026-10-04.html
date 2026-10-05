@@ -8,9 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display+SC:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-:root{--ink:#1a1209;--paper:#f5f0e8;--paper-dark:#ede7d9;--rule:#2a1f0f;--faint:#8b7355;--faint2:#b8a88a}
+:root{--ink:#111111;--paper:#ffffff;--paper-dark:#f0f0f0;--rule:#222222;--faint:#666666;--faint2:#cccccc}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(--ink);font-size:13px;line-height:1.4}
+body{background:#b0b8c0;font-family:'Libre Baskerville',Georgia,serif;color:var(--ink);font-size:13px;line-height:1.4}
 .newspaper{max-width:980px;margin:24px auto;background:var(--paper);box-shadow:2px 2px 12px rgba(0,0,0,.45),4px 4px 24px rgba(0,0,0,.2)}
 .masthead{border-bottom:4px double var(--rule);padding:16px 24px 10px;text-align:center}
 .masthead-meta{display:flex;justify-content:space-between;font-size:9.5px;color:var(--faint);margin-bottom:4px;letter-spacing:.05em}
@@ -27,7 +27,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .standings-tbl{width:100%;border-collapse:collapse;font-size:11.5px}
 .standings-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8.5px;letter-spacing:.1em;padding:2px 6px;border-bottom:1px solid var(--rule);color:var(--faint)}
 .standings-tbl th:first-child{text-align:left}.standings-tbl th:not(:first-child){text-align:right}
-.standings-tbl td{padding:2px 6px;border-bottom:1px dotted #d4c9b0}.standings-tbl td:first-child{font-weight:700}.standings-tbl td:not(:first-child){text-align:right}
+.standings-tbl td{padding:2px 6px;border-bottom:1px dotted #dddddd}.standings-tbl td:first-child{font-weight:700}.standings-tbl td:not(:first-child){text-align:right}
 .standings-tbl tr:last-child td{border-bottom:none}
 .scores-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
 .league-subsection{display:flex;flex-direction:column;gap:12px}
@@ -41,7 +41,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .batting-table{width:100%;border-collapse:collapse;font-size:10.5px}
 .batting-table th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;padding:1px 3px;text-align:right;color:var(--faint);border-bottom:1px solid var(--faint2)}
 .batting-table th:first-child{text-align:left}
-.batting-table td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}
+.batting-table td{padding:1px 3px;text-align:right;border-bottom:1px dotted #dddddd}
 .batting-table td:first-child{text-align:left;white-space:nowrap;overflow:hidden;max-width:130px}
 .batting-table tr.totals-row td{border-top:1px solid var(--rule);border-bottom:none;font-weight:700;background:var(--paper-dark)}
 .batting-table tr.totals-row td:first-child{font-size:8.5px}
@@ -59,7 +59,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .pitching-tbl{width:100%;border-collapse:collapse;font-size:10.5px}
 .pitching-tbl th{font-family:'Playfair Display SC',serif;font-weight:400;font-size:8px;letter-spacing:.08em;color:var(--faint);text-align:right;padding:0 3px;border-bottom:1px solid var(--faint2)}
 .pitching-tbl th:first-child{text-align:left}
-.pitching-tbl td{padding:1px 3px;text-align:right;border-bottom:1px dotted #d8cfbc}.pitching-tbl td:first-child{text-align:left}.pitching-tbl tr:last-child td{border-bottom:none}
+.pitching-tbl td{padding:1px 3px;text-align:right;border-bottom:1px dotted #dddddd}.pitching-tbl td:first-child{text-align:left}.pitching-tbl tr:last-child td{border-bottom:none}
 .game-notes{padding:4px 8px;font-size:10px;line-height:1.6}
 .note-label{font-weight:700;font-size:9px}
 .league-leaders-layout{display:flex;flex-direction:column;gap:14px}
@@ -69,15 +69,14 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 .leaders-block+.leaders-block{border-left:1px solid var(--rule)}
 .leaders-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.12em;padding:3px 8px;background:var(--paper-dark);border-bottom:1px solid var(--faint2)}
 .leaders-tbl{width:100%;border-collapse:collapse;font-size:11px}
-.leaders-tbl td{padding:2px 8px;border-bottom:1px dotted #d4c9b0}.leaders-tbl td:last-child{text-align:right;font-weight:700;white-space:nowrap}
+.leaders-tbl td{padding:2px 8px;border-bottom:1px dotted #dddddd}.leaders-tbl td:last-child{text-align:right;font-weight:700;white-space:nowrap}
 .leaders-tbl tr:last-child td{border-bottom:none}
 .rank{font-family:'Playfair Display SC',serif;font-size:8.5px;color:var(--faint);margin-right:3px}
 .player-team{font-size:9px;color:var(--faint);font-style:italic}
-.scores-summary{margin-bottom:12px;padding-bottom:10px;border-bottom:2px solid var(--rule)}.scores-summary-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.18em;color:var(--faint);padding:0 0 5px}.scores-summary-lines{display:flex;flex-wrap:wrap;gap:2px 14px;font-size:11.5px}.score-line{white-space:nowrap}
-.matchups-layout{display:flex;flex-direction:column;gap:0}
+.matchups-two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}.matchup-col{border:1px solid var(--rule)}.matchup-col-hed{background:var(--ink);color:var(--paper);font-family:'Playfair Display SC',serif;font-size:10px;letter-spacing:.1em;padding:3px 8px;text-align:center}.matchup-subsection-hed{font-family:'Playfair Display SC',serif;font-size:9px;letter-spacing:.15em;color:var(--faint);padding:3px 8px 2px;background:var(--paper-dark);border-bottom:1px solid var(--faint2)}.matchup-scores-block{padding:3px 8px 5px;border-bottom:1px solid var(--rule)}.matchup-games-block{padding:3px 8px 4px}.score-line{font-size:11.5px;padding:1px 0;border-bottom:1px dotted #dddddd}.score-line:last-child{border-bottom:none}
 .matchup-league-hed{font-family:'Playfair Display SC',serif;font-size:9.5px;letter-spacing:.18em;color:var(--faint);padding:6px 0 3px;border-bottom:1px solid var(--faint2);margin-bottom:4px}
 .matchup-league{margin-bottom:10px}
-.matchup-line{font-size:11.5px;padding:2px 0;border-bottom:1px dotted #d4c9b0;display:flex;justify-content:space-between;gap:8px}
+.matchup-line{font-size:11.5px;padding:2px 0;border-bottom:1px dotted #dddddd;display:flex;justify-content:space-between;gap:8px}
 .matchup-line:last-child{border-bottom:none}
 .matchup-teams{flex:1}.matchup-time{white-space:nowrap;color:var(--faint);font-size:10.5px}
 .paper-footer{border-top:3px double var(--rule);text-align:center;font-size:9px;color:var(--faint);padding:8px;font-style:italic;letter-spacing:.05em}
@@ -88,7 +87,7 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 <article class="newspaper">
   <header class="masthead">
     <div class="masthead-meta">
-      <span>VOL. CLIV . . . No. 277</span>
+      <span>VOL. CLIV . . . No. 276</span>
       <span>ESTABLISHED 1876</span>
       <span>PRICE: FOUR CENTS</span>
     </div>
@@ -1176,13 +1175,16 @@ body{background:#c8bfa8;font-family:'Libre Baskerville',Georgia,serif;color:var(
 
   <section class="section">
     <h2 class="section-hed">Today's Matchups — Monday, October 5, 2026</h2>
-    <div class="scores-summary"><div class="scores-summary-hed">Sunday's Scores</div><div class="scores-summary-lines"><span class="score-line">SD 3, <strong>MIL 4</strong></span><span class="score-line"><strong>ATL 3</strong>, LAD 2</span></div></div><div class="matchups-layout"><div class="matchup-league"><div class="matchup-league-hed">American League</div><div class="matchup-line">
-        <span class="matchup-teams">Chi. Sox (Kay 10-9) at Cleveland (Williams 14-8)</span>
-        <span class="matchup-time">2:00 p.m. PT</span>
-      </div><div class="matchup-line">
-        <span class="matchup-teams">N.Y. Yankees (Schlittler 14-6) at Tampa Bay (Peralta 10-11)</span>
-        <span class="matchup-time">5:00 p.m. PT</span>
-      </div></div></div>
+    <div class="matchups-two-col">
+    <div class="matchup-col"><div class="matchup-col-hed">American League</div><div class="matchup-subsection-hed">Today's Games</div><div class="matchup-games-block"><div class="matchup-line">
+      <span class="matchup-teams">Chi. Sox (Kay 10-9) at Cleveland (Williams 14-8)</span>
+      <span class="matchup-time">2:00 p.m. PT</span>
+    </div><div class="matchup-line">
+      <span class="matchup-teams">N.Y. Yankees (Schlittler 14-6) at Tampa Bay (Peralta 10-11)</span>
+      <span class="matchup-time">5:00 p.m. PT</span>
+    </div></div></div>
+    <div class="matchup-col"><div class="matchup-col-hed">National League</div><div class="matchup-subsection-hed">Sunday's Scores</div><div class="matchup-scores-block"><div class="score-line"><strong>MIL 4</strong>, SD 3</div><div class="score-line"><strong>ATL 3</strong>, LAD 2</div></div></div>
+  </div>
   </section>
 
   <footer class="paper-footer">

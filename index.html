@@ -9,18 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display+SC:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #1a1209;
-      --paper: #f5f0e8;
-      --paper-dark: #ede7d9;
-      --rule: #2a1f0f;
-      --faint: #8b7355;
-      --faint2: #b8a88a;
+      --ink: #111111;
+      --paper: #ffffff;
+      --paper-dark: #f0f0f0;
+      --rule: #222222;
+      --faint: #666666;
+      --faint2: #cccccc;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      background: #c8bfa8;
+      background: #b0b8c0;
       font-family: 'Libre Baskerville', Georgia, serif;
       color: var(--ink);
       font-size: 13px;
@@ -57,7 +57,7 @@
     .standings-tbl th { font-family: 'Playfair Display SC', serif; font-weight: 400; font-size: 8.5px; letter-spacing: 0.1em; padding: 2px 6px; border-bottom: 1px solid var(--rule); color: var(--faint); }
     .standings-tbl th:first-child { text-align: left; }
     .standings-tbl th:not(:first-child) { text-align: right; }
-    .standings-tbl td { padding: 2px 6px; border-bottom: 1px dotted #d4c9b0; }
+    .standings-tbl td { padding: 2px 6px; border-bottom: 1px dotted #dddddd; }
     .standings-tbl td:first-child { font-weight: 700; }
     .standings-tbl td:not(:first-child) { text-align: right; }
     .standings-tbl tr:last-child td { border-bottom: none; }
@@ -110,7 +110,7 @@
     .batting-table { width: 100%; border-collapse: collapse; font-size: 10.5px; }
     .batting-table th { font-family: 'Playfair Display SC', serif; font-weight: 400; font-size: 8px; letter-spacing: 0.08em; padding: 1px 3px; text-align: right; color: var(--faint); border-bottom: 1px solid var(--faint2); }
     .batting-table th:first-child { text-align: left; }
-    .batting-table td { padding: 1px 3px; text-align: right; border-bottom: 1px dotted #d8cfbc; }
+    .batting-table td { padding: 1px 3px; text-align: right; border-bottom: 1px dotted #dddddd; }
     .batting-table td:first-child { text-align: left; white-space: nowrap; overflow: hidden; max-width: 130px; }
     .batting-table tr.totals-row td { border-top: 1px solid var(--rule); border-bottom: none; font-weight: 700; background: var(--paper-dark); }
     .batting-table tr.totals-row td:first-child { font-size: 8.5px; }
@@ -135,7 +135,7 @@
     .pitching-tbl { width: 100%; border-collapse: collapse; font-size: 10.5px; }
     .pitching-tbl th { font-family: 'Playfair Display SC', serif; font-weight: 400; font-size: 8px; letter-spacing: 0.08em; color: var(--faint); text-align: right; padding: 0 3px; border-bottom: 1px solid var(--faint2); }
     .pitching-tbl th:first-child { text-align: left; }
-    .pitching-tbl td { padding: 1px 3px; text-align: right; border-bottom: 1px dotted #d8cfbc; }
+    .pitching-tbl td { padding: 1px 3px; text-align: right; border-bottom: 1px dotted #dddddd; }
     .pitching-tbl td:first-child { text-align: left; }
     .pitching-tbl tr:last-child td { border-bottom: none; }
 
@@ -153,22 +153,22 @@
     .leaders-block + .leaders-block { border-left: 1px solid var(--rule); }
     .leaders-hed { font-family: 'Playfair Display SC', serif; font-size: 9.5px; letter-spacing: 0.12em; padding: 3px 8px; background: var(--paper-dark); border-bottom: 1px solid var(--faint2); }
     .leaders-tbl { width: 100%; border-collapse: collapse; font-size: 11px; }
-    .leaders-tbl td { padding: 2px 8px; border-bottom: 1px dotted #d4c9b0; }
+    .leaders-tbl td { padding: 2px 8px; border-bottom: 1px dotted #dddddd; }
     .leaders-tbl td:last-child { text-align: right; font-weight: 700; white-space: nowrap; }
     .leaders-tbl tr:last-child td { border-bottom: none; }
     .rank { font-family: 'Playfair Display SC', serif; font-size: 8.5px; color: var(--faint); margin-right: 3px; }
     .player-team { font-size: 9px; color: var(--faint); font-style: italic; }
 
     /* ── TODAY'S MATCHUPS (at bottom) ── */
-    .scores-summary { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2px solid var(--rule); }
-    .scores-summary-hed { font-family: 'Playfair Display SC', serif; font-size: 9.5px; letter-spacing: 0.18em; color: var(--faint); padding: 0 0 5px; }
-    .scores-summary-lines { display: flex; flex-wrap: wrap; gap: 2px 14px; font-size: 11.5px; }
-    .score-line { white-space: nowrap; }
-    .score-line .winner { font-weight: 700; }
-    .matchups-layout { display: flex; flex-direction: column; gap: 0; }
-    .matchup-league-hed { font-family: 'Playfair Display SC', serif; font-size: 9.5px; letter-spacing: 0.18em; color: var(--faint); padding: 6px 0 3px; border-bottom: 1px solid var(--faint2); margin-bottom: 4px; }
-    .matchup-league { margin-bottom: 10px; }
-    .matchup-line { font-size: 11.5px; padding: 2px 0; border-bottom: 1px dotted #d4c9b0; display: flex; justify-content: space-between; gap: 8px; }
+    .matchups-two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
+    .matchup-col { border: 1px solid var(--rule); }
+    .matchup-col-hed { background: var(--ink); color: var(--paper); font-family: 'Playfair Display SC', serif; font-size: 10px; letter-spacing: 0.1em; padding: 3px 8px; text-align: center; }
+    .matchup-subsection-hed { font-family: 'Playfair Display SC', serif; font-size: 9px; letter-spacing: 0.15em; color: var(--faint); padding: 3px 8px 2px; background: var(--paper-dark); border-bottom: 1px solid var(--faint2); }
+    .matchup-scores-block { padding: 3px 8px 5px; border-bottom: 1px solid var(--rule); }
+    .matchup-games-block { padding: 3px 8px 4px; }
+    .score-line { font-size: 11.5px; padding: 1px 0; border-bottom: 1px dotted #dddddd; }
+    .score-line:last-child { border-bottom: none; }
+    .matchup-line { font-size: 11.5px; padding: 2px 0; border-bottom: 1px dotted #dddddd; display: flex; justify-content: space-between; gap: 8px; }
     .matchup-line:last-child { border-bottom: none; }
     .matchup-teams { flex: 1; }
     .matchup-time { white-space: nowrap; color: var(--faint); font-size: 10.5px; }
@@ -833,44 +833,23 @@ async function loadLeaders() {
 async function loadMatchups() {
   const container = document.getElementById('matchups-container');
   try {
-    // Fetch yesterday's scores summary and today's matchups in parallel
     const [yesterdayData, schedData] = await Promise.all([
       fetchJSON(`${MLB}/schedule?sportId=1&date=${DATE}`).catch(() => null),
       fetchJSON(`${MLB}/schedule?sportId=1&date=${TODAY}&hydrate=probablePitcher`),
     ]);
 
-    // Build scores summary block
     const yesterdayGames = yesterdayData?.dates?.[0]?.games || [];
-    let summaryHtml = '';
-    if (yesterdayGames.length) {
-      const dayName = new Date(...DATE.split('-').map((v,i)=>i===1?Number(v)-1:Number(v))).toLocaleDateString('en-US',{weekday:'long'});
-      const lines = yesterdayGames.map(g => {
-        const aw = g.teams.away, hm = g.teams.home;
-        const awS = aw.score??'', hmS = hm.score??'';
-        const isFinal = (g.status?.detailedState||'').startsWith('Final');
-        if (!isFinal || awS==='' || hmS==='') return '';
-        const awWon = awS > hmS;
-        const awPart = awWon ? `<span class="winner">${teamCode(aw.team.name)} ${awS}</span>` : `${teamCode(aw.team.name)} ${awS}`;
-        const hmPart = !awWon ? `<span class="winner">${teamCode(hm.team.name)} ${hmS}</span>` : `${teamCode(hm.team.name)} ${hmS}`;
-        return `<span class="score-line">${awPart}, ${hmPart}</span>`;
-      }).filter(Boolean).join('');
-      if (lines) summaryHtml = `<div class="scores-summary"><div class="scores-summary-hed">${dayName}'s Scores</div><div class="scores-summary-lines">${lines}</div></div>`;
-    }
+    const [y,m,d] = DATE.split('-').map(Number);
+    const dayName = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][new Date(y,m-1,d).getDay()];
 
-    const dates = schedData.dates || [];
-    if (!dates.length || !dates[0].games?.length) {
-      container.innerHTML = summaryHtml + '<div class="loading">No games scheduled today.</div>';
-      return;
-    }
-    const games = dates[0].games;
+    const todayGames = schedData?.dates?.[0]?.games || [];
 
-    // Batch-fetch pitcher season records
+    // Fetch each probable pitcher individually (batch drops players)
     const pitcherIds = new Set();
-    for (const g of games) {
+    for (const g of todayGames) {
       if (g.teams.away.probablePitcher?.id) pitcherIds.add(g.teams.away.probablePitcher.id);
       if (g.teams.home.probablePitcher?.id) pitcherIds.add(g.teams.home.probablePitcher.id);
     }
-    // Fetch each pitcher individually — batch endpoint drops some players unreliably
     const pitcherStats = {};
     const matchupSeason = TODAY.split('-')[0];
     await Promise.all([...pitcherIds].map(id =>
@@ -889,25 +868,45 @@ async function loadMatchups() {
       return rec ? `${lastName} ${rec.wins}-${rec.losses}` : lastName;
     }
 
-    function gameLines(gms) {
-      return gms.map(g => {
-        const away = g.teams.away, home = g.teams.home;
-        const time = g.gameDate ? formatGameTime(g.gameDate) : '';
-        return `<div class="matchup-line">
-          <span class="matchup-teams">${teamAbbr(away.team.name)} (${pitcherLabel(away.probablePitcher)}) at ${teamAbbr(home.team.name)} (${pitcherLabel(home.probablePitcher)})</span>
-          ${time ? `<span class="matchup-time">${time} PT</span>` : ''}
-        </div>`;
-      }).join('');
+    function scoreLine(g) {
+      const aw = g.teams.away, hm = g.teams.home;
+      const awS = Number(aw.score??''), hmS = Number(hm.score??'');
+      if (aw.score==null || hm.score==null) return '';
+      const awWon = awS > hmS;
+      const winner = awWon ? aw : hm, loser = awWon ? hm : aw;
+      const winS = awWon ? awS : hmS, loseS = awWon ? hmS : awS;
+      return `<div class="score-line"><strong>${teamCode(winner.team.name)} ${winS}</strong>, ${teamCode(loser.team.name)} ${loseS}</div>`;
     }
 
-    const alGames = games.filter(g =>  AL_TEAMS.has(g.teams.home.team.id));
-    const nlGames = games.filter(g => !AL_TEAMS.has(g.teams.home.team.id));
+    function matchupLine(g) {
+      const away = g.teams.away, home = g.teams.home;
+      const time = g.gameDate ? formatGameTime(g.gameDate) : '';
+      return `<div class="matchup-line">
+        <span class="matchup-teams">${teamAbbr(away.team.name)} (${pitcherLabel(away.probablePitcher)}) at ${teamAbbr(home.team.name)} (${pitcherLabel(home.probablePitcher)})</span>
+        ${time ? `<span class="matchup-time">${time} PT</span>` : ''}
+      </div>`;
+    }
 
-    let html = summaryHtml + '<div class="matchups-layout">';
-    if (alGames.length) html += `<div class="matchup-league"><div class="matchup-league-hed">American League</div>${gameLines(alGames)}</div>`;
-    if (nlGames.length) html += `<div class="matchup-league"><div class="matchup-league-hed">National League</div>${gameLines(nlGames)}</div>`;
-    html += '</div>';
-    container.innerHTML = html;
+    function leagueCol(label, scoreGames, matchupGames) {
+      const scores = scoreGames.map(scoreLine).filter(Boolean).join('');
+      const matchups = matchupGames.map(matchupLine).join('');
+      let html = `<div class="matchup-col"><div class="matchup-col-hed">${label}</div>`;
+      if (scores) html += `<div class="matchup-subsection-hed">${dayName}'s Scores</div><div class="matchup-scores-block">${scores}</div>`;
+      if (matchups) html += `<div class="matchup-subsection-hed">Today's Games</div><div class="matchup-games-block">${matchups}</div>`;
+      if (!scores && !matchups) html += `<div class="matchup-games-block"><em style="font-size:10px;color:var(--faint)">No games.</em></div>`;
+      return html + '</div>';
+    }
+
+    const byCity = (a,b) => a.teams.home.team.name.localeCompare(b.teams.home.team.name);
+    const alYesterday = yesterdayGames.filter(g =>  AL_TEAMS.has(g.teams.home.team.id));
+    const nlYesterday = yesterdayGames.filter(g => !AL_TEAMS.has(g.teams.home.team.id));
+    const alToday    = todayGames.filter(g =>  AL_TEAMS.has(g.teams.home.team.id)).sort(byCity);
+    const nlToday    = todayGames.filter(g => !AL_TEAMS.has(g.teams.home.team.id)).sort(byCity);
+
+    container.innerHTML = `<div class="matchups-two-col">
+      ${leagueCol('American League', alYesterday, alToday)}
+      ${leagueCol('National League', nlYesterday, nlToday)}
+    </div>`;
   } catch(e) {
     container.innerHTML = `<div class="error">Could not load matchups: ${e.message}</div>`;
   }
